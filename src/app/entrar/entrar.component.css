@@ -1,0 +1,11 @@
+.gradient-colors {
+  background: linear-gradient(to right, #ad65ff, #86a7f0, #b069ff, #84a3ec);
+}
+.ponteiro{
+  cursor: pointer;
+}
+.back-entrar{
+  background: url(../../assets/imgs/entrar/img-back.png);
+    min-height: 92vh;
+    background-size: cover;
+}
