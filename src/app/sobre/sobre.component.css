@@ -1,0 +1,23 @@
+img {
+    border-radius: 100%;
+    height: 300px;
+    width: 300px;
+}
+
+
+
+#bruno:hover {
+    content: url(https://i.imgur.com/vHIXMki.png);
+}
+#catarina:hover {
+    content: url(https://i.imgur.com/K1u42O9.png)
+}
+#igor:hover {
+    content: url(https://i.imgur.com/nl5Fese.png)
+}
+#sarah:hover {
+    content: url(https://i.imgur.com/LXLLhb0.png)
+}
+#thiago:hover {
+    content: url(https://i.imgur.com/TtRhZzW.png)
+}
