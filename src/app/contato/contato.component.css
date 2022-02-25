@@ -10,6 +10,7 @@ input {
 
 textarea {
   padding: 0.5em;
+  margin-left: 13px;
 }
 
 button {
