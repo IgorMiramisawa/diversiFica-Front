@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 import { RodapeComponent } from './rodape/rodape.component';
 
@@ -13,6 +14,7 @@ import { RodapeComponent } from './rodape/rodape.component';
     AppComponent,
     MenuComponent,
     EntrarComponent,
+    SobreComponent,
     ContatoComponent,
     RodapeComponent
   ],
