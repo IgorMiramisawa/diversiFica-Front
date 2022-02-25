@@ -2,75 +2,148 @@
   <section class="row bg-success w-25">
     <div class="col-md-12 bg-danger rounded d-flex flex-column justify-content-around p-3">
 
-      
-<form action="/action_page.php">
-  <label for="tipo">Tipo</label>
-  <select name="tipo" id="tipo">
-      <option value="">Selecione</option>
-      <option value="pessoaFisica">Pessoa Física</option>
-      <option value="pessoaJuridica">Pessoa Jurídica</option>
-  </select>
-<br>
+      <form action="">
+      <label for="Nome">Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Nome"
+        name="Nome"
+        placeholder="Digite seu Nome Completo"
+        aria-describedby="Nome"/>
+      </form>
 
-  <label for="sexualidade">Sexualidade</label>
-  <select name="sexualidade" id="sexualidade">
-      <option value="">Selecione</option>
-      <option value="lesbica">Lésbica</option>
-      <option value="gay">Gay</option>
-      <option value="bissexual">Bissexual</option>
-      <option value="pansexual">Pansexual</option>
-      <option value="assexual">Assexual</option>
-      <option value="queer">Queer</option>
-      <option value="heterossexual">Heterossexual</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+      <form action="">
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Digite seu E-mail"
+        aria-describedby="email"/>
+      </form>
 
-  <label for="genero">Gênero</label>
-  <select name="genero" id="genero">
-      <option value="">Selecione</option>
-      <option value="mulherTrans">Mulher trans</option>
-      <option value="homemTrans">Homem trans</option>
-      <option value="mulherCis">Mulher cis</option>
-      <option value="homemCis">Homem cis</option>
-      <option value="naoBinario">Não binário</option>
-      <option value="agenero">Agênero</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+      <form action="">
+        <label for="confirmEmail">Confirme seu E-mail</label>
+        <input
+          type="email"
+          class="form-control"
+          id="confirmEmail"
+          name="confirmEmail"
+          placeholder="Confirme seu E-mail"
+          aria-describedby="confirmEmail"/>
+        </form>
 
-  <label for="pcd">Você é uma pessoa com deficiência?</label>
-  <select name="pcd" id="pcd">
-      <option value="">Selecione</option>
-      <option value="visual">Visual</option>
-      <option value="auditiva">Auditiva</option>
-      <option value="fisica">Física</option>
-      <option value="intelectual">Intelectual</option>
-      <option value="multiplas">Múltiplas</option>
-      <option value="pessoaSemDeficiencia">Não sou PCD</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+      <form action="">
+      <label for="senha">Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        id="senha"
+        name="senha"
+        placeholder="Digite sua Senha"
+        aria-describedby="senha"/>
+      </form>
 
-  <label for="etnia">Etnia</label>
-  <select name="etnia" id="etnia">
-      <option value="">Selecione</option>
-      <option value="branco">Branco</option>
-      <option value="anarelo">Amarelo</option>
-      <option value="negro">Negro</option>
-      <option value="pardo">Pardo</option>
-      <option value="indígena">Indígena</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+      <form action="">
+      <label for="confirmSenha">Confirme sua Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        id="confirmSenha"
+        name="confirmSenha"
+        placeholder="Confirme sua Senha"
+        aria-describedby="confirmSenha"/>
+      </form>
 
-<input type="submit" value="Cadastrar">
-</form>
+      <form action="">
+      <label for="foto">Foto</label>
+      <input
+        type="string"
+        class="form-control"
+        id="foto"
+        name="foto"
+        placeholder="Coloque aqui o link da sua foto"
+        aria-describedby="foto"/>
+      </form>
 
-    </div>
+    <form action="">
+    <label for="tipo">Tipo</label>
+    <select name="tipo" id="tipo">
+        <option value="">Selecione</option>
+        <option value="pessoaFisica">Pessoa Física</option>
+        <option value="pessoaJuridica">Pessoa Jurídica</option>
+    </select>
+    <br>
+    </form>
+
+    <form action="">
+    <label for="sexualidade">Sexualidade</label>
+    <select name="sexualidade" id="sexualidade">
+        <option value="">Selecione</option>
+        <option value="lesbica">Lésbica</option>
+        <option value="gay">Gay</option>
+        <option value="bissexual">Bissexual</option>
+        <option value="pansexual">Pansexual</option>
+        <option value="assexual">Assexual</option>
+        <option value="queer">Queer</option>
+        <option value="heterossexual">Heterossexual</option>
+        <option value="prefiroNaoDizer">Prefiro não dizer</option>
+        <option value="Outro">Outro</option>
+    </select>
+    <br>
+    </form>
+
+    <form action="">
+    <label for="genero">Gênero</label>
+    <select name="genero" id="genero">
+        <option value="">Selecione</option>
+        <option value="mulherTrans">Mulher trans</option>
+        <option value="homemTrans">Homem trans</option>
+        <option value="mulherCis">Mulher cis</option>
+        <option value="homemCis">Homem cis</option>
+        <option value="naoBinario">Não binário</option>
+        <option value="agenero">Agênero</option>
+        <option value="prefiroNaoDizer">Prefiro não dizer</option>
+        <option value="Outro">Outro</option>
+    </select>
+    <br>
+    </form>
+
+    <form action="">
+    <label for="pcd">Você é uma pessoa com deficiência?</label>
+    <select name="pcd" id="pcd">
+        <option value="">Selecione</option>
+        <option value="visual">Visual</option>
+        <option value="auditiva">Auditiva</option>
+        <option value="fisica">Física</option>
+        <option value="intelectual">Intelectual</option>
+        <option value="multiplas">Múltiplas</option>
+        <option value="pessoaSemDeficiencia">Não sou PCD</option>
+        <option value="prefiroNaoDizer">Prefiro não dizer</option>
+        <option value="Outro">Outro</option>
+    </select>
+    <br>
+    </form>
+
+    <form action="">
+    <label for="etnia">Etnia</label>
+    <select name="etnia" id="etnia">
+        <option value="">Selecione</option>
+        <option value="branco">Branco</option>
+        <option value="anarelo">Amarelo</option>
+        <option value="negro">Negro</option>
+        <option value="pardo">Pardo</option>
+        <option value="indígena">Indígena</option>
+        <option value="prefiroNaoDizer">Prefiro não dizer</option>
+        <option value="Outro">Outro</option>
+    </select>
+    <br>
+    </form>
+
+    <button class="botao" routerLink="cadastrar">Cadastrar</button>
+
+  </div>
   </section>
 </main>
