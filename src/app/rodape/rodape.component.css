@@ -1,0 +1,38 @@
+.gradient-colors {
+  
+  background: linear-gradient(to right, #ad65ff, #86a7f0, #b069ff, #84a3ec);
+}
+
+ul.social-network
+{
+list-style: none;
+padding: 0;
+}
+ul.social-network li
+{
+  display: inline;
+  margin: 0;
+  padding: 5px;
+}
+.fa
+{
+font-size: 35pt;
+color: white;
+padding: 10px;
+}
+.fa-github:hover {
+  color: rgb(0, 0, 0);
+  transform: translateY(-9px);
+  transition: 0.5s ease-in-out;
+}
+
+.fa-facebook-square:hover {
+  color:#3b5998;
+  transform: translateY(-9px);
+  transition: 0.5s ease-in-out;
+}
+.fa-instagram:hover {
+  color: #c13584;
+  transform: translateY(-9px);
+  transition: 0.5s ease-in-out;
+}
