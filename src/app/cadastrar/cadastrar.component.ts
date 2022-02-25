@@ -9,10 +9,14 @@ import { Usuario } from '../model/Usuario';
 export class CadastrarComponent implements OnInit {
 
   usuario: Usuario = new Usuario
+  tipo: string
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selecionaTipo(event: any) {
+    this.tipo = event.target.value
+  }
 }
