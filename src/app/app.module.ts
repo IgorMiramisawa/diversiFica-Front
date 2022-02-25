@@ -24,11 +24,8 @@ import { InicioComponent } from './inicio/inicio.component';
     ContatoComponent,
     RodapeComponent,
     CadastrarComponent,
-<<<<<<< HEAD
-    TermosComponent
-=======
+    TermosComponent,
     InicioComponent
->>>>>>> 94dbc5bc3664629238e544727a83ae2fcbb34de6
   ],
   imports: [
     BrowserModule,
