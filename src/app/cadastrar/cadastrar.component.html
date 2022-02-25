@@ -2,74 +2,121 @@
   <section class="row bg-success w-25">
     <div class="col-md-12 bg-danger rounded d-flex flex-column justify-content-around p-3">
 
-      
-<form action="/action_page.php">
-  <label for="tipo">Tipo</label>
-  <select name="tipo" id="tipo">
-      <option value="">Selecione</option>
-      <option value="pessoaFisica">Pessoa Física</option>
-      <option value="pessoaJuridica">Pessoa Jurídica</option>
-  </select>
-<br>
+      <form action="">
+        <label for="tipo">Tipo</label>
+        <select name="tipo" id="tipo" [(ngModel)]="usuario.tipo">
+            <option value="">Selecione</option>
+            <option value="pessoaFisica">Pessoa Física</option>
+            <option value="pessoaJuridica">Pessoa Jurídica</option>
+        </select>
+        <br>
+      </form>
 
-  <label for="sexualidade">Sexualidade</label>
-  <select name="sexualidade" id="sexualidade">
-      <option value="">Selecione</option>
-      <option value="lesbica">Lésbica</option>
-      <option value="gay">Gay</option>
-      <option value="bissexual">Bissexual</option>
-      <option value="pansexual">Pansexual</option>
-      <option value="assexual">Assexual</option>
-      <option value="queer">Queer</option>
-      <option value="heterossexual">Heterossexual</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+      <form action="" *ngIf="usuario.tipo == 'pessoaFisica'">
+        <label for="sexualidade">Sexualidade</label>
+        <select name="sexualidade" id="sexualidade">
+            <option value="">Selecione</option>
+            <option value="lesbica">Lésbica</option>
+            <option value="gay">Gay</option>
+            <option value="bissexual">Bissexual</option>
+            <option value="pansexual">Pansexual</option>
+            <option value="assexual">Assexual</option>
+            <option value="queer">Queer</option>
+            <option value="heterossexual">Heterossexual</option>
+            <option value="prefiroNaoDizer">Prefiro não dizer</option>
+            <option value="Outro">Outro</option>
+        </select>
+        <br>
 
-  <label for="genero">Gênero</label>
-  <select name="genero" id="genero">
-      <option value="">Selecione</option>
-      <option value="mulherTrans">Mulher trans</option>
-      <option value="homemTrans">Homem trans</option>
-      <option value="mulherCis">Mulher cis</option>
-      <option value="homemCis">Homem cis</option>
-      <option value="naoBinario">Não binário</option>
-      <option value="agenero">Agênero</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+        <label for="genero">Gênero</label>
+        <select name="genero" id="genero">
+            <option value="">Selecione</option>
+            <option value="mulherTrans">Mulher trans</option>
+            <option value="homemTrans">Homem trans</option>
+            <option value="mulherCis">Mulher cis</option>
+            <option value="homemCis">Homem cis</option>
+            <option value="naoBinario">Não binário</option>
+            <option value="agenero">Agênero</option>
+            <option value="prefiroNaoDizer">Prefiro não dizer</option>
+            <option value="Outro">Outro</option>
+        </select>
+        <br>
 
-  <label for="pcd">Você é uma pessoa com deficiência?</label>
-  <select name="pcd" id="pcd">
-      <option value="">Selecione</option>
-      <option value="visual">Visual</option>
-      <option value="auditiva">Auditiva</option>
-      <option value="fisica">Física</option>
-      <option value="intelectual">Intelectual</option>
-      <option value="multiplas">Múltiplas</option>
-      <option value="pessoaSemDeficiencia">Não sou PCD</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+        <label for="pcd">Você é uma pessoa com deficiência?</label>
+        <select name="pcd" id="pcd">
+            <option value="">Selecione</option>
+            <option value="visual">Visual</option>
+            <option value="auditiva">Auditiva</option>
+            <option value="fisica">Física</option>
+            <option value="intelectual">Intelectual</option>
+            <option value="multiplas">Múltiplas</option>
+            <option value="pessoaSemDeficiencia">Não sou PCD</option>
+            <option value="prefiroNaoDizer">Prefiro não dizer</option>
+            <option value="Outro">Outro</option>
+        </select>
+        <br>
 
-  <label for="etnia">Etnia</label>
-  <select name="etnia" id="etnia">
-      <option value="">Selecione</option>
-      <option value="branco">Branco</option>
-      <option value="anarelo">Amarelo</option>
-      <option value="negro">Negro</option>
-      <option value="pardo">Pardo</option>
-      <option value="indígena">Indígena</option>
-      <option value="prefiroNaoDizer">Prefiro não dizer</option>
-      <option value="Outro">Outro</option>
-  </select>
-<br>
+        <label for="etnia">Etnia</label>
+        <select name="etnia" id="etnia">
+            <option value="">Selecione</option>
+            <option value="branco">Branco</option>
+            <option value="anarelo">Amarelo</option>
+            <option value="negro">Negro</option>
+            <option value="pardo">Pardo</option>
+            <option value="indígena">Indígena</option>
+            <option value="prefiroNaoDizer">Prefiro não dizer</option>
+            <option value="Outro">Outro</option>
+        </select>
+        <br>
+      </form>
 
-<input type="submit" value="Cadastrar">
-</form>
+      <form action="" *ngIf="usuario.tipo != 'pessoaFisica'">
+        <h2>Sua empresa tem medidas de inclusão para:</h2>
+        <div id="check">
+          <div>
+            <input type="checkbox" id="lgbtqia" name="lgbtqia" value="lgbtqia">
+            <label for="lgbtqia">Comunidade LGBTQIA+</label>
+          </div>
+          <div>
+            <input type="checkbox" id="trans" name="trans" value="trans">
+            <label for="trans">Comunidade Trans</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mulheres" name="mulheres" value="mulheres">
+            <label for="mulheres">Mulheres</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pcdv" name="pcdv" value="pcdv">
+            <label for="pcdv">PCD Visual</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pcda" name="pcda" value="pcda">
+            <label for="pcda">PCD Auditiva</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pcdf" name="pcdf" value="pcdf">
+            <label for="pcdf">PCD física</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pcdi" name="pcdi" value="pcdi">
+            <label for="pcdi">PCD intelectual</label>
+          </div>
+          <div>
+            <input type="checkbox" id="pcdm" name="pcdm" value="pcdm">
+            <label for="pcdm">PCD múltiplas</label>
+          </div>
+          <div>
+            <input type="checkbox" id="comunNegros" name="comunNegros" value="comunNegros">
+            <label for="comunNegros">Comunidade Negra</label>
+          </div>
+          <div>
+            <input type="checkbox" id="comunIndigenas" name="comunIndigenas" value="comunIndigenas">
+            <label for="comunIndigenas">Comunidade Indígena</label>
+          </div>
+        </div>
+      </form>
+
+      <button type="submit">Cadastrar</button>
 
     </div>
   </section>
