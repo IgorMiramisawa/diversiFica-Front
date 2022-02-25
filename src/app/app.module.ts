@@ -14,7 +14,7 @@ import { RodapeComponent } from './rodape/rodape.component';
     AppComponent,
     MenuComponent,
     EntrarComponent,
-    SobreComponent
+    SobreComponent,
     ContatoComponent,
     RodapeComponent
   ],
