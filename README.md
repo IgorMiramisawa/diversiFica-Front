@@ -12,7 +12,7 @@
 <br>
 
 <p align="left"><a href="https://www.behance.net/gallery/133631911/diversiFica" target="_blank"><img src="https://img.shields.io/badge/Behance-000?style=for-the-badge&logo=ko-fi&logoColor=white"></a>
-<a href="https://linktr.ee/grupo05" target="_blank"><img src="https://img.shields.io/badge/Contatos-000?style=for-the-badge&logo=&logoColor=white"></a>
+<a href="https://linktr.ee/diversifica" target="_blank"><img src="https://img.shields.io/badge/Contatos-000?style=for-the-badge&logo=&logoColor=white"></a>
 <br>
 </p>
 <br>
