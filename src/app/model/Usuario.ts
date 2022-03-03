@@ -12,7 +12,7 @@ export class Usuario{
   public sexualidade: string;
   public genero: string;
   public pcds: string;
-  public etinia: string;
+  public etnia: string;
   public foto: string;
   public avaliacao: Avaliacao[];
   public vaga: Vaga[]
