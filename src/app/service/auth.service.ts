@@ -16,8 +16,8 @@ export class AuthService {
     return this.http.post<UsuarioLogin>('https://diversificageneration.herokuapp.com//usuarios/logar', usuarioLogin)
   }
 
-  cadastro(usuarioCadastro: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('https://diversificageneration.herokuapp.com//usuarios/cadastrar', usuarioCadastro)
+  cadastrar(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>('https://diversificageneration.herokuapp.com//usuarios/cadastrar', usuario)
   }
 
   logado(){
