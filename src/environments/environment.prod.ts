@@ -1,13 +1,26 @@
 export const environment = {
   production: true,
+
+  // Usuario
+  idUsuario: 0,
    nomeUsuario: '',
-   token: '',
+   email: '',
    foto: '',
+   token: '',
+
    tipo: '',
-   comunidade: '',
-   sexualidade: '',
+   sexualidade:'',
+   pcdIntelectual:'',
+   pcdFisica:'',
+   pcdVisual:'',
+   pcdAuditiva:'',
+   pcdMultiplas:'',
    genero: '',
-   pcds: '',
    etinia: '',
-   idUsuario: 0
+   pcd:'',
+   generoLgbtqia:'',
+   generoMulher:'',
+   generoTrans:'',
+   negro:'',
+   indigena:''
 };
