@@ -26,12 +26,24 @@
                           class="form-control"
                           (change)="selecionaTipo($event)"
                         >
-                          <option value="">Selecione</option>
+                          <option>Selecione</option>
                           <option value="pessoaFisica">Pessoa Física</option>
                           <option value="pessoaJuridica">
                             Pessoa Jurídica
                           </option>
                         </select>
+                      </div>
+                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                        <label for="nome">Nome</label>
+                        <input
+                          [(ngModel)]="usuario.nomeUsuario"
+                          type="text"
+                          class="form-control"
+                          id="nome"
+                          name="nome"
+                          placeholder="Digite seu nome completo"
+                          aria-describedby="Nome"
+                        />
                       </div>
                       <div class="form-group" *ngIf="tipo == 'pessoaJuridica'">
                         <label for="empresa">Empresa</label>
@@ -46,7 +58,20 @@
                         />
                       </div>
                       <div class="form-group">
-                        <label for="senha" *ngIf="tipo == 'pessoaJuridica'"
+                        <label for="foto" *ngIf="tipo == 'pessoaFisica'"
+                          >Foto</label
+                        >
+                        <input
+                          *ngIf="tipo == 'pessoaFisica'"
+                          [(ngModel)]="usuario.foto"
+                          type="string"
+                          class="form-control my-2"
+                          id="foto"
+                          name="foto"
+                          placeholder="Coloque aqui o link da sua foto"
+                          aria-describedby="foto"
+                        />
+                        <label for="foto" *ngIf="tipo == 'pessoaJuridica'"
                           >Foto da Empresa</label
                         >
                         <input
@@ -74,7 +99,7 @@
                         />
                       </div>
                       <div class="form-group">
-                        <label for="email">Senha</label>
+                        <label for="senha">Senha</label>
                         <input
                           (input)="confirmaSenha($event)"
                           type="password"
@@ -86,7 +111,7 @@
                         />
                       </div>
                       <div class="form-group">
-                        <label for="email">Confirmar Senha</label>
+                        <label for="confirmSenha">Confirmar Senha</label>
                         <input
                           [(ngModel)]="usuario.senha"
                           type="password"
@@ -106,14 +131,14 @@
                           (change)="selecionaSexualidade($event)"
                         >
                           <option value="">Selecione</option>
-                          <option value="lesbica">Lésbica</option>
-                          <option value="gay">Gay</option>
-                          <option value="bissexual">Bissexual</option>
-                          <option value="pansexual">Pansexual</option>
-                          <option value="assexual">Assexual</option>
-                          <option value="queer">Queer</option>
-                          <option value="heterossexual">Heterossexual</option>
-                          <option value="prefiroNaoDizer">
+                          <option value="Lesbica">Lésbica</option>
+                          <option value="Gay">Gay</option>
+                          <option value="Bissexual">Bissexual</option>
+                          <option value="Pansexual">Pansexual</option>
+                          <option value="Assexual">Assexual</option>
+                          <option value="Queer">Queer</option>
+                          <option value="Heterossexual">Heterossexual</option>
+                          <option value="Prefiro Não Dizer">
                             Prefiro não dizer
                           </option>
                           <option value="Outro">Outro</option>
@@ -128,13 +153,13 @@
                           (change)="selecionaGenero($event)"
                         >
                           <option value="">Selecione</option>
-                          <option value="mulherTrans">Mulher trans</option>
-                          <option value="homemTrans">Homem trans</option>
-                          <option value="mulherCis">Mulher cis</option>
-                          <option value="homemCis">Homem cis</option>
-                          <option value="naoBinario">Não binário</option>
-                          <option value="agenero">Agênero</option>
-                          <option value="prefiroNaoDizer">
+                          <option value="Mulher Trans">Mulher trans</option>
+                          <option value="Homem Trans">Homem trans</option>
+                          <option value="Mulher Cis">Mulher cis</option>
+                          <option value="Homem Cis">Homem cis</option>
+                          <option value="Não Binario">Não binário</option>
+                          <option value="Agenero">Agênero</option>
+                          <option value="Prefiro Não Dizer">
                             Prefiro não dizer
                           </option>
                           <option value="Outro">Outro</option>
@@ -151,12 +176,12 @@
                           (change)="selecionaPCD($event)"
                         >
                           <option value="">Selecione</option>
-                          <option value="visual">Visual</option>
-                          <option value="auditiva">Auditiva</option>
-                          <option value="fisica">Física</option>
-                          <option value="intelectual">Intelectual</option>
-                          <option value="multiplas">Múltiplas</option>
-                          <option value="pessoaSemDeficiencia">
+                          <option value="Visual">Visual</option>
+                          <option value="Auditiva">Auditiva</option>
+                          <option value="Física">Física</option>
+                          <option value="Intelectual">Intelectual</option>
+                          <option value="Múltiplas">Múltiplas</option>
+                          <option value="Não Possui Deficiência">
                             Não sou PCD
                           </option>
                           <option value="prefiroNaoDizer">
@@ -171,15 +196,15 @@
                           name="etnia"
                           id="etnia"
                           class="form-control"
-                          (change)="(selecionaEtnia)"
+                          (change)="selecionaEtnia($event)"
                         >
                           <option value="">Selecione</option>
-                          <option value="branco">Branco</option>
-                          <option value="amarelo">Amarelo</option>
-                          <option value="negro">Negro</option>
-                          <option value="pardo">Pardo</option>
-                          <option value="indigena">Indígena</option>
-                          <option value="prefiroNaoDizer">
+                          <option value="Branco">Branco</option>
+                          <option value="Amarelo">Amarelo</option>
+                          <option value="Negro">Negro</option>
+                          <option value="Pardo">Pardo</option>
+                          <option value="Indígena">Indígena</option>
+                          <option value="Prefiro Não Dizer">
                             Prefiro não dizer
                           </option>
                           <option value="outro">Outro</option>
