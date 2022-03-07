@@ -7,13 +7,22 @@ export class Usuario{
   public nomeUsuario: string;
   public email: string;
   public senha: string;
-  public tipo: string;
-  public comunidade: string;
-  public sexualidade: string;
-  public genero: string;
-  public pcds: string;
-  public etnia: string;
   public foto: string;
+
+  public tipo: string;
+  public sexualidade: string;
+  public pcdIntelectual: string;
+  public pcdFisica: string;
+  public pcdVisual: string;
+  public pcdAuditiva: string;
+  public pcdMultiplas: string;
+  public genero: string;
+  public etnia: string;
+  public generoMulher: string;
+  public generoTrans: string;
+  public negro: string;
+  public indigena: string;
+  
   public avaliacao: Avaliacao[];
-  public vaga: Vaga[]
+  public vaga: Vaga[];
 }
