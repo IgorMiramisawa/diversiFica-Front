@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -33,7 +34,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public alertas: AlertasService
   ) { }
 
   ngOnInit(){
@@ -125,7 +127,7 @@ export class CadastrarComponent implements OnInit {
     this.usuario.negro = this.comunidadeNegra
     this.usuario.indigena = this.comunidadeIndigena
     if (this.usuario.senha != this.confirmSenha) {
-      alert("Tipo de usuário precisa estar selecionado")
+      this.alertas.showAlertWarning("Tipo de usuário precisa estar selecionado")
     } else {
       if(this.generoLgbtqia == null){
         this.usuario.generoLgbtqia = "Não"
@@ -160,7 +162,7 @@ export class CadastrarComponent implements OnInit {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(["/entrar"])
-        alert("Cadastro realizado com sucesso!")
+        this.alertas.showAlertSuccess("Cadastro realizado com sucesso!")
       })
 
     }
