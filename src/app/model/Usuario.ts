@@ -18,11 +18,12 @@ export class Usuario{
   public pcdMultiplas: string;
   public genero: string;
   public etnia: string;
+  public generoLgbtqia: string;
   public generoMulher: string;
   public generoTrans: string;
   public negro: string;
   public indigena: string;
-  
+
   public avaliacao: Avaliacao[];
   public vaga: Vaga[];
 }

@@ -14,6 +14,7 @@ export class UsuarioLogin{
   public pcdMultiplas: string;
   public genero: string;
   public etinia: string;
+  public generoLgbtqia: string;
   public generoMulher: string;
   public generoTrans: string;
   public negro: string;
