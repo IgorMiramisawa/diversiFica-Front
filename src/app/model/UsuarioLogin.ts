@@ -6,9 +6,16 @@ export class UsuarioLogin{
   public token: string;
   public foto: string;
   public tipo: string;
-  public comunidade: string;
   public sexualidade: string;
+  public pcdIntelectual: string;
+  public pcdFisica: string;
+  public pcdVisual: string;
+  public pcdAuditiva: string;
+  public pcdMultiplas: string;
   public genero: string;
-  public pcds: string;
   public etinia: string;
+  public generoMulher: string;
+  public generoTrans: string;
+  public negro: string;
+  public indigena: string;
 }

@@ -8,6 +8,7 @@ export class Vaga{
   public cargo: number;
   public salario: number;
   public beneficios: string;
+  
   public datePostagem: Date;
   public convenio: number;
   public dental: string;
