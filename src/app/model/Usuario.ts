@@ -18,6 +18,7 @@ export class Usuario{
   public pcdMultiplas: string;
   public genero: string;
   public etnia: string;
+  public pcd: string;
   public generoLgbtqia: string;
   public generoMulher: string;
   public generoTrans: string;

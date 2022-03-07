@@ -5,6 +5,7 @@ export class UsuarioLogin{
   public senha: string;
   public token: string;
   public foto: string;
+
   public tipo: string;
   public sexualidade: string;
   public pcdIntelectual: string;
@@ -13,7 +14,8 @@ export class UsuarioLogin{
   public pcdAuditiva: string;
   public pcdMultiplas: string;
   public genero: string;
-  public etinia: string;
+  public etnia: string;
+  public pcd: string;
   public generoLgbtqia: string;
   public generoMulher: string;
   public generoTrans: string;

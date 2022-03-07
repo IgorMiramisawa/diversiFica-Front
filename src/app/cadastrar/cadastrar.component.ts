@@ -110,6 +110,20 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar() {
     this.usuario.tipo = this.tipo
+    this.usuario.sexualidade = this.sexualidade
+    this.usuario.genero = this.genero
+    this.usuario.pcd = this.pcd
+    this.usuario.etnia = this.etnia
+    this.usuario.generoLgbtqia = this.generoLgbtqia
+    this.usuario.generoTrans = this.generoTrans
+    this.usuario.generoMulher = this.generoMulher
+    this.usuario.pcdVisual = this.generoPCDVisual
+    this.usuario.pcdAuditiva = this.generoPCDAuditiva
+    this.usuario.pcdFisica = this.generoPCDFisica
+    this.usuario.pcdMultiplas = this.generoPCDMultiplas
+    this.usuario.pcdIntelectual = this.generoPCDIntelectual
+    this.usuario.negro = this.comunidadeNegra
+    this.usuario.indigena = this.comunidadeIndigena
     if (this.usuario.senha != this.confirmSenha) {
       alert("Tipo de usuário precisa estar selecionado")
     } else {
