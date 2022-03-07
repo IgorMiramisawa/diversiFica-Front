@@ -1,17 +1,7 @@
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-select{
-  display: flex;
-  width: 9rem;
-}
-
 h2 {
   font-size: medium;
 }
 
-select {
-  width: 100%;
+.gradient-colors {
+  background: linear-gradient(to right, #ad65ff, #86a7f0, #b069ff, #84a3ec);
 }
