@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class EntrarComponent implements OnInit {
   usuarioLogin: UsuarioLogin = new UsuarioLogin
   constructor(
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    public alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,7 @@ export class EntrarComponent implements OnInit {
       },
       error: erro => {
         if (erro.status == 401) {
-          alert("Usuario ou senha inválidos")
+        this.alertas.showAlertDanger("Usuario ou senha inválidos")
         }
       }
     })
