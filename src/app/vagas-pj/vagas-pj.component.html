@@ -1,0 +1,191 @@
+<main class="my-5">
+  <section>
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <h1>MINHAS VAGAS</h1>
+      </div>
+    </div>
+
+    <div class="container my-4">
+      <div class="row align-content-center">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-center mb-3 ">
+            <button  class="btn nova-cor borda" data-toggle="modal" data-target="#novaVagas">Cadastrar Nova Vaga</button>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <div class="card borda">
+                <div class="card-body  ">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h5 class="card-title ">Titulo da Vaga</h5>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                      <span>Icones Virão aqui</span>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-end">
+                      <i class="fa fa-angle-down" aria-hidden="true" data-toggle="collapse" href="#collapseExample"
+                        role="button" aria-expanded="false" aria-controls="collapseExample"></i>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 mt-3">
+                      <p class="card-text">Empresa Confidencial</p>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                      <span class="font-weight-bold">Salario:</span>
+                      <span> De R$ 6.001,00 a R$ 7.000,00</span>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                      <span class="font-weight-bold">Cargo:</span>
+                      <span> Lorem ipsum</span>
+                    </div>
+                  </div>
+                </div>
+              </div >
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body borda mt-2">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="text-center font-weight-bold">Descrição</p>
+                      <p class="text-center">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Pariatur quidem a ipsum molestiae, repellendus
+                        similique sint iure alias ad asperiores minima impedit.
+                        Omnis praesentium beatae aspernatur eos nam, non fugit.
+                      </p>
+                    </div>
+                    <div class="row"></div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="text-center font-weight-bold">Benefícios</p>
+                      <p class="text-center">
+                        Assistência Médica / Medicina em grupo, Assistência
+                        Odontológica, Celular fornecido pela empresa, Convênio
+                        com Farmácia, Estacionamento, Participação nos lucros,
+                        Seguro de Vida em Grupo, Tíquete Refeição, Vale
+                        Transporte
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal -->
+<div class="modal fade" id="novaVagas" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Cadastrar Nova Vaga</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nomeVaga">Nome da Vaga</label>
+          <input [(ngModel)]='vaga.nomeVaga' type="text" class="form-control" id="nomeVaga" placeholder="Digite o nome da vaga">
+        </div>
+        <div class="form-group">
+          <label for="descricaoVaga">Descrição da Vaga</label>
+          <input [(ngModel)]='vaga.descricao' type="text" class="form-control" id="descricaoVaga" placeholder="Digite a descrição da vaga">
+        </div>
+        <div class="form-group">
+          <label for="cargoVaga">Cargo da Vaga</label>
+          <input [(ngModel)]='vaga.cargo' type="text" class="form-control" id="cargoVaga" placeholder="Digite o cargo">
+        </div>
+        <div class="form-group">
+          <label for="beneficiosVaga">Benefícios da Vaga</label>
+          <input  [(ngModel)]='vaga.beneficios' type="text" class="form-control" id="beneficiosVaga" placeholder="Digite os benefícios">
+        </div>
+        <label for="convenio">Possui convênio</label>
+        <select [(ngModel)]='vaga.convenio' class="form-control" name="convenio" id="convenio">
+          <option>Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="dental">Possui dental</label>
+        <select [(ngModel)]='vaga.dental' class="form-control" name="dental" id="dental">
+          <option>Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="remoto">Possui remoto</label>
+        <select [(ngModel)]='vaga.remoto' class="form-control" name="remoto" id="remoto" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="intelectual">Possui deficiência intelectual</label>
+        <select [(ngModel)]='vaga.pcdIntelectual' class="form-control" name="intelectual" id="intelectual" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="fisica">Possui deficiência física</label>
+        <select  [(ngModel)]='vaga.pcdFisica' class="form-control" name="fisica" id="fisica" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="visual">Possui deficiência visual</label>
+        <select [(ngModel)]='vaga.pcdVisual' class="form-control" name="visual" id="visual" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="auditiva">Possui deficiência Auditiva</label>
+        <select [(ngModel)]='vaga.pcdAuditiva' class="form-control" name="auditiva" id="auditiva" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="multiplas">Possui deficiência multíplas</label>
+        <select [(ngModel)]='vaga.pcdMultiplas' class="form-control" name="multiplas" id="multiplas" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="lgbia">LGBIA</label>
+        <select [(ngModel)]='vaga.lgbia' class="form-control" name="lgbia" id="lgbia" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="trans">TRANS</label>
+        <select [(ngModel)]='vaga.trans' class="form-control" name="trans" id="trans" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="experiencia">Necessário experiência</label>
+        <select [(ngModel)]='vaga.experiencia' class="form-control" name="experiencia" id="experiencia" >
+          <option >Selecione a opção </option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label for="etnia">Etnia</label>
+        <select [(ngModel)]='vaga.etnia' class="form-control" name="etnia" id="etnia" >
+          <option >Selecione a opção </option>
+          <option value="negro">Negro</option>
+          <option value="indigena">Indígena</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)='cadastrar()' >Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
