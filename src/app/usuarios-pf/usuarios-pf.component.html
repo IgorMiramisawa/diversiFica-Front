@@ -1,0 +1,307 @@
+<!-- Pessoal Fisica -->
+<div class="container my-5 d-flex justify-content-between"
+*ngIf="authService.pessoaFisica()">
+  <div class="row">
+    <div class="mt-4 col-md-12 text-center">
+      <img
+        src="https://i.imgur.com/D7NZyVD.jpg"
+        alt="imagem do usuário"
+        width="150px"
+        height="150px"
+        class="img-fluid rounded-circle borda-perfil"
+      />
+      <p class="font-weight-bold">Creduspano</p>
+
+      <div class="d-flex justify-content-center mb-2">
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/fisico.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/auditivo.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/cocar.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/intelectual.svg"
+          alt=""
+          width="25px"
+        />
+      </div>
+      <div>
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/negro.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/visual.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/lgbqia.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/trans.svg"
+          alt=""
+          width="25px"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-10">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card borda-div p-0">
+          <p class="font-weight-bold textos p-2 pl-4">
+            Creduspano, 28 anos, desenvolvedor.
+          </p>
+          <p class="pl-4">Desenvolvedor FullStack</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-4 col-md-10 borda-div">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-10">
+            <h5 class="card-title">Experiências Profissionais</h5>
+          </div>
+          <div class="col-md-2 d-flex justify-content-end">
+            <i
+              class="fa fa-angle-down"
+              aria-hidden="true"
+              data-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            ></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="card-text">Corporation 1</p>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Salario: </span>
+            <span>R$ 3.500,00</span>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Cargo: </span>
+            <span>Desenvolvedor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body borda-div mt-3 col-md-10">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="card-text">Corporation 2</p>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Salario: </span>
+            <span>R$ 2.600,00</span>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Cargo: </span>
+            <span>Desenvolvedor Junior</span>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="card-text">Corporation 3</p>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Salario: </span>
+            <span>R$ 1.500,00</span>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Cargo: </span>
+            <span>Estágiario</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pessoal Juridica -->
+  <div class="container my-5 d-flex justify-content-between"
+  *ngIf="!authService.pessoaFisica()">
+    <div class="row">
+      <div class="mt-4 col-md-12 text-center">
+        <img
+          src="../../assets/imgs/logoempresas/empresa.png"
+          alt="imagem do usuário"
+          width="150px"
+          height="150px"
+          class="img-fluid rounded-circle borda-perfil"
+        />
+        <p class="font-weight-bold">LTDA Corporation</p>
+
+          <!-- Rank de estrela -->
+        <div>
+          <img
+          class="mt-0 mr-2 mb-2"
+          src="../../assets/imgs/ico/estrela.svg"
+          alt=""
+          width="100px"
+        />
+        </div>
+
+        <!-- Icones de inclusão -->
+        <div class="d-flex justify-content-center mb-2">
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/fisico.svg"
+            alt=""
+            width="25px"
+          />
+
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/auditivo.svg"
+            alt=""
+            width="25px"
+          />
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/cocar.svg"
+            alt=""
+            width="25px"
+          />
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/intelectual.svg"
+            alt=""
+            width="25px"
+          />
+        </div>
+        <div>
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/negro.svg"
+            alt=""
+            width="25px"
+          />
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/visual.svg"
+            alt=""
+            width="25px"
+          />
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/lgbqia.svg"
+            alt=""
+            width="25px"
+          />
+          <img
+            class="mt-0 mr-2"
+            src="../../assets/imgs/ico/trans.svg"
+            alt=""
+            width="25px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card borda-div p-0">
+            <p class="font-weight-bold textos p-2 pl-4">
+              Creduspano, 28 anos, desenvolvedor.
+            </p>
+            <p class="pl-4">Desenvolvedor FullStack</p>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-4 col-md-10 borda-div">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-10">
+              <h5 class="card-title">Experiências Profissionais</h5>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end">
+              <i
+                class="fa fa-angle-down"
+                aria-hidden="true"
+                data-toggle="collapse"
+                href="#collapseExample"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              ></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <p class="card-text">Corporation 1</p>
+            </div>
+            <div class="col-md-12 mt-3">
+              <span class="font-weight-bold">Salario: </span>
+              <span>R$ 3.500,00</span>
+            </div>
+            <div class="col-md-12 mt-3">
+              <span class="font-weight-bold">Cargo: </span>
+              <span>Desenvolvedor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body borda-div mt-3 col-md-10">
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <p class="card-text">Corporation 2</p>
+            </div>
+            <div class="col-md-12 mt-3">
+              <span class="font-weight-bold">Salario: </span>
+              <span>R$ 2.600,00</span>
+            </div>
+            <div class="col-md-12 mt-3">
+              <span class="font-weight-bold">Cargo: </span>
+              <span>Desenvolvedor Junior</span>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <p class="card-text">Corporation 3</p>
+            </div>
+            <div class="col-md-12 mt-3">
+              <span class="font-weight-bold">Salario: </span>
+              <span>R$ 1.500,00</span>
+            </div>
+            <div class="col-md-12 mt-3">
+              <span class="font-weight-bold">Cargo: </span>
+              <span>Estágiario</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

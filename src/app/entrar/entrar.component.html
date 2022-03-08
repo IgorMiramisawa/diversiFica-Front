@@ -20,6 +20,7 @@
                         id="email"
                         name="email"
                         placeholder="E-mail"
+                        [(ngModel)]="usuarioLogin.email"
                         aria-describedby="email"
                       />
                     </div>
@@ -31,6 +32,7 @@
                         id="senha"
                         name="senha"
                         placeholder="Senha"
+                        [(ngModel)]="usuarioLogin.senha"
                       />
                     </div>
 
@@ -47,7 +49,7 @@
                         class="btn rounded-pill borda-entrar text-white font-weight-bold"
                         type="button"
                       >
-                        <span class="texto-entrar m-4">Entrar</span>
+                        <span class="texto-entrar m-4" (click)="entrar()">Entrar</span>
                       </button>
                     </div>
 
