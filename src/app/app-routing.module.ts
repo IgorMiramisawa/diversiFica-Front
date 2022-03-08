@@ -5,6 +5,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 
 const routes: Routes = [
   {path:'' , redirectTo:'entrar' , pathMatch :'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'sobre', component:SobreComponent},
   {path:'inicio', component:InicioComponent},
   {path:'cadastrar', component:CadastrarComponent},
+  {path:'vagas-pf', component:VagasPfComponent},
 ];
 
 @NgModule({
