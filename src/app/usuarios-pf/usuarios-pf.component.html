@@ -150,7 +150,7 @@
 <!-- Pessoal Juridica -->
   <div class="container my-5 d-flex justify-content-between"
   *ngIf="!authService.pessoaFisica()">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="mt-4 col-md-12 text-center">
         <img
           src="../../assets/imgs/logoempresas/empresa.png"
@@ -159,12 +159,12 @@
           height="150px"
           class="img-fluid rounded-circle borda-perfil"
         />
-        <p class="font-weight-bold">LTDA Corporation</p>
+        <p class="font-weight-bold mt-3">LTDA Corporation</p>
 
           <!-- Rank de estrela -->
         <div>
           <img
-          class="mt-0 mr-2 mb-2"
+          class="mt-0 mr-2 mb-4"
           src="../../assets/imgs/ico/estrela.svg"
           alt=""
           width="100px"
@@ -224,18 +224,25 @@
             alt=""
             width="25px"
           />
+          <div>
+            <button class="btn rounded-pill mt-5 borda-entrar text-white font-weight-bold" type="button">
+          <span class="texto-entrar m-4" >AVALIAR</span>
+          </button>
+          </div>
         </div>
       </div>
+
     </div>
+
 
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-10">
           <div class="card borda-div p-0">
             <p class="font-weight-bold textos p-2 pl-4">
-              Creduspano, 28 anos, desenvolvedor.
+              LTDA Corporation, Prestadora de serviços de tecnologia.
             </p>
-            <p class="pl-4">Desenvolvedor FullStack</p>
+            <p class="pl-4">Localizado na região leste de São Paulo</p>
           </div>
         </div>
       </div>
@@ -243,7 +250,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-10">
-              <h5 class="card-title">Experiências Profissionais</h5>
+              <h5 class="card-title">Sobre Nós</h5>
             </div>
             <div class="col-md-2 d-flex justify-content-end">
               <i
@@ -299,6 +306,22 @@
             <div class="col-md-12 mt-3">
               <span class="font-weight-bold">Cargo: </span>
               <span>Estágiario</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vagas Abertas -->
+      <div class="row mt-4">
+        <div class="col-md-10">
+          <div class="card borda-div p-0">
+            <p class="font-weight-bold textos pl-4 mb-2 mt-3">
+              Vagas Abertas
+            </p>
+            <div class="d-flex flex-column ponteiro">
+              <a class="textos-vagas pl-4">Desenvolvedor Java</a>
+              <a class="textos-vagas pl-4">Desenvolvedor Angular</a>
+              <a class="textos-vagas pl-4">Desenvolvedor Back-End</a>
             </div>
           </div>
         </div>
