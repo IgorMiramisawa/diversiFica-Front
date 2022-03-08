@@ -1,0 +1,16 @@
+.nova-cor {
+  color: #be4137 !important;
+  border-color: #be4137 !important;
+}
+.nova-cor:hover {
+  color: white !important;
+  background-color: #f09b64 !important;
+}
+
+.font-color {
+  color: #be4137;
+}
+
+.nav-background {
+  background: #fffaf8;
+}

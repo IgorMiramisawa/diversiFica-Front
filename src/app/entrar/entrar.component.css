@@ -1,0 +1,27 @@
+.bg-digital{
+background: url(../../assets/imgs/ico/bgDigital.svg);
+background-repeat: no-repeat;
+background-size:contain;
+}
+
+.borda-div{
+  box-shadow: 0px 2px 1px #be4137;
+  border-radius: 10%;
+  background-color: #FFFAF8;
+}
+.borda-input{
+  border: 1px solid #be4137;
+}
+.borda-entrar{
+border-radius: 10%;
+border: 3px solid #be4137;
+}
+.texto-entrar{
+color: #be4137;
+}
+.textos{
+  font-size: 8pt;
+}
+.ponteiro{
+  cursor: pointer;
+}

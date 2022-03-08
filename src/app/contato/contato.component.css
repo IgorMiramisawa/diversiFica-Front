@@ -1,0 +1,65 @@
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+input {
+  height: 40%;
+  padding: 0 0.5em;
+}
+
+textarea {
+  padding: 0.5em;
+  margin-left: 13px;
+}
+
+button {
+  font-weight: 600;
+  color: #fff;
+  background-color: #b069ff;
+  border: none;
+}
+
+button:hover {
+  box-shadow: 1px 2px 6px #84a3ec;
+  border: 1px solid #b069ff
+}
+
+#fundo {
+  width: min(80%, 800px);
+  height: min(100%, 600px);
+  border-radius: 20px;
+}
+
+#title {
+  font-size: min(100vw - 2em, 4em);
+  font-weight: 700;
+}
+
+#texto-email {
+  font-size: min(100vw - 1em, 1.5em);
+  font-weight: 500;
+}
+
+#logo {
+  width: min(100vw - 20px, 100px);
+  height: auto;
+  position: relative;
+  top: 4%;
+}
+
+img {
+  width: min(100vw - 20px, 80px);
+  height: auto;
+  border-radius: 50%;
+  margin: 0 5pt;
+}
+
+img:hover {
+  box-shadow: 1px 3px 6px #000;
+  width: min(100vw - 20px, 85px);
+}
+
+.gradient-colors {
+  background: linear-gradient(to right, #ad65ff, #86a7f0, #b069ff, #84a3ec);
+}

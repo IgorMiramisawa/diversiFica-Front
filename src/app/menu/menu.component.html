@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg nav-background">
+  <a class="navbar-brand" routerLink="/inicio"
+    ><img
+      src="../../assets/imgs/menu/diversifica.svg"
+      alt="DiversiFica Logo"
+      width="360"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav nav-positioning">
+      <li class="nav-item active mr-5">
+        <a class="nav-link font-color" href="#"
+          >HOME <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item mr-5 ml-5">
+        <a class="nav-link font-color" routerLink="/sobre">SOBRE</a>
+      </li>
+      <li class="nav-item mr-5 ml-5">
+        <a class="nav-link font-color" routerLink="/vagas-pf">VAGAS</a>
+      </li>
+      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+        <a class="nav-link font-color" routerLink="/perfil">PERFIL</a>
+      </li>
+      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+        <a class="nav-link font-color" (click)="sair()">SAIR</a>
+      </li>
+      <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
+        <a class="nav-link font-color" routerLink="/entrar">ENTRAR</a>
+      </li>
+      <li class="nav-item" *ngIf="!auth.logado()">
+        <button
+          class="btn btn-outline-success nova-cor rounded-pill"
+          routerLink="/cadastrar"
+          *ngIf="!auth.logado()"
+        >
+          Cadastrar
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
