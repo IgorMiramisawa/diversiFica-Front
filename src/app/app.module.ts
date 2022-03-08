@@ -17,6 +17,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { TermosComponent } from './termos/termos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     CadastrarComponent,
     TermosComponent,
     InicioComponent,
-    AlertasComponent
+    AlertasComponent,
+    VagasPfComponent
   ],
   imports: [
     BrowserModule,
