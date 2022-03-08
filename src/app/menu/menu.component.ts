@@ -13,19 +13,18 @@ export class MenuComponent implements OnInit {
   nome = environment.nomeUsuario
   foto = environment.foto
   id = environment.idUsuario
-
+  tipo = environment.tipo
   constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit(){
   }
 
   sair(){
-    this.router.navigate(['/login'])
+    this.router.navigate(['/entrar'])
     environment.token = ''
     environment.foto = ''
     environment.nomeUsuario = ''
     environment.tipo = ''
     environment.idUsuario = 0
-
   }
 }
