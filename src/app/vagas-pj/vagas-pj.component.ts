@@ -14,8 +14,8 @@ import { VagasPjService } from '../service/vagas-pj.service';
   styleUrls: ['./vagas-pj.component.css']
 })
 export class VagasPjComponent implements OnInit {
-  vaga : Vaga = new Vaga ()
-  listaVagas: Vaga []
+  vaga: Vaga = new Vaga()
+  listaVagas: Vaga[]
 
   usuario: Usuario = new Usuario()
   id = environment.idUsuario
@@ -28,27 +28,27 @@ export class VagasPjComponent implements OnInit {
   pcdFisica: string
   pcdIntelectual: string
   pcdMultiplas: string
-  convenio : string
-  dental : string
-  remoto : string
-  experiencia : string
-  etnia : string
+  convenio: string
+  dental: string
+  remoto: string
+  experiencia: string
+  etnia: string
 
 
 
   constructor(
 
-    private router: Router ,
+    private router: Router,
     private auth: AuthService,
     private vagaspj: VagasPjService,
-    public alertas: AlertasService ,
+    public alertas: AlertasService,
 
 
   ) {
-}
+  }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
 
     this.auth.refreshToken()
@@ -56,7 +56,7 @@ export class VagasPjComponent implements OnInit {
 
 
 
-    if(environment.token == '' ){
+    if (environment.token == '') {
       /*alert('Sua seção expirou, faça o login novament.')*/
       this.router.navigate(['/entrar'])
 
@@ -113,12 +113,11 @@ export class VagasPjComponent implements OnInit {
   }
 
   findByIdUsuario() {
-    this.auth.findByIdUsuario(this.id).subscribe((resp: Usuario)=> {
+    this.auth.findByIdUsuario(this.id).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
-    cadastrar() {
-
+  cadastrar() {
     this.vaga.etnia = this.etnia
     this.vaga.lgbia = this.lgbia
     this.vaga.trans = this.trans
@@ -134,13 +133,11 @@ export class VagasPjComponent implements OnInit {
     this.usuario.idUsuario = environment.idUsuario
     this.vaga.usuario = this.usuario
 
-
-    this.vagaspj.postVagas(this.vaga).subscribe((resp: Vaga)=> {
+    this.vagaspj.postVagas(this.vaga).subscribe((resp: Vaga) => {
       this.vaga = resp
       this.alertas.showAlertSuccess('Vaga cadastrada')
-      this.vaga = new Vaga ()
-
-
+      this.findByIdUsuario()
+      this.vaga = new Vaga()
     })
   }
 }
