@@ -26,8 +26,22 @@
       <li class="nav-item mr-5 ml-5">
         <a class="nav-link font-color" routerLink="/sobre">SOBRE</a>
       </li>
-      <li class="nav-item mr-5 ml-5">
+      <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/vagas-pf">VAGAS</a>
+      </li>
+      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+        <a
+          class="nav-link font-color"
+          routerLink="/vagas-pf"
+          *ngIf="auth.pessoaFisica()"
+          >VAGAS</a
+        >
+        <a
+          class="nav-link font-color"
+          routerLink="/vagas-pj"
+          *ngIf="!auth.pessoaFisica()"
+          >Minhas VAGAS</a
+        >
       </li>
       <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
         <a class="nav-link font-color" routerLink="/usuarios-pf">PERFIL</a>
