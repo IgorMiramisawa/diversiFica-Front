@@ -3,64 +3,57 @@
     <div class="row d-flex align-items-center">
       <div class="col-md-12">
         <div class="row d-flex justify-content-center my-5">
-          <div class="col-md-8">
-            <div class="card mb-3">
+          <div class="col-md-4">
+            <div class="card mb-3 card-style">
               <div class="row no-gutters d-flex justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title text-center">DiversiFica</h5>
                     <div class="text-center">
-                      <img
-                        src="../../assets/imgs/ico/pp.ico"
-                        style="width: 50px"
-                        alt="logo"
-                      />
-                      <h4 class="mt-1 mb-3">Cadastrar</h4>
+                      <h1 class="my-3">Cadastrar</h1>
+                      <br>
                     </div>
+
                     <form>
                       <div class="form-group">
-                        <label for="tipo">Tipo</label>
                         <select
                           name="tipo"
                           id="tipo"
                           class="form-control"
                           (change)="selecionaTipo($event)"
                         >
-                          <option>Selecione</option>
+                          <option>Tipo de usuário</option>
                           <option value="pessoaFisica">Pessoa Física</option>
                           <option value="pessoaJuridica">
                             Pessoa Jurídica
                           </option>
                         </select>
                       </div>
+
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <label for="nome">Nome</label>
                         <input
                           [(ngModel)]="usuario.nomeUsuario"
                           type="text"
                           class="form-control"
                           id="nome"
                           name="nome"
-                          placeholder="Digite seu nome completo"
+                          placeholder="Nome completo"
                           aria-describedby="Nome"
                         />
                       </div>
+
                       <div class="form-group" *ngIf="tipo == 'pessoaJuridica'">
-                        <label for="empresa">Empresa</label>
                         <input
                           [(ngModel)]="usuario.nomeUsuario"
                           type="text"
                           class="form-control"
                           id="empresa"
                           name="empresa"
-                          placeholder="Digite o nome da sua empresa"
+                          placeholder="Nome da sua empresa"
                           aria-describedby="Empresa"
                         />
                       </div>
                       <div class="form-group">
-                        <label for="foto" *ngIf="tipo == 'pessoaFisica'"
-                          >Foto</label
-                        >
+
                         <input
                           *ngIf="tipo == 'pessoaFisica'"
                           [(ngModel)]="usuario.foto"
@@ -68,12 +61,10 @@
                           class="form-control my-2"
                           id="foto"
                           name="foto"
-                          placeholder="Coloque aqui o link da sua foto"
+                          placeholder="Link da sua foto"
                           aria-describedby="foto"
                         />
-                        <label for="foto" *ngIf="tipo == 'pessoaJuridica'"
-                          >Foto da Empresa</label
-                        >
+
                         <input
                           *ngIf="tipo == 'pessoaJuridica'"
                           [(ngModel)]="usuario.foto"
@@ -81,56 +72,54 @@
                           class="form-control my-2"
                           id="foto"
                           name="foto"
-                          placeholder="Coloque aqui o link da foto da sua empresa"
+                          placeholder="Link do seu logo"
                           aria-describedby="foto"
                         />
                       </div>
-                      <div class="form-group">
-                        <label for="email">E-mail</label>
 
+                      <div class="form-group">
                         <input
                           [(ngModel)]="usuario.email"
                           type="email"
                           class="form-control my-2"
                           id="email"
                           name="email"
-                          placeholder="Digite seu e-mail"
+                          placeholder="E-mail"
                           aria-describedby="email"
                         />
                       </div>
+
                       <div class="form-group">
-                        <label for="senha">Senha</label>
                         <input
                           (input)="confirmaSenha($event)"
                           type="password"
                           class="form-control my-2"
                           id="senha"
                           name="senha"
-                          placeholder="Digite sua senha"
+                          placeholder="Senha"
                           aria-describedby="senha"
                         />
                       </div>
                       <div class="form-group">
-                        <label for="confirmSenha">Confirmar Senha</label>
                         <input
                           [(ngModel)]="usuario.senha"
                           type="password"
                           class="form-control my-2"
                           id="confirmSenha"
                           name="confirmSenha"
-                          placeholder="Confirme sua senha"
+                          placeholder="Confirme a senha"
                           aria-describedby="confirmSenha"
                         />
                       </div>
+
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <label for="sexualidade">Sexualidade</label>
                         <select
                           name="sexualidade"
                           id="sexualidade"
                           class="form-control"
                           (change)="selecionaSexualidade($event)"
                         >
-                          <option value="">Selecione</option>
+                          <option value="">Sexualidade</option>
                           <option value="Lesbica">Lésbica</option>
                           <option value="Gay">Gay</option>
                           <option value="Bissexual">Bissexual</option>
@@ -144,15 +133,15 @@
                           <option value="Outro">Outro</option>
                         </select>
                       </div>
+
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <label for="genero">Gênero</label>
                         <select
                           name="genero"
                           id="genero"
                           class="form-control"
                           (change)="selecionaGenero($event)"
                         >
-                          <option value="">Selecione</option>
+                          <option value="">Gênero</option>
                           <option value="Mulher Trans">Mulher trans</option>
                           <option value="Homem Trans">Homem trans</option>
                           <option value="Mulher Cis">Mulher cis</option>
@@ -165,17 +154,15 @@
                           <option value="Outro">Outro</option>
                         </select>
                       </div>
+
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <label for="pcd"
-                          >Você é uma pessoa com deficiência?</label
-                        >
                         <select
                           name="pcd"
                           id="pcd"
                           class="form-control"
                           (change)="selecionaPCD($event)"
                         >
-                          <option value="">Selecione</option>
+                          <option value="">Alguma deficiência?</option>
                           <option value="Visual">Visual</option>
                           <option value="Auditiva">Auditiva</option>
                           <option value="Física">Física</option>
@@ -190,15 +177,15 @@
                           <option value="outro">Outro</option>
                         </select>
                       </div>
+
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <label for="etnia">Etnia</label>
                         <select
                           name="etnia"
                           id="etnia"
                           class="form-control"
                           (change)="selecionaEtnia($event)"
                         >
-                          <option value="">Selecione</option>
+                          <option value="">Etnia</option>
                           <option value="Branco">Branco</option>
                           <option value="Amarelo">Amarelo</option>
                           <option value="Negro">Negro</option>
@@ -210,12 +197,13 @@
                           <option value="outro">Outro</option>
                         </select>
                       </div>
+
                       <div *ngIf="tipo == 'pessoaJuridica'">
-                        <h2 class="text-center">
+                        <h2 class="text-justify">
                           Sua empresa tem medidas de inclusão para:
                         </h2>
-                        <div class="row d-flex justify-content-around">
-                          <div class="col-md-4">
+                        <div class="row d-flex flex-column justify-content-around">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -232,7 +220,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -249,7 +237,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -266,7 +254,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -283,7 +271,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -300,7 +288,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -317,7 +305,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -334,7 +322,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -351,7 +339,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -370,7 +358,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
                                 <input
@@ -392,9 +380,9 @@
                         </div>
                       </div>
 
-                      <div class="d-grid gap-2 mx-auto mt-4">
+                      <div class="d-flex justify-content-center d-grid gap-2 mx-auto mt-4">
                         <button
-                          class="btn btn-block gradient-colors text-white font-weight-bold"
+                          class="btn btn-lg"
                           type="button"
                           (click)="cadastrar()"
                         >
