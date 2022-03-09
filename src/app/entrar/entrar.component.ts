@@ -49,7 +49,6 @@ export class EntrarComponent implements OnInit {
         environment.negro = this.usuarioLogin.negro
         environment.indigena = this.usuarioLogin.indigena
 
-        console.log(environment)
         this.router.navigate(['/inicio'])
       },
       error: erro => {
