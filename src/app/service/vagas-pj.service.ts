@@ -17,9 +17,7 @@ export class VagasPjService {
 // Puxar todas Vagas
   getAllVagas(): Observable<Vaga[]> {
     return this.http.get<Vaga[]>(
-      'https://.herokuapp.com/vagas',
-      this.token
-    );
+      'https://diversificageneration.herokuapp.com/vagas/get-all');
   }
 
   getByIdVagas(id: number): Observable<Vaga> {
