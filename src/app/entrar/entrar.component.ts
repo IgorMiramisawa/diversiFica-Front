@@ -12,7 +12,8 @@ import { AuthService } from '../service/auth.service';
 })
 export class EntrarComponent implements OnInit {
 
-  usuarioLogin: UsuarioLogin = new UsuarioLogin
+  usuarioLogin: UsuarioLogin = new UsuarioLogin()
+
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -35,7 +36,6 @@ export class EntrarComponent implements OnInit {
         environment.tipo = this.usuarioLogin.tipo
 
         this.router.navigate(['/inicio'])
-
       },
       error: erro => {
         if (erro.status == 401) {

@@ -2,25 +2,24 @@
 
 .fa {
     font-size: 1.4rem;
-    color: #D3695B;
+    color: #BE4137;
 }
 
 .fa:hover{
-    color: #CB4439;
+    color: #601009;
 }
-
 
 #titulo{
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
-    color: #D3695B;
+    color: #BE4137;
     text-decoration: none;
     position: relative;
 }
 
 #titulo::before {
     content: '';
-    background-color: #d3695b17;
+    background-color: #FF9A2417;
     position: absolute;
     left: 0;
     bottom: 2px;
@@ -36,18 +35,18 @@
 }
 
 #titulo:hover{
-    color: #CB4439;
+    color: #601009;
 }
 
 #funcao{
-    color: #c98c84;
+    color: #b86255d8;
     font-weight: 500;
     font-size: 0.9rem;
     font-family: 'Montserrat', sans-serif;
 }
 
 .descricao{
-    color:#CB4439;
+    color:#BE4137;
     font-weight: 400;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
@@ -73,4 +72,11 @@ img {
 }
 #thiago:hover {
     content: url(https://i.imgur.com/TtRhZzW.png)
+}
+
+.equipe{
+    font-weight: 600;
+    color: #BE4137;
+    margin-top: 3rem;
+    margin-bottom: 0%;
 }

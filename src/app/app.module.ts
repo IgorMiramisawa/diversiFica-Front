@@ -17,6 +17,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { TermosComponent } from './termos/termos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
+import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
+import { ProjetoComponent } from './projeto/projeto.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { AlertasComponent } from './alertas/alertas.component';
     CadastrarComponent,
     TermosComponent,
     InicioComponent,
-    AlertasComponent
+    AlertasComponent,
+    VagasPfComponent,
+    UsuariosPfComponent,
+    ProjetoComponent
   ],
   imports: [
     BrowserModule,

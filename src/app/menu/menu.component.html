@@ -1,5 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">diversiFica</a>
+<nav class="navbar navbar-expand-lg nav-background">
+  <a class="navbar-brand" routerLink="/inicio"
+    ><img
+      src="../../assets/imgs/menu/diversifica.svg"
+      alt="DiversiFica Logo"
+      width="360"
+  /></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -13,25 +18,36 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >Home <span class="sr-only">(current)</span></a
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav nav-positioning">
+      <li class="nav-item active mr-5">
+        <a class="nav-link font-color" href="#"
+          >HOME <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/sobre">Sobre</a>
+      <li class="nav-item mr-5 ml-5">
+        <a class="nav-link font-color" routerLink="/sobre">SOBRE</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/contato">Contato</a>
+      <li class="nav-item mr-5 ml-5">
+        <a class="nav-link font-color" routerLink="/vagas-pf">VAGAS</a>
       </li>
-    </ul>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/entrar">Login</a>
+      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+        <a class="nav-link font-color" routerLink="/usuarios-pf">PERFIL</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/cadastrar">Cadastrar</a>
+      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+        <a class="nav-link font-color" (click)="sair()">SAIR</a>
+      </li>
+      <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
+        <a class="nav-link font-color" routerLink="/entrar">ENTRAR</a>
+      </li>
+      <li class="nav-item" *ngIf="!auth.logado()">
+        <button
+          class="btn btn-outline-success nova-cor rounded-pill"
+          routerLink="/cadastrar"
+          *ngIf="!auth.logado()"
+        >
+          Cadastrar
+        </button>
       </li>
     </ul>
   </div>

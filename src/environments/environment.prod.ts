@@ -7,7 +7,6 @@ export const environment = {
    email: '',
    foto: '',
    token: '',
-
    tipo: '',
    sexualidade:'',
    pcdIntelectual:'',
