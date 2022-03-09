@@ -10,7 +10,7 @@
                   <div class="card-body">
                     <div class="text-center">
                       <h1 class="my-3">Cadastrar</h1>
-                      <br>
+                      <br />
                     </div>
 
                     <form>
@@ -53,7 +53,6 @@
                         />
                       </div>
                       <div class="form-group">
-
                         <input
                           *ngIf="tipo == 'pessoaFisica'"
                           [(ngModel)]="usuario.foto"
@@ -157,29 +156,6 @@
 
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
                         <select
-                          name="pcd"
-                          id="pcd"
-                          class="form-control"
-                          (change)="selecionaPCD($event)"
-                        >
-                          <option value="">Alguma deficiência?</option>
-                          <option value="Visual">Visual</option>
-                          <option value="Auditiva">Auditiva</option>
-                          <option value="Física">Física</option>
-                          <option value="Intelectual">Intelectual</option>
-                          <option value="Múltiplas">Múltiplas</option>
-                          <option value="Não Possui Deficiência">
-                            Não sou PCD
-                          </option>
-                          <option value="prefiroNaoDizer">
-                            Prefiro não dizer
-                          </option>
-                          <option value="outro">Outro</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <select
                           name="etnia"
                           id="etnia"
                           class="form-control"
@@ -197,12 +173,119 @@
                           <option value="outro">Outro</option>
                         </select>
                       </div>
+                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                        <h2 class="text-justify">Possui Algum tipo de pcd?:</h2>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="m-2">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pcdv"
+                                name="pcdv"
+                                value="Sim"
+                                (change)="selecionaPCDVisual($event)"
+                              />
+                              <label class="form-check-label" for="pcdv"
+                                >PCD Visual</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="m-2">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pcda"
+                                name="pcda"
+                                value="Sim"
+                                (change)="selecionaPCDAuditiva($event)"
+                              />
+                              <label class="form-check-label" for="pcda"
+                                >PCD Auditiva</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="m-2">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pcdf"
+                                name="pcdf"
+                                value="Sim"
+                                (change)="selecionaPCDFisica($event)"
+                              />
+                              <label class="form-check-label" for="pcdf"
+                                >PCD física</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="m-2">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pcdi"
+                                name="pcdi"
+                                value="Sim"
+                                (change)="selecionaPCDIntelectual($event)"
+                              />
+                              <label class="form-check-label" for="pcdi"
+                                >PCD intelectual</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="m-2">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pcdm"
+                                name="pcdm"
+                                value="Sim"
+                                (change)="selecionaPCDMultiplas($event)"
+                              />
+                              <label class="form-check-label" for="pcdm"
+                                >PCD múltiplas</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="m-2">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pcdm"
+                                name="pcdm"
+                                value="Sim"
+                                (change)="selecionaPCD($event)"
+                              />
+                              <label class="form-check-label" for="pcdm"
+                                >Não Possuo</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                       <div *ngIf="tipo == 'pessoaJuridica'">
                         <h2 class="text-justify">
                           Sua empresa tem medidas de inclusão para:
                         </h2>
-                        <div class="row d-flex flex-column justify-content-around">
+                        <div
+                          class="row d-flex flex-column justify-content-around"
+                        >
                           <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
@@ -380,7 +463,9 @@
                         </div>
                       </div>
 
-                      <div class="d-flex justify-content-center d-grid gap-2 mx-auto mt-4">
+                      <div
+                        class="d-flex justify-content-center d-grid gap-2 mx-auto mt-4"
+                      >
                         <button
                           class="btn btn-lg"
                           type="button"
