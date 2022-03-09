@@ -9,3 +9,13 @@
 .textos{
   font-size: 10pt;
 }
+.textos-vagas{
+  color: #be4137;
+}
+.borda-entrar{
+  border-radius: 10%;
+  border: 3px solid #be4137;
+  }
+  .texto-entrar{
+  color: #be4137;
+  }
