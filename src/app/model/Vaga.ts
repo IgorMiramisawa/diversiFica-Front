@@ -5,12 +5,12 @@ export class Vaga{
   public idVaga: number;
   public nomeVaga: string;
   public descricao: string;
-  public cargo: number;
+  public cargo: string;
   public salario: number;
   public beneficios: string;
-  
+
   public datePostagem: Date;
-  public convenio: number;
+  public convenio: string;
   public dental: string;
   public remoto: string;
   public pcdIntelectual: string;

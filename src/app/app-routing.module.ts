@@ -7,6 +7,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
+import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
 
 const routes: Routes = [
   {path:'' , redirectTo:'inicio' , pathMatch :'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'inicio', component:InicioComponent},
   {path:'cadastrar', component:CadastrarComponent},
   {path:'vagas-pf', component:VagasPfComponent},
+  {path:'vagas-pj', component: VagasPjComponent},
   {path: 'usuarios-pf', component:UsuariosPfComponent}
 ];
 

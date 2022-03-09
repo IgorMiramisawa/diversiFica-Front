@@ -1,5 +1,5 @@
 .gradient-colors {
-background-color: #FFFAF8;
+background-color: #fffaf8;
 }
 span {
   font-size: 14px;
@@ -9,9 +9,6 @@ h5 {
 font:Roboto;
 font-size: 18px;
 color:#1C0200;
-}
-.fa{
-
 }
 a {
 font: Roboto;
@@ -29,20 +26,14 @@ ul.social-network li
   margin: 0;
   padding: 5px;
 }
+.fa-behance:hover {
 
-.fa-github:hover {
-  color: rgb(0, 0, 0);
   transform: translateY(-9px);
   transition: 0.5s ease-in-out;
 }
 
-.fa-facebook-square:hover {
-  color:#3b5998;
-  transform: translateY(-9px);
-  transition: 0.5s ease-in-out;
-}
-.fa-instagram:hover {
-  color: #c13584;
+.fa-linkedin:hover {
+
   transform: translateY(-9px);
   transition: 0.5s ease-in-out;
 }
