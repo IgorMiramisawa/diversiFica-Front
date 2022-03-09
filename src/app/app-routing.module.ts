@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
+import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component';
+import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreComponent } from './sobre/sobre.component';
@@ -18,8 +20,10 @@ const routes: Routes = [
   {path:'cadastrar', component:CadastrarComponent},
   {path:'vagas-pf', component:VagasPfComponent},
   {path:'vagas-pj', component: VagasPjComponent},
-  {path: 'usuarios-pf', component:UsuariosPfComponent}
-];
+  {path: 'usuarios-pf', component:UsuariosPfComponent},
+  {path: 'vaga-delete/:id', component:VagaDeleteComponent},
+  {path: 'vaga-edit/:id' , component:VagaEditComponent}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

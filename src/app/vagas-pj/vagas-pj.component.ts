@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
 import { Vaga } from '../model/Vaga';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { VagasPjService } from '../service/vagas-pj.service';
 
 
@@ -36,9 +37,12 @@ export class VagasPjComponent implements OnInit {
 
 
   constructor(
+
     private router: Router ,
+    private auth: AuthService,
     private vagaspj: VagasPjService,
     public alertas: AlertasService ,
+
 
   ) {
 }
@@ -46,8 +50,10 @@ export class VagasPjComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
 
-    this.findByIdVaga()
-   // this.findAllTema()
+
+    this.auth.refreshToken()
+    this.findByIdUsuario()
+
 
 
     if(environment.token == '' ){
@@ -106,14 +112,8 @@ export class VagasPjComponent implements OnInit {
     this.experiencia = event.target.value
   }
 
-  findAllTema() {
-    this.vagaspj.getAllVagas().subscribe((resp: Vaga[]) => {
-      this.listaVagas = resp
-    })
-  }
-
-  findByIdVaga() {
-    this.vagaspj.getByIdVagas(this.id).subscribe((resp: Usuario)=> {
+  findByIdUsuario() {
+    this.auth.findByIdUsuario(this.id).subscribe((resp: Usuario)=> {
       this.usuario = resp
     })
   }

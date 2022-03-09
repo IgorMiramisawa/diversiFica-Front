@@ -21,6 +21,8 @@ import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { ProjetoComponent } from './projeto/projeto.component';
+import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component';
+import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { ProjetoComponent } from './projeto/projeto.component';
     VagasPfComponent,
     VagasPjComponent,
     UsuariosPfComponent,
-    ProjetoComponent
+    ProjetoComponent,
+    VagaDeleteComponent,
+    VagaEditComponent
   ],
   imports: [
     BrowserModule,
