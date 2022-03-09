@@ -34,6 +34,7 @@ export class VagasPjComponent implements OnInit {
   experiencia: string
   etnia: string
 
+  nome: string
 
 
   constructor(
@@ -48,18 +49,14 @@ export class VagasPjComponent implements OnInit {
   }
 
   ngOnInit() {
+
     window.scroll(0, 0)
-
-
     this.auth.refreshToken()
     this.findByIdUsuario()
-
-
 
     if (environment.token == '') {
       /*alert('Sua seção expirou, faça o login novament.')*/
       this.router.navigate(['/entrar'])
-
     }
   }
 
@@ -107,7 +104,6 @@ export class VagasPjComponent implements OnInit {
     this.etnia = event.target.value
   }
 
-
   selecionaExperiencia(event: any) {
     this.experiencia = event.target.value
   }
@@ -139,5 +135,9 @@ export class VagasPjComponent implements OnInit {
       this.findByIdUsuario()
       this.vaga = new Vaga()
     })
+  }
+
+  confirmar() {
+    this.vaga.nomeVaga = this.nome
   }
 }

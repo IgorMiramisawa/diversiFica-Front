@@ -237,8 +237,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-2 d-flex justify-content-end">
-                      <button class="btn nova-cor borda mr-3">Atualizar</button>
-                      <button class="btn nova-cor borda">Apagar </button>
+                      <button class="btn nova-cor borda mr-3" [routerLink]="['/vaga-edit', vaga.idVaga]" >Atualizar</button>
+                      <button class="btn nova-cor borda" data-toggle="modal" data-target="#apagarVaga"  (click)="confirmar()"> Apagar </button>
                     </div>
                   </div>
                 </div>
@@ -251,7 +251,36 @@
   </section>
 </main>
 
-<!-- Modal -->
+<!-- Modal Apagar-->
+<div class="modal fade" id="apagarVaga" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="TituloModalCentralizado">Apagar Vaga</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="descricao"> Deseja apagar está vaga ?  </label>
+        </div>
+        <div class="form-group">
+          <label for="nomeVaga"> </label>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" >Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Cadastrar-->
 <div class="modal fade" id="novaVagas" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
