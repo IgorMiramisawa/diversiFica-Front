@@ -21,21 +21,33 @@
     <ul class="navbar-nav mr-auto"></ul>
     <ul class="navbar-nav nav-positioning">
       <li class="nav-item active mr-5">
-        <a class="nav-link font-color" href="#"
-          >HOME <span class="sr-only">(current)</span></a
-        >
+        <a class="nav-link font-color" routerLink="/inicio">HOME</a>
       </li>
       <li class="nav-item mr-5 ml-5">
         <a class="nav-link font-color" routerLink="/sobre">SOBRE</a>
       </li>
-      <li class="nav-item mr-5 ml-5">
+      <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/vagas-pf">VAGAS</a>
+      </li>
+      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+        <a
+          class="nav-link font-color"
+          routerLink="/vagas-pf"
+          *ngIf="auth.pessoaFisica()"
+          >VAGAS</a
+        >
+        <a
+          class="nav-link font-color"
+          routerLink="/vagas-pj"
+          *ngIf="!auth.pessoaFisica()"
+          >Minhas VAGAS</a
+        >
       </li>
       <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
         <a class="nav-link font-color" routerLink="/usuarios-pf">PERFIL</a>
       </li>
       <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
-        <a class="nav-link font-color" (click)="sair()">SAIR</a>
+        <a class="nav-link font-color sair-config" (click)="sair()">SAIR</a>
       </li>
       <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/entrar">ENTRAR</a>

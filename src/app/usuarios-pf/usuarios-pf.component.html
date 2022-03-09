@@ -1,19 +1,27 @@
 <!-- Pessoal Fisica -->
-<div class="container my-5 d-flex justify-content-between"
-*ngIf="authService.pessoaFisica()">
+<div
+  class="container my-5 d-flex justify-content-between"
+  *ngIf="authService.pessoaFisica()"
+>
+  <!-- Foto e Nome -->
   <div class="row">
     <div class="mt-4 col-md-12 text-center">
       <img
-        src="https://i.imgur.com/D7NZyVD.jpg"
+        src="{{foto}}"
         alt="imagem do usuário"
         width="150px"
         height="150px"
         class="img-fluid rounded-circle borda-perfil"
       />
-      <p class="font-weight-bold">Creduspano</p>
+      <p class="font-weight-bold">{{nome}}</p>
 
+      <!-- Icones de inclusão -->
+      
       <div class="d-flex justify-content-center mb-2">
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência Fisica."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/fisico.svg"
           alt=""
@@ -21,18 +29,27 @@
         />
 
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência Auditiva."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/auditivo.svg"
           alt=""
           width="25px"
         />
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas Indígenas."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/cocar.svg"
           alt=""
           width="25px"
         />
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência intelectual."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/intelectual.svg"
           alt=""
@@ -41,24 +58,36 @@
       </div>
       <div>
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas Negras."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/negro.svg"
           alt=""
           width="25px"
         />
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência Visual."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/visual.svg"
           alt=""
           width="25px"
         />
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas LGBTQIA+."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/lgbqia.svg"
           alt=""
           width="25px"
         />
         <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas Trans."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/trans.svg"
           alt=""
@@ -68,22 +97,23 @@
     </div>
   </div>
 
+  <!-- Perfil Descrição e Experiências -->
   <div class="col-md-10">
     <div class="row">
       <div class="col-md-10">
         <div class="card borda-div p-0">
           <p class="font-weight-bold textos p-2 pl-4">
-            Creduspano, 28 anos, desenvolvedor.
+            {{nome}}, 31 anos, desenvolvedor.
           </p>
           <p class="pl-4">Desenvolvedor FullStack</p>
         </div>
       </div>
     </div>
-    <div class="card mt-4 col-md-10 borda-div">
+    <div class="card mt-4 col-md-10 borda-div text-muted">
       <div class="card-body">
         <div class="row">
           <div class="col-md-10">
-            <h5 class="card-title">Experiências Profissionais</h5>
+            <h5 class="card-title">Experiências Profissionais (Em construção)</h5>
           </div>
           <div class="col-md-2 d-flex justify-content-end">
             <i
@@ -99,10 +129,10 @@
         </div>
         <div class="row">
           <div class="col-md-12 mt-3">
-            <p class="card-text">Corporation 1</p>
+            <p class="card-text text-muted">Corporation 1</p>
           </div>
           <div class="col-md-12 mt-3">
-            <span class="font-weight-bold">Salario: </span>
+            <span class="font-weight-bold">Salário: </span>
             <span>R$ 3.500,00</span>
           </div>
           <div class="col-md-12 mt-3">
@@ -113,7 +143,204 @@
       </div>
     </div>
     <div class="collapse" id="collapseExample">
-      <div class="card card-body borda-div mt-3 col-md-10">
+      <div class="card card-body borda-div mt-3 col-md-10 text-muted">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="card-text">Corporation 2</p>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Salário: </span>
+            <span>R$ 2.600,00</span>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Cargo: </span>
+            <span>Desenvolvedor Junior</span>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="card-text">Corporation 3</p>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Salário: </span>
+            <span>R$ 1.500,00</span>
+          </div>
+          <div class="col-md-12 mt-3">
+            <span class="font-weight-bold">Cargo: </span>
+            <span>Estágiario</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pessoal Juridica -->
+<div
+  class="container my-5 d-flex justify-content-between"
+  *ngIf="!authService.pessoaFisica()"
+>
+  <div class="row justify-content-center">
+    <div class="mt-4 col-md-12 text-center">
+      <img
+        src="{{foto}}"
+        alt="imagem do usuário"
+        width="150px"
+        height="150px"
+        class="img-fluid rounded-circle borda-perfil"
+      />
+      <p class="font-weight-bold mt-3">{{nome}}</p>
+
+      <!-- Rank de estrela -->
+      <div>
+        <img
+          class="mt-0 mr-2 mb-4"
+          src="../../assets/imgs/ico/estrela.svg"
+          alt=""
+          width="100px"
+        />
+        <!-- <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
+<div class="card">
+    <pre class="card-block card-header" style="margin:15px 0;">Rate: <b>{{rate}}</b> </pre>
+</div> -->
+      </div>
+
+      <!-- Icones de inclusão -->
+      <div class="d-flex justify-content-center mb-2">
+        <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência Fisica."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/fisico.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência Auditiva."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/auditivo.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas Indígenas."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/cocar.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência intelectual."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/intelectual.svg"
+          alt=""
+          width="25px"
+        />
+      </div>
+      <div>
+        <img
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas Negras."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/negro.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas com deficiência Visual."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/visual.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas LGBTQIA+."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/lgbqia.svg"
+          alt=""
+          width="25px"
+        />
+        <img
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa se adequa a pessoas Trans."
+          class="mt-0 mr-2"
+          src="../../assets/imgs/ico/trans.svg"
+          alt=""
+          width="25px"
+        />
+        <div>
+          <button
+            class="btn rounded-pill mt-5 borda-entrar text-white font-weight-bold"
+            type="button"
+          >
+            <span class="texto-entrar m-4">AVALIAR</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-10">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card borda-div p-0">
+          <p class="font-weight-bold textos p-2 pl-4">
+            {{nome}}, Prestadora de serviços de tecnologia.
+          </p>
+          <p class="pl-4">Localizado na região leste de São Paulo</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-4 col-md-10 borda-div text-muted">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-10">
+            <h5 class="card-title">(EM CONSTRUÇÃO) Sobre Nós</h5>
+          </div>
+
+          <!-- <div class="col-md-2 d-flex justify-content-end">
+            <i
+              class="fa fa-angle-down"
+              aria-hidden="true"
+              data-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            ></i>
+          </div> -->
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="card-text">Vamos muito além do ERP com um portfólio completo de sistemas e plataformas para gestão de empresas de 8 segmentos de mercado, serviços financeiros e soluções de business performance.
+              Nos últimos cinco anos, investimos R$ 2 bilhões em pesquisa e desenvolvimento para atender as exigências dos nossos mais de 40 mil clientes entre micro, pequenas, médias e grandes – de norte a sul do Brasil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Precisamos decidir -->
+    
+    <!-- <div class="collapse" id="collapseExample">
+      <div class="card card-body borda-div mt-3 col-md-10 text-muted">
         <div class="row">
           <div class="col-md-12 mt-3">
             <p class="card-text">Corporation 2</p>
@@ -142,189 +369,20 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <!-- Vagas Abertas -->
+    <div class="row mt-4">
+      <div class="col-md-10">
+        <div class="card borda-div p-0">
+          <p class="font-weight-bold textos pl-4 mb-2 mt-3 text-muted">(EM CONSTRUÇÃO) Vagas Abertas</p>
+          <div class="d-flex flex-column ponteiro">
+            <a class="textos-vagas pl-4">Desenvolvedor Java</a>
+            <a class="textos-vagas pl-4">Desenvolvedor Angular</a>
+            <a class="textos-vagas pl-4">Desenvolvedor Back-End</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-<!-- Pessoal Juridica -->
-  <div class="container my-5 d-flex justify-content-between"
-  *ngIf="!authService.pessoaFisica()">
-    <div class="row justify-content-center">
-      <div class="mt-4 col-md-12 text-center">
-        <img
-          src="../../assets/imgs/logoempresas/empresa.png"
-          alt="imagem do usuário"
-          width="150px"
-          height="150px"
-          class="img-fluid rounded-circle borda-perfil"
-        />
-        <p class="font-weight-bold mt-3">LTDA Corporation</p>
-
-          <!-- Rank de estrela -->
-        <div>
-          <img
-          class="mt-0 mr-2 mb-4"
-          src="../../assets/imgs/ico/estrela.svg"
-          alt=""
-          width="100px"
-        />
-        </div>
-
-        <!-- Icones de inclusão -->
-        <div class="d-flex justify-content-center mb-2">
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/fisico.svg"
-            alt=""
-            width="25px"
-          />
-
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/auditivo.svg"
-            alt=""
-            width="25px"
-          />
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/cocar.svg"
-            alt=""
-            width="25px"
-          />
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/intelectual.svg"
-            alt=""
-            width="25px"
-          />
-        </div>
-        <div>
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/negro.svg"
-            alt=""
-            width="25px"
-          />
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/visual.svg"
-            alt=""
-            width="25px"
-          />
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/lgbqia.svg"
-            alt=""
-            width="25px"
-          />
-          <img
-            class="mt-0 mr-2"
-            src="../../assets/imgs/ico/trans.svg"
-            alt=""
-            width="25px"
-          />
-          <div>
-            <button class="btn rounded-pill mt-5 borda-entrar text-white font-weight-bold" type="button">
-          <span class="texto-entrar m-4" >AVALIAR</span>
-          </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="col-md-10">
-      <div class="row">
-        <div class="col-md-10">
-          <div class="card borda-div p-0">
-            <p class="font-weight-bold textos p-2 pl-4">
-              LTDA Corporation, Prestadora de serviços de tecnologia.
-            </p>
-            <p class="pl-4">Localizado na região leste de São Paulo</p>
-          </div>
-        </div>
-      </div>
-      <div class="card mt-4 col-md-10 borda-div">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-10">
-              <h5 class="card-title">Sobre Nós</h5>
-            </div>
-            <div class="col-md-2 d-flex justify-content-end">
-              <i
-                class="fa fa-angle-down"
-                aria-hidden="true"
-                data-toggle="collapse"
-                href="#collapseExample"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              ></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 mt-3">
-              <p class="card-text">Corporation 1</p>
-            </div>
-            <div class="col-md-12 mt-3">
-              <span class="font-weight-bold">Salario: </span>
-              <span>R$ 3.500,00</span>
-            </div>
-            <div class="col-md-12 mt-3">
-              <span class="font-weight-bold">Cargo: </span>
-              <span>Desenvolvedor</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body borda-div mt-3 col-md-10">
-          <div class="row">
-            <div class="col-md-12 mt-3">
-              <p class="card-text">Corporation 2</p>
-            </div>
-            <div class="col-md-12 mt-3">
-              <span class="font-weight-bold">Salario: </span>
-              <span>R$ 2.600,00</span>
-            </div>
-            <div class="col-md-12 mt-3">
-              <span class="font-weight-bold">Cargo: </span>
-              <span>Desenvolvedor Junior</span>
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-md-12 mt-3">
-              <p class="card-text">Corporation 3</p>
-            </div>
-            <div class="col-md-12 mt-3">
-              <span class="font-weight-bold">Salario: </span>
-              <span>R$ 1.500,00</span>
-            </div>
-            <div class="col-md-12 mt-3">
-              <span class="font-weight-bold">Cargo: </span>
-              <span>Estágiario</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Vagas Abertas -->
-      <div class="row mt-4">
-        <div class="col-md-10">
-          <div class="card borda-div p-0">
-            <p class="font-weight-bold textos pl-4 mb-2 mt-3">
-              Vagas Abertas
-            </p>
-            <div class="d-flex flex-column ponteiro">
-              <a class="textos-vagas pl-4">Desenvolvedor Java</a>
-              <a class="textos-vagas pl-4">Desenvolvedor Angular</a>
-              <a class="textos-vagas pl-4">Desenvolvedor Back-End</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>

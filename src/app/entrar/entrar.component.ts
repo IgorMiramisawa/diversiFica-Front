@@ -29,12 +29,27 @@ export class EntrarComponent implements OnInit {
       next: (resp: UsuarioLogin) => {
         this.usuarioLogin = resp
 
-        environment.foto = this.usuarioLogin.foto
-        environment.nomeUsuario = this.usuarioLogin.nomeUsuario
-        environment.idUsuario = this.usuarioLogin.idUsuario
         environment.token = this.usuarioLogin.token
+        environment.idUsuario = this.usuarioLogin.idUsuario
+        environment.nomeUsuario = this.usuarioLogin.nomeUsuario
+        environment.foto = this.usuarioLogin.foto
         environment.tipo = this.usuarioLogin.tipo
+        environment.sexualidade = this.usuarioLogin.sexualidade
+        environment.pcdIntelectual = this.usuarioLogin.pcdIntelectual
+        environment.pcdFisica = this.usuarioLogin.pcdFisica
+        environment.pcdVisual = this.usuarioLogin.pcdVisual
+        environment.pcdAuditiva = this.usuarioLogin.pcdAuditiva
+        environment.pcdMultiplas = this.usuarioLogin.pcdMultiplas
+        environment.genero = this.usuarioLogin.genero
+        environment.etinia = this.usuarioLogin.etnia
+        environment.pcd = this.usuarioLogin.pcd
+        environment.generoLgbtqia = this.usuarioLogin.generoLgbtqia
+        environment.generoMulher = this.usuarioLogin.generoMulher
+        environment.generoTrans = this.usuarioLogin.generoTrans
+        environment.negro = this.usuarioLogin.negro
+        environment.indigena = this.usuarioLogin.indigena
 
+        console.log(environment)
         this.router.navigate(['/inicio'])
       },
       error: erro => {

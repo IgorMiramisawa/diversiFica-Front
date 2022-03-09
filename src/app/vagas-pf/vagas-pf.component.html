@@ -2,26 +2,28 @@
   <section>
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <h1>VAGAS</h1>
+        <h1 class="font-color">VAGAS</h1>
       </div>
     </div>
-
-    <div class="container my-4">
+    <div class="container my-4 font-color">
       <div class="row align-content-center">
         <div class="col-md-12">
           <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-md-10 my-3" *ngFor="let vagas of listaVagas">
               <div class="card border-configuration">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
-                      <h5 class="card-title">Juniors LTDA</h5>
+                      <h5 class="card-title">
+                        {{ vagas.usuario.nomeUsuario }}
+                      </h5>
                     </div>
-                    <div class="col-md-4 d-flex justify-content-end">
+                    <div class="col-md-5 d-flex justify-content-end">
                       <img
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas Negras"
+                        title="Empresa se adequa a pessoas Negras."
                         class="mt-0 mr-2"
                         src="../../assets/imgs/ico/negro.svg"
                         alt=""
@@ -29,98 +31,101 @@
                       />
 
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência Visual"
+                        title="Empresa se adequa a pessoas com deficiência Visual."
                         src="../../assets/imgs/ico/visual.svg"
                         alt=""
                         width="25px"
                       />
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas LGBTQIA+"
+                        title="Empresa se adequa a pessoas LGBTQIA+."
                         src="../../assets/imgs/ico/lgbqia.svg"
                         alt=""
                         width="25px"
                       />
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas Trans"
+                        title="Empresa se adequa a pessoas Trans."
                         src="../../assets/imgs/ico/trans.svg"
                         alt=""
                         width="25px"
                       />
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência Auditiva"
+                        title="Empresa se adequa a pessoas com deficiência Auditiva."
                         src="../../assets/imgs/ico/auditivo.svg"
                         alt=""
                         width="25px"
                       />
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas Indígenas"
+                        title="Empresa se adequa a pessoas Indígenas."
                         src="../../assets/imgs/ico/cocar.svg"
                         alt=""
                         width="25px"
                       />
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência intelectual"
+                        title="Empresa se adequa a pessoas com deficiência intelectual."
                         src="../../assets/imgs/ico/intelectual.svg"
                         alt=""
                         width="25px"
                       />
                       <img
-                        class="mt-0 mr-2"
+                        class="mt-0 mr-4 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência Fisica"
+                        title="Empresa se adequa a pessoas com deficiência Fisica."
                         src="../../assets/imgs/ico/fisico.svg"
                         alt=""
                         width="25px"
                       />
                     </div>
-                    <div class="col-md-2 d-flex justify-content-end">
+                    <div
+                      class="col-md-1 d-flex justify-content-end"
+                      *ngIf="auth.logado()"
+                    >
                       <i
                         class="fa fa-angle-down"
                         aria-hidden="true"
                         data-toggle="collapse"
-                        href="#collapseExample"
+                        attr.href="#collapse-{{ vagas.idVaga }}"
                         role="button"
                         aria-expanded="false"
-                        aria-controls="collapseExample"
+                        attr.aria-controls="collapse-{{ vagas.idVaga }}"
                       ></i>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <p class="card-text">Programador Full-stack</p>
+                      <p class="card-text">{{ vagas.nomeVaga }}</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="collapse" id="collapseExample">
+              <div class="collapse" id="collapse-{{ vagas.idVaga }}">
                 <div class="card card-body border-configuration mt-2">
                   <div class="row">
                     <div class="col-md-12">
                       <span class="font-weight-bold">Salario:</span>
-                      <span> De R$ 6.001,00git</span>
+                      <span> {{ vagas.salario }}}</span>
                     </div>
                     <div class="col-md-12 mt-2">
                       <span class="font-weight-bold">Cargo:</span>
-                      <span> Lorem ipsum</span>
+                      <span> {{ vagas.cargo }}</span>
                     </div>
                   </div>
                   <div class="row">
@@ -129,10 +134,7 @@
                         Descrição:
                       </span>
                       <span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Pariatur quidem a ipsum molestiae, repellendus
-                        similique sint iure alias ad asperiores minima impedit.
-                        Omnis praesentium beatae aspernatur eos nam, non fugit.
+                        {{ vagas.descricao }}
                       </span>
                     </div>
                   </div>
@@ -142,11 +144,7 @@
                         >Benefícios</span
                       >
                       <span class="text-center">
-                        Assistência Médica / Medicina em grupo, Assistência
-                        Odontológica, Celular fornecido pela empresa, Convênio
-                        com Farmácia, Estacionamento, Participação nos lucros,
-                        Seguro de Vida em Grupo, Tíquete Refeição, Vale
-                        Transporte
+                        {{ vagas.beneficios }}
                       </span>
                     </div>
                   </div>
