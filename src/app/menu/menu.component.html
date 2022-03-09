@@ -35,7 +35,7 @@
         <a class="nav-link font-color" routerLink="/usuarios-pf">PERFIL</a>
       </li>
       <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
-        <a class="nav-link font-color" (click)="sair()">SAIR</a>
+        <a class="nav-link font-color ponteiro" (click)="sair()">SAIR</a>
       </li>
       <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/entrar">ENTRAR</a>
