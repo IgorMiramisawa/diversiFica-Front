@@ -13,15 +13,88 @@
             <button  class="btn nova-cor borda" data-toggle="modal" data-target="#novaVagas">Cadastrar Nova Vaga</button>
           </div>
           <div class="row justify-content-center">
-            <div *ngFor="let vaga of listaVagas" class="col-md-10">
+            <div *ngFor="let vaga of usuario.vaga" class="col-md-10 my-3">
               <div class="card borda">
-                <div class="card-body  ">
+                <div class="card-body ">
                   <div class="row">
                     <div class="col-md-6">
-                      <h5 class="card-title "> {{vaga.nomeVaga}} </h5>
+                      <h5 class="card-title "> {{vaga.usuario.idUsuario}} </h5>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
-                      <span>Icones Virão aqui</span>
+                      <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas Negras."
+                      class="mt-0 mr-2"
+                      src="../../assets/imgs/ico/negro.svg"
+                      alt=""
+                      width="25px"
+                    />
+
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas com deficiência Visual."
+                      src="../../assets/imgs/ico/visual.svg"
+                      alt=""
+                      width="25px"
+                    />
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas LGBTQIA+."
+                      src="../../assets/imgs/ico/lgbqia.svg"
+                      alt=""
+                      width="25px"
+                    />
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas Trans."
+                      src="../../assets/imgs/ico/trans.svg"
+                      alt=""
+                      width="25px"
+                    />
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas com deficiência Auditiva."
+                      src="../../assets/imgs/ico/auditivo.svg"
+                      alt=""
+                      width="25px"
+                    />
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas Indígenas."
+                      src="../../assets/imgs/ico/cocar.svg"
+                      alt=""
+                      width="25px"
+                    />
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas com deficiência intelectual."
+                      src="../../assets/imgs/ico/intelectual.svg"
+                      alt=""
+                      width="25px"
+                    />
+                    <img
+                      class="mt-0 mr-4 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa se adequa a pessoas com deficiência Fisica."
+                      src="../../assets/imgs/ico/fisico.svg"
+                      alt=""
+                      width="25px"
+                    />
                     </div>
                     <div class="col-md-2 d-flex justify-content-end">
                       <i class="fa fa-angle-down" aria-hidden="true" data-toggle="collapse" href="#collapseExample"
@@ -44,7 +117,7 @@
                 </div>
               </div >
               <div class="collapse" id="collapseExample">
-                <div class="card card-body borda mt-2">
+                <div class="card card-body borda mt-2 ">
                   <div class="row">
                     <div class="col-md-12">
                       <p class="text-center font-weight-bold">Descrição</p>
@@ -105,7 +178,7 @@
           <input [(ngModel)]='vaga.cargo' type="text" class="form-control" id="cargoVaga" placeholder="Digite o cargo">
         </div>
         <div class="form-group">
-          <label for="salario">Cargo da Vaga</label>
+          <label for="salario">Salário da Vaga</label>
           <input [(ngModel)]='vaga.salario' type="number" class="form-control" id="salario" placeholder="Digite o salario">
         </div>
         <div class="form-group">

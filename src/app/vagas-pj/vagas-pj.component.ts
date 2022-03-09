@@ -17,7 +17,7 @@ export class VagasPjComponent implements OnInit {
   listaVagas: Vaga []
 
   usuario: Usuario = new Usuario()
-
+  id = environment.idUsuario
 
   lgbia: string
   trans: string
@@ -38,14 +38,22 @@ export class VagasPjComponent implements OnInit {
   constructor(
     private router: Router ,
     private vagaspj: VagasPjService,
-    public alertas: AlertasService
+    public alertas: AlertasService ,
+
   ) {
 }
 
   ngOnInit() {
+    window.scroll(0,0)
+
+    this.findByIdVaga()
+   // this.findAllTema()
+
+
     if(environment.token == '' ){
       /*alert('Sua seção expirou, faça o login novament.')*/
       this.router.navigate(['/entrar'])
+
     }
   }
 
@@ -98,13 +106,18 @@ export class VagasPjComponent implements OnInit {
     this.experiencia = event.target.value
   }
 
-
-  findAllVagas(){
-    this.vagaspj.getAllVagas().subscribe((resp: Vaga[])=> {
+  findAllTema() {
+    this.vagaspj.getAllVagas().subscribe((resp: Vaga[]) => {
       this.listaVagas = resp
     })
   }
-  cadastrar() {
+
+  findByIdVaga() {
+    this.vagaspj.getByIdVagas(this.id).subscribe((resp: Usuario)=> {
+      this.usuario = resp
+    })
+  }
+    cadastrar() {
 
     this.vaga.etnia = this.etnia
     this.vaga.lgbia = this.lgbia
@@ -126,7 +139,7 @@ export class VagasPjComponent implements OnInit {
       this.vaga = resp
       this.alertas.showAlertSuccess('Vaga cadastrada')
       this.vaga = new Vaga ()
-      this.findAllVagas()
+
 
     })
   }
