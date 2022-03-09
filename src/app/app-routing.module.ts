@@ -10,7 +10,7 @@ import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
 
 const routes: Routes = [
-  {path:'' , redirectTo:'entrar' , pathMatch :'full'},
+  {path:'' , redirectTo:'inicio' , pathMatch :'full'},
   {path:'entrar', component: EntrarComponent},
   {path:'contato', component:ContatoComponent},
   {path:'sobre', component:SobreComponent},
