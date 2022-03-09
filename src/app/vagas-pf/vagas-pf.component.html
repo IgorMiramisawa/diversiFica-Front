@@ -216,14 +216,17 @@
                       </span>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row mt-2">
                     <div class="col-md-12 mt-2">
                       <a
-                        type="button"
                         class="btn btn-outline-success nova-cor rounded-pill"
-                        href="mailto:someone@example.com?Subject=Hello%20again"
+                        href="mailto:{{
+                          vagas.usuario.email
+                        }}?Subject=Cadastro%20para%Participar%Da%Vaga:%20{{
+                          vagas.nomeVaga
+                        }}"
                         target="_top"
-                        >Send Mail</a
+                        >Enviar Curriculum</a
                       >
                     </div>
                   </div>
