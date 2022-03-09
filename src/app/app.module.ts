@@ -20,6 +20,7 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
+import { ProjetoComponent } from './projeto/projeto.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
     AlertasComponent,
     VagasPfComponent,
     VagasPjComponent,
-    UsuariosPfComponent
+    UsuariosPfComponent,
+    ProjetoComponent
   ],
   imports: [
     BrowserModule,
