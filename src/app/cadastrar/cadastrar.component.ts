@@ -62,8 +62,6 @@ export class CadastrarComponent implements OnInit {
   selecionaEtnia(event: any) {
     this.etnia = event.target.value
   }
-
-
   //Pessoa Juridica
   selecionaGeneroLBTQIA(event: any) {
     this.generoLgbtqia = event.target.value
@@ -104,7 +102,6 @@ export class CadastrarComponent implements OnInit {
   selecionaComunidadeIndigena(event: any) {
     this.comunidadeIndigena = event.target.value
   }
-
   confirmaSenha(event: any) {
     this.confirmSenha = event.target.value
   }
