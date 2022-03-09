@@ -1,8 +1,62 @@
 main {
   width: 100vw;
   height: 100vh;
+  background-color: #FFFEFD;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #BE4137;
 }
 
+section {
+  background-color: #FFFAF8;
+  border: none;
+  box-shadow: 0.5px 1px 2px 2px #D36759;
+  border-radius: 30px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+input, textarea {
+  border: 1px solid #BE4137;
+  border-radius: 10px;
+  background-color: #FFFAF8;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #634A48;
+  font-weight: 500;
+}
+
+input:focus, textarea:focus, button:focus {
+  box-shadow: none;
+  border: 2px solid #BE4137;
+}
+
+button {
+  background-color: #FFFAF8;
+  border: 2px solid #BE4137;
+  color: #BE4137;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #FFE1DD;
+  color: #BE4137;
+}
+
+iframe {
+  width: 90%;
+  height: 70%;
+  border-radius: 30px;
+  box-shadow: 0.2px 0.7px 1.5px 1.5px #D36759;
+}
+
+/*
 input {
   height: 40%;
   padding: 0 0.5em;
@@ -23,43 +77,4 @@ button {
 button:hover {
   box-shadow: 1px 2px 6px #84a3ec;
   border: 1px solid #b069ff
-}
-
-#fundo {
-  width: min(80%, 800px);
-  height: min(100%, 600px);
-  border-radius: 20px;
-}
-
-#title {
-  font-size: min(100vw - 2em, 4em);
-  font-weight: 700;
-}
-
-#texto-email {
-  font-size: min(100vw - 1em, 1.5em);
-  font-weight: 500;
-}
-
-#logo {
-  width: min(100vw - 20px, 100px);
-  height: auto;
-  position: relative;
-  top: 4%;
-}
-
-img {
-  width: min(100vw - 20px, 80px);
-  height: auto;
-  border-radius: 50%;
-  margin: 0 5pt;
-}
-
-img:hover {
-  box-shadow: 1px 3px 6px #000;
-  width: min(100vw - 20px, 85px);
-}
-
-.gradient-colors {
-  background: linear-gradient(to right, #ad65ff, #86a7f0, #b069ff, #84a3ec);
-}
+} */
