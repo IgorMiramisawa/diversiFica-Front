@@ -13,12 +13,12 @@
             <button  class="btn nova-cor borda" data-toggle="modal" data-target="#novaVagas">Cadastrar Nova Vaga</button>
           </div>
           <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div *ngFor="let vaga of listaVagas" class="col-md-10">
               <div class="card borda">
                 <div class="card-body  ">
                   <div class="row">
                     <div class="col-md-6">
-                      <h5 class="card-title ">Titulo da Vaga</h5>
+                      <h5 class="card-title "> {{vaga.nomeVaga}} </h5>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end">
                       <span>Icones Virão aqui</span>
@@ -188,7 +188,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)='cadastrar()' >Cadastrar</button>
+        <button type="button" class="btn btn-success" (click)='cadastrar()' data-dismiss="modal" >Cadastrar</button>
       </div>
     </div>
   </div>

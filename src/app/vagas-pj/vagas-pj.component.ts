@@ -125,8 +125,9 @@ export class VagasPjComponent implements OnInit {
     this.vagaspj.postVagas(this.vaga).subscribe((resp: Vaga)=> {
       this.vaga = resp
       this.alertas.showAlertSuccess('Vaga cadastrada')
-      this.findAllVagas()
       this.vaga = new Vaga ()
+      this.findAllVagas()
+
     })
   }
 }
