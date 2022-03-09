@@ -18,8 +18,10 @@ import { TermosComponent } from './termos/termos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
+import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { ProjetoComponent } from './projeto/projeto.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ProjetoComponent } from './projeto/projeto.component';
     InicioComponent,
     AlertasComponent,
     VagasPfComponent,
+    VagasPjComponent,
     UsuariosPfComponent,
     ProjetoComponent
   ],
