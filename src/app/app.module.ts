@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ɵInternalFormsSharedModule } from '@angular/forms'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
@@ -23,6 +23,7 @@ import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { ProjetoComponent } from './projeto/projeto.component';
 import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component';
 import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 
 @NgModule({
@@ -42,15 +43,17 @@ import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
     UsuariosPfComponent,
     ProjetoComponent,
     VagaDeleteComponent,
-    VagaEditComponent
+    VagaEditComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule,
+    ɵInternalFormsSharedModule,
+    AppRoutingModule
   ],
   providers: [{
     provide: LocationStrategy,
