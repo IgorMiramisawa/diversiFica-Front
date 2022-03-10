@@ -237,8 +237,6 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-2 d-flex justify-content-end">
-                      <button class="btn nova-cor borda mr-3" [routerLink]="['/vaga-edit', vaga.idVaga]" >Atualizar</button>
-                      <button class="btn nova-cor borda" data-toggle="modal" data-target="#apagarVaga"  (click)="confirmar()"> Apagar </button>
                     </div>
                   </div>
                 </div>
@@ -251,33 +249,7 @@
   </section>
 </main>
 
-<!-- Modal Apagar-->
-<div class="modal fade" id="apagarVaga" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="TituloModalCentralizado">Apagar Vaga</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="descricao"> Deseja apagar está vaga ?  </label>
-        </div>
-        <div class="form-group">
-          <label for="nomeVaga"> </label>
 
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal" >Confirmar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- Modal Cadastrar-->
@@ -294,23 +266,23 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="nomeVaga">Nome da Vaga</label>
-          <input [(ngModel)]='vaga.nomeVaga' type="text" class="form-control" id="nomeVaga" placeholder="Digite o nome da vaga">
+          <input [(ngModel)]='vaga.nomeVaga' type="text" class="form-control" id="nomeVaga" name="nomeVaga" placeholder="Digite o nome da vaga">
         </div>
         <div class="form-group">
           <label for="descricaoVaga">Descrição da Vaga</label>
-          <input [(ngModel)]='vaga.descricao' type="text" class="form-control" id="descricaoVaga" placeholder="Digite a descrição da vaga">
+          <input [(ngModel)]='vaga.descricao' type="text" class="form-control" id="descricaoVaga" name="descricaoVaga" placeholder="Digite a descrição da vaga">
         </div>
         <div class="form-group">
           <label for="cargoVaga">Cargo da Vaga</label>
-          <input [(ngModel)]='vaga.cargo' type="text" class="form-control" id="cargoVaga" placeholder="Digite o cargo">
+          <input [(ngModel)]='vaga.cargo' type="text" class="form-control" id="cargoVaga"  name="cargoVaga" placeholder="Digite o cargo">
         </div>
         <div class="form-group">
           <label for="salario">Salário da Vaga</label>
-          <input [(ngModel)]='vaga.salario' type="number" class="form-control" id="salario" placeholder="Digite o salario">
+          <input [(ngModel)]='vaga.salario' type="number" class="form-control" id="salario" name="salario" placeholder="Digite o salario">
         </div>
         <div class="form-group">
           <label for="beneficiosVaga">Benefícios da Vaga</label>
-          <input  [(ngModel)]='vaga.beneficios' type="text" class="form-control" id="beneficiosVaga" placeholder="Digite os benefícios">
+          <input  [(ngModel)]='vaga.beneficios' type="text" class="form-control" id="beneficiosVaga" name="beneficiosVaga" placeholder="Digite os benefícios">
         </div>
         <label for="convenio">Possui convênio</label>
         <select (change)="selecionaConvenio($event)"class="form-control" name="convenio" id="convenio">
