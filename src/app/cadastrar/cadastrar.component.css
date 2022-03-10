@@ -50,6 +50,14 @@ button:hover {
   color: #BE4137;
 }
 
+#button-option-1 {
+  background-color: #BE4137;
+}
+
+#button-option-2 {
+  background-color: #E8DCDA;
+}
+
 .card-style {
   border-radius: 30px;
   background-color: #FFFAF8;
