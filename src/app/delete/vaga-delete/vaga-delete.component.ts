@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
 import { Vaga } from 'src/app/model/Vaga';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { VagasPjService } from 'src/app/service/vagas-pj.service';
 import { environment } from 'src/environments/environment.prod';
@@ -19,7 +20,8 @@ export class VagaDeleteComponent implements OnInit {
     private router:Router ,
     private vagapj: VagasPjService,
     private auth: AuthService,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    public alertas: AlertasService
   ) { }
 
   ngOnInit(){
@@ -41,7 +43,7 @@ export class VagaDeleteComponent implements OnInit {
 
   apagar(){
     this.vagapj.deleteVagas(this.idVaga).subscribe(()=> {
-      alert('Tema apagado com sucesso!')
+      this.alertas.showAlertSuccess('Vaga Apagada com sucesso!')
       this.router.navigate(['/vagas-pj'])
     })
   }

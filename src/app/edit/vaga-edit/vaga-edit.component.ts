@@ -110,7 +110,7 @@ export class VagaEditComponent implements OnInit {
 
     this.vagaspj.putVagas(this.vaga).subscribe((resp: Vaga) => {
       this.vaga = resp
-      this.alertas.showAlertSuccess('Vaga cadastrada')
+      this.alertas.showAlertSuccess('Vaga Atualizada com sucesso!')
       this.router.navigate(['/vagas-pj'])
     })
   }
