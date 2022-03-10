@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Usuario } from '../model/Usuario';
+import { Vaga } from '../model/Vaga';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
-import { VagasPjService } from '../service/vagas-pj.service';
 
 @Component({
   selector: 'app-usuarios-pf',
@@ -11,6 +12,9 @@ import { VagasPjService } from '../service/vagas-pj.service';
   styleUrls: ['./usuarios-pf.component.css'],
 })
 export class UsuariosPfComponent implements OnInit {
+  
+  vaga: Vaga = new Vaga()
+  usuario: Usuario = new Usuario()
 
   idUsuario = environment.idUsuario
   nome = environment.nomeUsuario
@@ -34,11 +38,13 @@ export class UsuariosPfComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private alertas: AlertasService,
+    private alertas: AlertasService
+    
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
+    this.findByIdUsuario();
 
     if (environment.token == '') {
       this.alertas.showAlertInfo(
@@ -48,5 +54,11 @@ export class UsuariosPfComponent implements OnInit {
     }
 
     this.authService.refreshToken()
+  }
+
+  findByIdUsuario() {
+    this.authService.findByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
+    })
   }
 }
