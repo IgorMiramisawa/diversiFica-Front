@@ -1,0 +1,31 @@
+.border-configuration {
+  box-shadow: 0px 2px 1px #be4137;
+  border-radius: 20px;
+  border: #be4137 1px solid;
+}
+
+.font-color {
+  color: #be4137;
+}
+
+.nova-cor {
+  color: #be4137 !important;
+  border-color: #be4137 !important;
+}
+.nova-cor:hover {
+  color: #be4137 !important;
+  background-color: #fffaf8 !important;
+}
+
+.borda-div {
+  box-shadow: 0px 2px 1px #be4137;
+  border-radius: 25px;
+  background-color: #fffaf8;
+}
+.borda-input {
+  border: 1px solid #be4137;
+}
+.borda-entrar {
+  border-radius: 10%;
+  border: 3px solid #be4137;
+}
