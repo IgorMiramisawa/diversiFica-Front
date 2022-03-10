@@ -29,3 +29,12 @@
 .opacity {
   filter: opacity(0.3);
 }
+
+.nova-cor {
+  color: #be4137 !important;
+  border-color: #be4137 !important;
+}
+.nova-cor:hover {
+  color: #be4137 !important;
+  background-color: #fffaf8 !important;
+}
