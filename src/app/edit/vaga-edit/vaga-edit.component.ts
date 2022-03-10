@@ -4,6 +4,7 @@ import { Vaga } from 'src/app/model/Vaga';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { VagasPjService } from 'src/app/service/vagas-pj.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-vaga-edit',
@@ -29,6 +30,9 @@ export class VagaEditComponent implements OnInit {
 
   idVaga: number
 
+
+  step: any = 1
+
   constructor(private router: Router,
     private auth: AuthService,
     private vagaspj: VagasPjService,
@@ -36,9 +40,27 @@ export class VagaEditComponent implements OnInit {
     public alertas: AlertasService,) { }
 
   ngOnInit(){
+    if (environment.token == '') {
+      this.alertas.showAlertInfo(
+        'Sua seção expirou para sua segurança! Faça o login novamente!'
+      );
+      this.router.navigate(['/entrar']);
+    }
     this.auth.refreshToken()
     this.idVaga = this.route.snapshot.params['id']
     this.findByIdVaga(this.idVaga)
+  }
+
+  selecionaButton1() {
+    this.step = 1
+  }
+
+  selecionaButton2() {
+    this.step = 2
+  }
+
+  selecionaButton3() {
+    this.step = 3
   }
 
   selecionaGeneroLgbia(event: any) {
