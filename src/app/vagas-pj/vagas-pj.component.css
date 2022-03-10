@@ -2,6 +2,11 @@
   color: #be4137 !important;
   border-color: #be4137 !important;
 }
+.nova-cor:hover {
+  color: #be4137 !important;
+  background-color: #fffaf8 !important;
+}
+
 .borda {
   box-shadow: 0px 2px 1px #be4137;
   border-radius: 20px;
@@ -11,4 +16,27 @@
 }
 .font-color {
   color: #be4137;
+}
+
+.buttonVagas {
+  background-color: #fffaf8 !important;
+  border: 2px solid #be4137 !important;
+  color: #be4137 !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  border-radius: 50px !important;
+  transition: 0.5s !important;
+}
+
+.buttonVagas:hover {
+  background-color: #ffe1dd !important;
+  color: #be4137 !important;
+}
+
+.button-option-1 {
+  background-color: #be4137 !important;
+}
+
+.button-option-2 {
+  background-color: #e8dcda !important;
 }

@@ -34,16 +34,32 @@ export class UsuarioEditComponent implements OnInit {
   comunidadeNegra: string
   comunidadeIndigena: string
 
+  step: any = 1
+
   constructor(private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
     private alerts: AlertasService) { }
 
   ngOnInit(){
+    if (environment.token == '') {
+      this.alerts.showAlertInfo(
+        'Sua seção expirou para sua segurança! Faça o login novamente!'
+      );
+      this.router.navigate(['/entrar']);
+    }
     window.scroll(0,0)
     this.authService.refreshToken()
     this.idUsuario = this.route.snapshot.params['idUsuario']
     this.findByIdUser(this.idUsuario)
+  }
+
+  selecionaButton1() {
+    this.step = 1
+  }
+
+  selecionaButton2() {
+    this.step = 2
   }
 
   findByIdUser(id: number){
@@ -165,6 +181,7 @@ export class UsuarioEditComponent implements OnInit {
       if(this.comunidadeIndigena == null){
         this.usuario.indigena = "Não"
       }
+      console.log(this.usuario)
       this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(["/login"])
