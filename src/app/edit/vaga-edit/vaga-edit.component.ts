@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Vaga } from 'src/app/model/Vaga';
+import { AlertasService } from 'src/app/service/alertas.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { VagasPjService } from 'src/app/service/vagas-pj.service';
 
 @Component({
   selector: 'app-vaga-edit',
@@ -7,9 +12,106 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VagaEditComponent implements OnInit {
 
-  constructor() { }
+  vaga: Vaga = new Vaga()
 
-  ngOnInit(): void {
+  lgbia: string
+  trans: string
+  pcdVisual: string
+  pcdAuditiva: string
+  pcdFisica: string
+  pcdIntelectual: string
+  pcdMultiplas: string
+  convenio: string
+  dental: string
+  remoto: string
+  experiencia: string
+  etnia: string
+
+  idVaga: number
+
+  constructor(private router: Router,
+    private auth: AuthService,
+    private vagaspj: VagasPjService,
+    private route: ActivatedRoute,
+    public alertas: AlertasService,) { }
+
+  ngOnInit(){
+    this.auth.refreshToken()
+    this.idVaga = this.route.snapshot.params['id']
+    this.findByIdVaga(this.idVaga)
   }
 
+  selecionaGeneroLgbia(event: any) {
+    this.lgbia = event.target.value
+  }
+
+  selecionaGeneroTrans(event: any) {
+    this.trans = event.target.value
+  }
+
+  selecionaPCDVisual(event: any) {
+    this.pcdVisual = event.target.value
+  }
+
+  selecionaPCDAuditiva(event: any) {
+    this.pcdAuditiva = event.target.value
+  }
+
+  selecionaPCDFisica(event: any) {
+    this.pcdFisica = event.target.value
+  }
+
+  selecionaPCDIntelectual(event: any) {
+    this.pcdIntelectual = event.target.value
+  }
+
+  selecionaPCDMultiplas(event: any) {
+    this.pcdMultiplas = event.target.value
+  }
+
+  selecionaConvenio(event: any) {
+    this.convenio = event.target.value
+  }
+
+  selecionaDental(event: any) {
+    this.dental = event.target.value
+  }
+
+  selecionaRemoto(event: any) {
+    this.remoto = event.target.value
+  }
+
+  selecionaEtnia(event: any) {
+    this.etnia = event.target.value
+  }
+
+  selecionaExperiencia(event: any) {
+    this.experiencia = event.target.value
+  }
+
+  findByIdVaga(id: number) {
+    this.vagaspj.getByIdVagas(this.idVaga).subscribe((resp: Vaga) => {
+      this.vaga = resp
+    })
+  }
+  atualizar() {
+    this.vaga.etnia = this.etnia
+    this.vaga.lgbia = this.lgbia
+    this.vaga.trans = this.trans
+    this.vaga.pcdVisual = this.pcdVisual
+    this.vaga.pcdAuditiva = this.pcdAuditiva
+    this.vaga.pcdFisica = this.pcdFisica
+    this.vaga.pcdMultiplas = this.pcdMultiplas
+    this.vaga.pcdIntelectual = this.pcdIntelectual
+    this.vaga.convenio = this.convenio
+    this.vaga.dental = this.dental
+    this.vaga.experiencia = this.experiencia
+    this.vaga.remoto = this.remoto
+
+    this.vagaspj.putVagas(this.vaga).subscribe((resp: Vaga) => {
+      this.vaga = resp
+      this.alertas.showAlertSuccess('Vaga cadastrada')
+      this.router.navigate(['/vagas-pj'])
+    })
+  }
 }
