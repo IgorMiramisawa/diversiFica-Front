@@ -1,18 +1,18 @@
 <main class="container d-flex justify-content-center align-items-center">
   <section class="col-md-8 card">
-    <div class="d-flex justify-content-center">
+    <form class="d-flex justify-content-center">
       <div class="col-md-5 d-flex flex-column align-items-center">
         <h2 class="mb-4 mt-4 text-center">Contato</h2>
-        <input class="form-control my-2" type="text" placeholder="Nome">
-        <input class="form-control my-2" type="email" placeholder="E-mail">
-        <textarea class="form-control my-2" name="mensagem" id="mensagem" cols="100%" rows="7" placeholder="Dúvidas, sugestões ou outros? Fale conosco por aqui"></textarea>
-        <button class="mt-2 mb-4 btn w-50 btn-lg">Enviar</button>
+        <input class="form-control my-2" type="text" placeholder="Nome" name="nome" [(ngModel)]="nome">
+        <input class="form-control my-2" type="email" placeholder="E-mail" name="email" [(ngModel)]="email">
+        <textarea class="form-control my-2" name="mensagem" id="mensagem" cols="100%" rows="7" placeholder="Dúvidas, sugestões ou outros? Fale conosco por aqui" [(ngModel)]="mensagem"></textarea>
+        <button (click)="enviarContato()" class="mt-2 mb-4 btn w-50 btn-lg">Enviar</button>
         <br>
       </div>
       <div class="col-md-6 d-flex justify-content-center align-items-center">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22886.99594739029!2d-43.95750618317575!3d-19.831306116170943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa685552089ad31%3A0x537375dc80939a00!2sDiversifica%20Reformas%20Inst.com.resid.ltda!5e0!3m2!1spt-BR!2sbr!4v1646830564753!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
-    </div>
+    </form>
   </section>
 </main>
 
