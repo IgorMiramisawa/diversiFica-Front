@@ -50,8 +50,8 @@ button {
 }
 
 button:hover {
-  background-color: #ffe1dd;
-  color: #be4137;
+  background-color: #ffe1dd !important;
+  color: #be4137 !important;
 }
 
 .button-option-1 {
