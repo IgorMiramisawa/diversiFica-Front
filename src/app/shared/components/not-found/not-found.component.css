@@ -1,0 +1,26 @@
+.titulo{
+    color: #BE4137;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.subtitulo{
+    color: #1C0200;
+    margin: 1rem;
+}
+
+.texto{
+    color: #1C0200;
+    margin: 1rem;
+}
+
+.link{
+    color: #BE4137;
+}
+
+.imagem{
+    height: 20vw;
+    width: 20vw;
+    max-width: 40vw;
+    max-height: 40vw;
+}
