@@ -33,7 +33,6 @@ ul.social-network li
 }
 
 .fa-linkedin:hover {
-
   transform: translateY(-9px);
   transition: 0.5s ease-in-out;
 }

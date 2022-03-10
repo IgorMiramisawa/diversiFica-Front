@@ -9,7 +9,11 @@
       <div class="row align-content-center">
         <div class="col-md-12">
           <div class="d-flex justify-content-center">
-            <button class="btn nova-cor borda" data-toggle="modal" data-target="#novaVagas">
+            <button
+              class="btn nova-cor borda"
+              data-toggle="modal"
+              data-target="#novaVagas"
+            >
               Cadastrar Nova Vaga
             </button>
           </div>
@@ -22,59 +26,177 @@
                       <h5 class="card-title">{{ usuario.nomeUsuario }}</h5>
                     </div>
                     <div class="col-md-5 d-flex justify-content-between">
-                      <img *ngIf="vaga.etnia === 'negro'" class="mt-0 mr-3 " data-toggle="tooltip" data-placement="top"
+                      <img
+                        *ngIf="vaga.etnia === 'negro'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
                         title="Empresa se adequa a pessoas Negras."
-                        src="../../assets/imgs/ico/negro.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.etnia !== 'negro'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas Negras."
-                        src="../../assets/imgs/ico/negro.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.etnia === 'indigena'" class="mt-0 mr-3" data-toggle="tooltip"
-                        data-placement="top" title="Empresa se adequa a pessoas Indígenas."
-                        src="../../assets/imgs/ico/cocar.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.etnia !== 'indigena'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas Indígenas."
-                        src="../../assets/imgs/ico/cocar.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.trans === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip" data-placement="top"
-                        title="Empresa se adequa a pessoas Trans." src="../../assets/imgs/ico/trans.svg" alt=""
-                        width="25px" />
-                      <img *ngIf="vaga.trans === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas Trans."
-                        src="../../assets/imgs/ico/trans.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.lgbia === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip" data-placement="top"
-                        title="Empresa não se adequa a pessoas LGBIA+." src="../../assets/imgs/ico/lgbqia.svg" alt=""
-                        width="25px" />
-                      <img *ngIf="vaga.lgbia === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas LGBIA+."
-                        src="../../assets/imgs/ico/lgbqia.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdVisual === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip" data-placement="top"
+                        src="../../assets/imgs/ico/negro.svg"
+                        alt="Empresa se adequa a pessoas Negras."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.etnia !== 'negro'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas Negras."
+                        src="../../assets/imgs/ico/negro.svg"
+                        alt="Empresa não se adequa a pessoas Negras."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.etnia === 'indigena'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa se adequa a pessoas Indígenas."
+                        src="../../assets/imgs/ico/cocar.svg"
+                        alt="Empresa se adequa a pessoas Indígenas."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.etnia !== 'indigena'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas Indígenas."
+                        src="../../assets/imgs/ico/cocar.svg"
+                        alt="Empresa não se adequa a pessoas Indígenas."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.trans === 'Sim'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa se adequa a pessoas Trans."
+                        src="../../assets/imgs/ico/trans.svg"
+                        alt="Empresa se adequa a pessoas Trans."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.trans === 'Não'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas Trans."
+                        src="../../assets/imgs/ico/trans.svg"
+                        alt="Empresa não se adequa a pessoas Trans."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.lgbia === 'Sim'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas LGBIA+."
+                        src="../../assets/imgs/ico/lgbqia.svg"
+                        alt="Empresa não se adequa a pessoas LGBIA+."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.lgbia === 'Não'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas LGBIA+."
+                        src="../../assets/imgs/ico/lgbqia.svg"
+                        alt="Empresa não se adequa a pessoas LGBIA+."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdVisual === 'Sim'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
                         title="Empresa se adequa a pessoas com deficiência Visual."
-                        src="../../assets/imgs/ico/visual.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdVisual === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência Visual."
-                        src="../../assets/imgs/ico/visual.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdAuditiva === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip"
-                        data-placement="top" title="Empresa se adequa a pessoas com deficiência Auditiva."
-                        src="../../assets/imgs/ico/auditivo.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdAuditiva === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência Auditiva."
-                        src="../../assets/imgs/ico/auditivo.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdIntelectual === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip"
-                        data-placement="top" title="Empresa se adequa a pessoas com deficiência intelectual."
-                        src="../../assets/imgs/ico/intelectual.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdIntelectual === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência intelectual."
-                        src="../../assets/imgs/ico/intelectual.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdFisica === 'Sim'" class="mt-0 mr-4" data-toggle="tooltip" data-placement="top"
+                        src="../../assets/imgs/ico/visual.svg"
+                        alt="Empresa se adequa a pessoas com deficiência Visual."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdVisual === 'Não'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas com deficiência Visual."
+                        src="../../assets/imgs/ico/visual.svg"
+                        alt="Empresa não se adequa a pessoas com deficiência Visual."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdAuditiva === 'Sim'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa se adequa a pessoas com deficiência Auditiva."
+                        src="../../assets/imgs/ico/auditivo.svg"
+                        alt="Empresa se adequa a pessoas com deficiência Auditiva."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdAuditiva === 'Não'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas com deficiência Auditiva."
+                        src="../../assets/imgs/ico/auditivo.svg"
+                        alt="Empresa não se adequa a pessoas com deficiência Auditiva."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdIntelectual === 'Sim'"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa se adequa a pessoas com deficiência intelectual."
+                        src="../../assets/imgs/ico/intelectual.svg"
+                        alt="Empresa se adequa a pessoas com deficiência intelectual."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdIntelectual === 'Não'"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas com deficiência intelectual."
+                        src="../../assets/imgs/ico/intelectual.svg"
+                        alt="Empresa não se adequa a pessoas com deficiência intelectual."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdFisica === 'Sim'"
+                        class="mt-0 mr-4"
+                        data-toggle="tooltip"
+                        data-placement="top"
                         title="Empresa se adequa a pessoas com deficiência Fisica."
-                        src="../../assets/imgs/ico/fisico.svg" alt="" width="25px" />
-                      <img *ngIf="vaga.pcdFisica === 'Não'" class="mt-0 mr-4 opacity" data-toggle="tooltip"
-                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência Fisica."
-                        src="../../assets/imgs/ico/fisico.svg" alt="" width="25px" />
+                        src="../../assets/imgs/ico/fisico.svg"
+                        alt="Empresa se adequa a pessoas com deficiência Fisica."
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.pcdFisica === 'Não'"
+                        class="mt-0 mr-4 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não se adequa a pessoas com deficiência Fisica."
+                        src="../../assets/imgs/ico/fisico.svg"
+                        alt="Empresa não se adequa a pessoas com deficiência Fisica."
+                        width="25px"
+                      />
                     </div>
                     <div class="col-md-1 d-flex justify-content-end">
-                      <i class="fa fa-angle-down" aria-hidden="true" data-toggle="collapse"
-                        attr.href="#collapse-{{ vaga.idVaga }}" role="button" aria-expanded="false"
-                        attr.aria-controls="collapse-{{ vaga.idVaga }}"></i>
+                      <i
+                        class="fa fa-angle-down"
+                        aria-hidden="true"
+                        data-toggle="collapse"
+                        attr.href="#collapse-{{ vaga.idVaga }}"
+                        role="button"
+                        aria-expanded="false"
+                        attr.aria-controls="collapse-{{ vaga.idVaga }}"
+                      ></i>
                     </div>
                   </div>
                   <div class="row">
@@ -88,7 +210,7 @@
                 <div class="card card-body border-configuration mt-2">
                   <div class="row">
                     <div class="col-md-12">
-                      <span class="font-weight-bold">Salario:</span>
+                      <span class="font-weight-bold">Salário:</span>
                       <span> {{ vaga.salario }}</span>
                     </div>
                     <div class="col-md-12 mt-2">
@@ -108,7 +230,9 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-2">
-                      <span class="text-center font-weight-bold">Benefícios</span>
+                      <span class="text-center font-weight-bold"
+                        >Benefícios</span
+                      >
                       <span class="text-center">
                         {{ vaga.beneficios }}
                       </span>
@@ -116,10 +240,16 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-2 d-flex justify-content-end">
-                      <button class="btn nova-cor borda mr-3" [routerLink]="['/vaga-edit', vaga.idVaga]">
+                      <button
+                        class="btn nova-cor borda mr-3"
+                        [routerLink]="['/vaga-edit', vaga.idVaga]"
+                      >
                         Atualizar
                       </button>
-                      <button class="btn nova-cor borda" [routerLink]="['/vaga-delete' , vaga.idVaga]">
+                      <button
+                        class="btn nova-cor borda"
+                        [routerLink]="['/vaga-delete', vaga.idVaga]"
+                      >
                         Apagar
                       </button>
                     </div>
@@ -134,114 +264,210 @@
   </section>
 </main>
 
-
 <!-- Modal Cadastrar-->
-<div class="modal fade" id="novaVagas" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="novaVagas"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="TituloModalCentralizado">
           Cadastrar Nova Vaga
         </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Fechar"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="form-group">
           <label for="nomeVaga">Nome da Vaga</label>
-          <input [(ngModel)]='vaga.nomeVaga' type="text" class="form-control" id="nomeVaga" name="nomeVaga"
-            placeholder="Digite o nome da vaga">
+          <input
+            [(ngModel)]="vaga.nomeVaga"
+            type="text"
+            class="form-control"
+            id="nomeVaga"
+            name="nomeVaga"
+            placeholder="Digite o nome da vaga"
+          />
         </div>
         <div class="form-group">
           <label for="descricaoVaga">Descrição da Vaga</label>
-          <input [(ngModel)]="vaga.descricao" type="text" class="form-control" id="descricaoVaga"
-            placeholder="Digite a descrição da vaga" />
+          <input
+            [(ngModel)]="vaga.descricao"
+            type="text"
+            class="form-control"
+            id="descricaoVaga"
+            placeholder="Digite a descrição da vaga"
+          />
         </div>
         <div class="form-group">
           <label for="cargoVaga">Cargo da Vaga</label>
-          <input [(ngModel)]="vaga.cargo" type="text" class="form-control" id="cargoVaga"
-            placeholder="Digite o cargo" />
+          <input
+            [(ngModel)]="vaga.cargo"
+            type="text"
+            class="form-control"
+            id="cargoVaga"
+            placeholder="Digite o cargo"
+          />
         </div>
         <div class="form-group">
           <label for="salario">Salário da Vaga</label>
-          <input [(ngModel)]="vaga.salario" type="number" class="form-control" id="salario"
-            placeholder="Digite o salario" />
+          <input
+            [(ngModel)]="vaga.salario"
+            type="number"
+            class="form-control"
+            id="salario"
+            placeholder="Digite o salario"
+          />
         </div>
         <div class="form-group">
           <label for="beneficiosVaga">Benefícios da Vaga</label>
-          <input [(ngModel)]="vaga.beneficios" type="text" class="form-control" id="beneficiosVaga"
-            placeholder="Digite os benefícios" />
+          <input
+            [(ngModel)]="vaga.beneficios"
+            type="text"
+            class="form-control"
+            id="beneficiosVaga"
+            placeholder="Digite os benefícios"
+          />
         </div>
         <label for="experiencia">Necessário experiência</label>
-        <select (change)="selecionaExperiencia($event)" class="form-control" name="experiencia" id="experiencia">
+        <select
+          (change)="selecionaExperiencia($event)"
+          class="form-control"
+          name="experiencia"
+          id="experiencia"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="convenio">Possui convênio</label>
-        <select (change)="selecionaConvenio($event)" class="form-control" name="convenio" id="convenio">
+        <select
+          (change)="selecionaConvenio($event)"
+          class="form-control"
+          name="convenio"
+          id="convenio"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="dental">Possui dental</label>
-        <select (change)="selecionaDental($event)" class="form-control" name="dental" id="dental">
+        <select
+          (change)="selecionaDental($event)"
+          class="form-control"
+          name="dental"
+          id="dental"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="remoto">Possui remoto</label>
-        <select (change)="selecionaRemoto($event)" class="form-control" name="remoto" id="remoto">
+        <select
+          (change)="selecionaRemoto($event)"
+          class="form-control"
+          name="remoto"
+          id="remoto"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="intelectual">Possui deficiência intelectual</label>
-        <select (change)="selecionaPCDIntelectual($event)" class="form-control" name="intelectual" id="intelectual">
+        <select
+          (change)="selecionaPCDIntelectual($event)"
+          class="form-control"
+          name="intelectual"
+          id="intelectual"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="fisica">Possui deficiência física</label>
-        <select (change)="selecionaPCDFisica($event)" class="form-control" name="fisica" id="fisica">
+        <select
+          (change)="selecionaPCDFisica($event)"
+          class="form-control"
+          name="fisica"
+          id="fisica"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="visual">Possui deficiência visual</label>
-        <select (change)="selecionaPCDVisual($event)" class="form-control" name="visual" id="visual">
+        <select
+          (change)="selecionaPCDVisual($event)"
+          class="form-control"
+          name="visual"
+          id="visual"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="auditiva">Possui deficiência auditiva</label>
-        <select (change)="selecionaPCDAuditiva($event)" class="form-control" name="auditiva" id="auditiva">
+        <select
+          (change)="selecionaPCDAuditiva($event)"
+          class="form-control"
+          name="auditiva"
+          id="auditiva"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="multiplas">Possui deficiência multíplas</label>
-        <select (change)="selecionaPCDMultiplas($event)" class="form-control" name="multiplas" id="multiplas">
+        <select
+          (change)="selecionaPCDMultiplas($event)"
+          class="form-control"
+          name="multiplas"
+          id="multiplas"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="lgbia">LGBIA</label>
-        <select (change)="selecionaGeneroLgbia($event)" class="form-control" name="lgbia" id="lgbia">
+        <select
+          (change)="selecionaGeneroLgbia($event)"
+          class="form-control"
+          name="lgbia"
+          id="lgbia"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="trans">TRANS</label>
-        <select (change)="selecionaGeneroTrans($event)" class="form-control" name="trans" id="trans">
+        <select
+          (change)="selecionaGeneroTrans($event)"
+          class="form-control"
+          name="trans"
+          id="trans"
+        >
           <option>Selecione a opção</option>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
         <label for="etnia">Etnia</label>
-        <select (change)="selecionaEtnia($event)" class="form-control" name="etnia" id="etnia">
+        <select
+          (change)="selecionaEtnia($event)"
+          class="form-control"
+          name="etnia"
+          id="etnia"
+        >
           <option>Selecione a opção</option>
           <option value="negro">Negro</option>
           <option value="indigena">Indígena</option>
@@ -252,7 +478,12 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-success" (click)="cadastrar()" data-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="cadastrar()"
+          data-dismiss="modal"
+        >
           Cadastrar
         </button>
       </div>
