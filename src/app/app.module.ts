@@ -24,6 +24,7 @@ import { ProjetoComponent } from './projeto/projeto.component';
 import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component';
 import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
     ProjetoComponent,
     VagaDeleteComponent,
     VagaEditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

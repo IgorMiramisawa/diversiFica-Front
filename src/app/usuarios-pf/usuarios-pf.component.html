@@ -15,7 +15,6 @@
       />
       <p class="font-weight-bold">{{ nome }}</p>
 
-
       <!-- Icones de inclusão -->
       <div class="d-flex justify-content-center mb-2">
         <img
@@ -41,7 +40,7 @@
         />
 
         <img
-        *ngIf="pcdVisual === 'Sim'"
+          *ngIf="pcdVisual === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Pessoa com deficiência Auditiva."
@@ -52,7 +51,7 @@
         />
 
         <img
-        *ngIf="pcdVisual === 'Não'"
+          *ngIf="pcdVisual === 'Não'"
           data-toggle="tooltip"
           data-placement="top"
           title="Pessoa sem deficiência Auditiva."
@@ -85,7 +84,7 @@
         />
 
         <img
-        *ngIf="pcdintelectual === 'Sim'"
+          *ngIf="pcdintelectual === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Pessoa com deficiência intelectual."
@@ -96,7 +95,7 @@
         />
 
         <img
-        *ngIf="pcdintelectual !== 'Sim'"
+          *ngIf="pcdintelectual !== 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Pessoa sem deficiência intelectual."
@@ -108,7 +107,7 @@
       </div>
       <div>
         <img
-        *ngIf="negro === 'Sim'"
+          *ngIf="negro === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Pessoa Negra."
@@ -119,7 +118,7 @@
         />
 
         <img
-        *ngIf="negro !== 'Sim'"
+          *ngIf="negro !== 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Pessoa não Negra."
@@ -130,7 +129,7 @@
         />
 
         <img
-        *ngIf="pcdVisual === 'Sim'"
+          *ngIf="pcdVisual === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -142,7 +141,7 @@
         />
 
         <img
-        *ngIf="pcdVisual !== 'Sim'"
+          *ngIf="pcdVisual !== 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -154,7 +153,7 @@
         />
 
         <img
-        *ngIf="generoLgbtqia === 'Sim'"
+          *ngIf="generoLgbtqia === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -166,7 +165,7 @@
         />
 
         <img
-        *ngIf="generoLgbtqia !== 'Sim'"
+          *ngIf="generoLgbtqia !== 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -178,7 +177,7 @@
         />
 
         <img
-        *ngIf="generoTrans === 'Sim'"
+          *ngIf="generoTrans === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -190,7 +189,7 @@
         />
 
         <img
-        *ngIf="generoTrans !== 'Sim'"
+          *ngIf="generoTrans !== 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -200,6 +199,14 @@
           alt=""
           width="25px"
         />
+        <div class="mt-5">
+          <button
+            class="btn btn-outline-success nova-cor rounded-pill mt-3"
+            [routerLink]="['/usuario-edit', idUsuario]"
+          >
+            Atualizar Perfil
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -285,7 +292,6 @@
   </div>
 </div>
 
-
 <!-- Pessoal Juridica -->
 <div
   class="container my-5 d-flex justify-content-between"
@@ -301,7 +307,6 @@
         class="img-fluid rounded-circle borda-perfil"
       />
       <p class="font-weight-bold mt-3">{{ nome }}</p>
-
 
       <!-- Rank de estrela -->
       <div>
@@ -342,7 +347,7 @@
         />
 
         <img
-        *ngIf="pcdVisual === 'Sim'"
+          *ngIf="pcdVisual === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas com deficiência Auditiva."
@@ -353,7 +358,7 @@
         />
 
         <img
-        *ngIf="pcdVisual === 'Não'"
+          *ngIf="pcdVisual === 'Não'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa não se adequa a pessoas com deficiência Auditiva."
@@ -386,7 +391,7 @@
         />
 
         <img
-        *ngIf="pcdintelectual === 'Sim'"
+          *ngIf="pcdintelectual === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas com deficiência intelectual."
@@ -397,7 +402,7 @@
         />
 
         <img
-        *ngIf="pcdintelectual !== 'Sim'"
+          *ngIf="pcdintelectual !== 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa não se adequa a pessoas com deficiência intelectual."
@@ -409,7 +414,7 @@
       </div>
       <div>
         <img
-        *ngIf="negro === 'Sim'"
+          *ngIf="negro === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas Negras."
@@ -420,7 +425,7 @@
         />
 
         <img
-        *ngIf="negro !== 'Sim'"
+          *ngIf="negro !== 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa não se adequa a pessoas Negras."
@@ -431,7 +436,7 @@
         />
 
         <img
-        *ngIf="pcdVisual === 'Sim'"
+          *ngIf="pcdVisual === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -443,7 +448,7 @@
         />
 
         <img
-        *ngIf="pcdVisual !== 'Sim'"
+          *ngIf="pcdVisual !== 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -455,7 +460,7 @@
         />
 
         <img
-        *ngIf="generoLgbtqia === 'Sim'"
+          *ngIf="generoLgbtqia === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -467,7 +472,7 @@
         />
 
         <img
-        *ngIf="generoLgbtqia !== 'Sim'"
+          *ngIf="generoLgbtqia !== 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -479,7 +484,7 @@
         />
 
         <img
-        *ngIf="generoTrans === 'Sim'"
+          *ngIf="generoTrans === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -491,7 +496,7 @@
         />
 
         <img
-        *ngIf="generoTrans !== 'Sim'"
+          *ngIf="generoTrans !== 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -502,12 +507,18 @@
           width="25px"
         />
 
-        <div>
+        <div class="mt-5">
           <button
-            class="btn rounded-pill mt-5 borda-entrar text-white font-weight-bold"
+            class="btn rounded-pill mt-3 borda-entrar text-white font-weight-bold"
             type="button"
           >
             <span class="texto-entrar m-4">AVALIAR</span>
+          </button>
+          <button
+            class="btn btn-outline-success nova-cor rounded-pill mt-3"
+            [routerLink]="['/usuario-edit', idUsuario]"
+          >
+            Atualizar Perfil
           </button>
         </div>
       </div>

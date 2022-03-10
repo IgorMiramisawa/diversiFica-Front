@@ -34,6 +34,9 @@ export class AuthService {
     return this.http.get<Usuario>(`https://diversificageneration.herokuapp.com/usuarios/${idUsuario}`, this.token)
   }
 
+  putUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://diversificageneration.herokuapp.com/usuarios', usuario, this.token)
+  }
 
   logado(){
     let ok: boolean = false

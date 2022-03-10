@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Usuario } from '../model/Usuario';
-import { AlertasService } from '../service/alertas.service';
-import { AuthService } from '../service/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-cadastrar',
-  templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  selector: 'app-usuario-edit',
+  templateUrl: './usuario-edit.component.html',
+  styleUrls: ['./usuario-edit.component.css']
 })
-export class CadastrarComponent implements OnInit {
+export class UsuarioEditComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
+  idUsuario: number
+
   tipo: string
   confirmSenha: string
   sexualidade: string
@@ -31,15 +34,22 @@ export class CadastrarComponent implements OnInit {
   comunidadeNegra: string
   comunidadeIndigena: string
 
-
-  constructor(
-    private authService: AuthService,
+  constructor(private authService: AuthService,
+    private route: ActivatedRoute,
     private router: Router,
-    public alertas: AlertasService
-  ) { }
+    private alerts: AlertasService) { }
 
   ngOnInit(){
     window.scroll(0,0)
+    this.authService.refreshToken()
+    this.idUsuario = this.route.snapshot.params['idUsuario']
+    this.findByIdUser(this.idUsuario)
+  }
+
+  findByIdUser(id: number){
+    this.authService.findByIdUsuario(this.idUsuario).subscribe((resp: Usuario) =>{
+      this.usuario = resp
+    })
   }
 
   selecionaTipo(event: any) {
@@ -106,8 +116,7 @@ export class CadastrarComponent implements OnInit {
     this.confirmSenha = event.target.value
   }
 
-
-  cadastrar() {
+  atualizar() {
     this.usuario.tipo = this.tipo
     this.usuario.sexualidade = this.sexualidade
     this.usuario.genero = this.genero
@@ -124,7 +133,7 @@ export class CadastrarComponent implements OnInit {
     this.usuario.negro = this.comunidadeNegra
     this.usuario.indigena = this.comunidadeIndigena
     if (this.usuario.senha != this.confirmSenha) {
-      this.alertas.showAlertWarning("Tipo de usuário precisa estar selecionado")
+      this.alerts.showAlertWarning("As senhas precisam estár iguais para continuar")
     } else {
       if(this.generoLgbtqia == null){
         this.usuario.generoLgbtqia = "Não"
@@ -156,14 +165,17 @@ export class CadastrarComponent implements OnInit {
       if(this.comunidadeIndigena == null){
         this.usuario.indigena = "Não"
       }
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+      this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
-        this.router.navigate(["/entrar"])
-        this.alertas.showAlertSuccess("Cadastro realizado com sucesso!")
+        this.router.navigate(["/login"])
+        this.alerts.showAlertSuccess("Usuário atualizado com sucesso!")
+        environment.token = ''
+        environment.foto = ''
+        environment.nomeUsuario = ''
+        environment.tipo = ''
+        environment.idUsuario = 0
       })
 
     }
   }
-
-
 }
