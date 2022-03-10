@@ -9,336 +9,180 @@
                 <div class="col-md-10">
                   <div class="card-body">
                     <div class="text-center">
-                      <h1 class="my-3">Atualizar Cadastro</h1>
+                      <h3 class="my-3">Atualizar Perfil</h3>
                       <br />
                     </div>
 
                     <form>
-                      <div class="form-group">
-                        <select
-                          name="tipo"
-                          id="tipo"
-                          class="form-control"
-                          (change)="selecionaTipo($event)"
-                        >
-                          <option>Tipo de usuário</option>
-                          <option value="pessoaFisica">Pessoa Física</option>
-                          <option value="pessoaJuridica">
-                            Pessoa Jurídica
-                          </option>
-                        </select>
-                      </div>
-
-                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <input
-                          [(ngModel)]="usuario.nomeUsuario"
-                          type="text"
-                          class="form-control"
-                          id="nome"
-                          name="nome"
-                          placeholder="Nome completo"
-                          aria-describedby="Nome"
-                        />
-                      </div>
-
-                      <div class="form-group" *ngIf="tipo == 'pessoaJuridica'">
-                        <input
-                          [(ngModel)]="usuario.nomeUsuario"
-                          type="text"
-                          class="form-control"
-                          id="empresa"
-                          name="empresa"
-                          placeholder="Nome da sua empresa"
-                          aria-describedby="Empresa"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <input
-                          *ngIf="tipo == 'pessoaFisica'"
-                          [(ngModel)]="usuario.foto"
-                          type="string"
-                          class="form-control my-2"
-                          id="foto"
-                          name="foto"
-                          placeholder="Link da sua foto"
-                          aria-describedby="foto"
-                        />
-
-                        <input
-                          *ngIf="tipo == 'pessoaJuridica'"
-                          [(ngModel)]="usuario.foto"
-                          type="string"
-                          class="form-control my-2"
-                          id="foto"
-                          name="foto"
-                          placeholder="Link do seu logo"
-                          aria-describedby="foto"
-                        />
-                      </div>
-
-                      <div class="form-group">
-                        <input
-                          [(ngModel)]="usuario.email"
-                          type="email"
-                          class="form-control my-2"
-                          id="email"
-                          name="email"
-                          placeholder="E-mail"
-                          aria-describedby="email"
-                        />
-                      </div>
-
-                      <div class="form-group">
-                        <input
-                          (input)="confirmaSenha($event)"
-                          type="password"
-                          class="form-control my-2"
-                          id="senha"
-                          name="senha"
-                          placeholder="Senha"
-                          aria-describedby="senha"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <input
-                          [(ngModel)]="usuario.senha"
-                          type="password"
-                          class="form-control my-2"
-                          id="confirmSenha"
-                          name="confirmSenha"
-                          placeholder="Confirme a senha"
-                          aria-describedby="confirmSenha"
-                        />
-                      </div>
-
-                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <select
-                          name="sexualidade"
-                          id="sexualidade"
-                          class="form-control"
-                          (change)="selecionaSexualidade($event)"
-                        >
-                          <option value="">Sexualidade</option>
-                          <option value="Lesbica">Lésbica</option>
-                          <option value="Gay">Gay</option>
-                          <option value="Bissexual">Bissexual</option>
-                          <option value="Pansexual">Pansexual</option>
-                          <option value="Assexual">Assexual</option>
-                          <option value="Queer">Queer</option>
-                          <option value="Heterossexual">Heterossexual</option>
-                          <option value="Prefiro Não Dizer">
-                            Prefiro não dizer
-                          </option>
-                          <option value="Outro">Outro</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <select
-                          name="genero"
-                          id="genero"
-                          class="form-control"
-                          (change)="selecionaGenero($event)"
-                        >
-                          <option value="">Gênero</option>
-                          <option value="Mulher Trans">Mulher trans</option>
-                          <option value="Homem Trans">Homem trans</option>
-                          <option value="Mulher Cis">Mulher cis</option>
-                          <option value="Homem Cis">Homem cis</option>
-                          <option value="Não Binario">Não binário</option>
-                          <option value="Agenero">Agênero</option>
-                          <option value="Prefiro Não Dizer">
-                            Prefiro não dizer
-                          </option>
-                          <option value="Outro">Outro</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <select
-                          name="etnia"
-                          id="etnia"
-                          class="form-control"
-                          (change)="selecionaEtnia($event)"
-                        >
-                          <option value="">Etnia</option>
-                          <option value="Branco">Branco</option>
-                          <option value="Amarelo">Amarelo</option>
-                          <option value="Negro">Negro</option>
-                          <option value="Pardo">Pardo</option>
-                          <option value="Indígena">Indígena</option>
-                          <option value="Prefiro Não Dizer">
-                            Prefiro não dizer
-                          </option>
-                          <option value="outro">Outro</option>
-                        </select>
-                      </div>
-                      <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <h2 class="text-justify">
-                          Possui algum tipo de deficiência?:
-                        </h2>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="m-2">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="pcdv"
-                                name="pcdv"
-                                value="Sim"
-                                (change)="selecionaPCDVisual($event)"
-                              />
-                              <label class="form-check-label" for="pcdv"
-                                >Deficiência visual</label
-                              >
-                            </div>
-                          </div>
+                      <section *ngIf="step == 1">
+                        <div class="form-group">
+                          <select
+                            name="tipo"
+                            id="tipo"
+                            class="form-control"
+                            (change)="selecionaTipo($event)"
+                          >
+                            <option>Tipo de usuário</option>
+                            <option value="pessoaFisica">Pessoa Física</option>
+                            <option value="pessoaJuridica">
+                              Pessoa Jurídica
+                            </option>
+                          </select>
                         </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="m-2">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="pcda"
-                                name="pcda"
-                                value="Sim"
-                                (change)="selecionaPCDAuditiva($event)"
-                              />
-                              <label class="form-check-label" for="pcda"
-                                >Deficiência auditiva</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="m-2">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="pcdf"
-                                name="pcdf"
-                                value="Sim"
-                                (change)="selecionaPCDFisica($event)"
-                              />
-                              <label class="form-check-label" for="pcdf"
-                                >Deficiência física</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="m-2">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="pcdi"
-                                name="pcdi"
-                                value="Sim"
-                                (change)="selecionaPCDIntelectual($event)"
-                              />
-                              <label class="form-check-label" for="pcdi"
-                                >Deficiência intelectual</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="m-2">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="pcdm"
-                                name="pcdm"
-                                value="Sim"
-                                (change)="selecionaPCDMultiplas($event)"
-                              />
-                              <label class="form-check-label" for="pcdm"
-                                >Múltiplas</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="m-2">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                id="pcdm"
-                                name="pcdm"
-                                value="Sim"
-                                (change)="selecionaPCD($event)"
-                              />
-                              <label class="form-check-label" for="pcdm"
-                                >Não Possuo</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
 
-                      <div *ngIf="tipo == 'pessoaJuridica'">
-                        <h2 class="text-justify">
-                          Sua empresa tem medidas de inclusão para:
-                        </h2>
+                        <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                          <input
+                            [(ngModel)]="usuario.nomeUsuario"
+                            type="text"
+                            class="form-control"
+                            id="nome"
+                            name="nome"
+                            placeholder="Nome completo"
+                            aria-describedby="Nome"
+                          />
+                        </div>
+
                         <div
-                          class="row d-flex flex-column justify-content-around"
+                          class="form-group"
+                          *ngIf="tipo == 'pessoaJuridica'"
                         >
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="m-2">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="lgbtqia"
-                                  name="lgbtqia"
-                                  value="Sim"
-                                  (change)="selecionaGeneroLBTQIA($event)"
-                                />
-                                <label class="form-check-label" for="lgbtqia"
-                                  >Comunidade LGBQIA+</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="m-2">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="trans"
-                                  name="trans"
-                                  value="Sim"
-                                  (change)="selecionaGeneroTrans($event)"
-                                />
-                                <label class="form-check-label" for="trans"
-                                  >Comunidade Trans</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="m-2">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="mulheres"
-                                  name="mulheres"
-                                  value="Sim"
-                                  (change)="selecionaGeneroMulher($event)"
-                                />
-                                <label class="form-check-label" for="mulheres"
-                                  >Mulheres</label
-                                >
-                              </div>
-                            </div>
-                          </div>
+                          <input
+                            [(ngModel)]="usuario.nomeUsuario"
+                            type="text"
+                            class="form-control"
+                            id="empresa"
+                            name="empresa"
+                            placeholder="Nome da sua empresa"
+                            aria-describedby="Empresa"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            *ngIf="tipo == 'pessoaFisica'"
+                            [(ngModel)]="usuario.foto"
+                            type="string"
+                            class="form-control my-2"
+                            id="foto"
+                            name="foto"
+                            placeholder="Link da sua foto"
+                            aria-describedby="foto"
+                          />
+
+                          <input
+                            *ngIf="tipo == 'pessoaJuridica'"
+                            [(ngModel)]="usuario.foto"
+                            type="string"
+                            class="form-control my-2"
+                            id="foto"
+                            name="foto"
+                            placeholder="Link do seu logo"
+                            aria-describedby="foto"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <input
+                            [(ngModel)]="usuario.email"
+                            type="email"
+                            class="form-control my-2"
+                            id="email"
+                            name="email"
+                            placeholder="E-mail"
+                            aria-describedby="email"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <input
+                            (input)="confirmaSenha($event)"
+                            type="password"
+                            class="form-control my-2"
+                            id="senha"
+                            name="senha"
+                            placeholder="Senha"
+                            aria-describedby="senha"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            [(ngModel)]="usuario.senha"
+                            type="password"
+                            class="form-control my-2"
+                            id="confirmSenha"
+                            name="confirmSenha"
+                            placeholder="Confirme a senha"
+                            aria-describedby="confirmSenha"
+                          />
+                        </div>
+                      </section>
+
+                      <section *ngIf="step == 2">
+                        <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                          <select
+                            name="sexualidade"
+                            id="sexualidade"
+                            class="form-control"
+                            (change)="selecionaSexualidade($event)"
+                          >
+                            <option value="">Sexualidade</option>
+                            <option value="Lesbica">Lésbica</option>
+                            <option value="Gay">Gay</option>
+                            <option value="Bissexual">Bissexual</option>
+                            <option value="Pansexual">Pansexual</option>
+                            <option value="Assexual">Assexual</option>
+                            <option value="Queer">Queer</option>
+                            <option value="Heterossexual">Heterossexual</option>
+                            <option value="Prefiro Não Dizer">
+                              Prefiro não dizer
+                            </option>
+                            <option value="Outro">Outro</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                          <select
+                            name="genero"
+                            id="genero"
+                            class="form-control"
+                            (change)="selecionaGenero($event)"
+                          >
+                            <option value="">Gênero</option>
+                            <option value="Mulher Trans">Mulher trans</option>
+                            <option value="Homem Trans">Homem trans</option>
+                            <option value="Mulher Cis">Mulher cis</option>
+                            <option value="Homem Cis">Homem cis</option>
+                            <option value="Não Binario">Não binário</option>
+                            <option value="Agenero">Agênero</option>
+                            <option value="Prefiro Não Dizer">
+                              Prefiro não dizer
+                            </option>
+                            <option value="Outro">Outro</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                          <select
+                            name="etnia"
+                            id="etnia"
+                            class="form-control"
+                            (change)="selecionaEtnia($event)"
+                          >
+                            <option value="">Etnia</option>
+                            <option value="Branco">Branco</option>
+                            <option value="Amarelo">Amarelo</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Pardo">Pardo</option>
+                            <option value="Indígena">Indígena</option>
+                            <option value="Prefiro Não Dizer">
+                              Prefiro não dizer
+                            </option>
+                            <option value="outro">Outro</option>
+                          </select>
+                        </div>
+                        <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
+                          <h2 class="text-justify">
+                            Possui algum tipo de deficiência?:
+                          </h2>
                           <div class="col-md-12">
                             <div class="form-group">
                               <div class="m-2">
@@ -351,7 +195,7 @@
                                   (change)="selecionaPCDVisual($event)"
                                 />
                                 <label class="form-check-label" for="pcdv"
-                                  >PCD Visual</label
+                                  >Deficiência visual</label
                                 >
                               </div>
                             </div>
@@ -368,7 +212,7 @@
                                   (change)="selecionaPCDAuditiva($event)"
                                 />
                                 <label class="form-check-label" for="pcda"
-                                  >PCD Auditiva</label
+                                  >Deficiência auditiva</label
                                 >
                               </div>
                             </div>
@@ -385,7 +229,7 @@
                                   (change)="selecionaPCDFisica($event)"
                                 />
                                 <label class="form-check-label" for="pcdf"
-                                  >PCD física</label
+                                  >Deficiência física</label
                                 >
                               </div>
                             </div>
@@ -402,79 +246,239 @@
                                   (change)="selecionaPCDIntelectual($event)"
                                 />
                                 <label class="form-check-label" for="pcdi"
-                                  >PCD intelectual</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="m-2">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="pcdm"
-                                  name="pcdm"
-                                  value="Sim"
-                                  (change)="selecionaPCDMultiplas($event)"
-                                />
-                                <label class="form-check-label" for="pcdm"
-                                  >PCD múltiplas</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="m-2">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="comunNegros"
-                                  name="comunNegros"
-                                  value="Sim"
-                                  (change)="selecionaComunidadeNegra($event)"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="comunNegros"
-                                  >Comunidade Negra</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <div class="m-2">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="comunIndigenas"
-                                  name="comunIndigenas"
-                                  value="Sim"
-                                  (change)="selecionaComunidadeIndigena($event)"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="comunIndigenas"
-                                  >Comunidade Indígena</label
+                                  >Deficiência intelectual</label
                                 >
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div
-                        class="d-flex justify-content-center d-grid gap-2 mx-auto mt-4"
-                      >
-                        <button
-                          class="btn btn-lg"
-                          type="button"
-                          (click)="atualizar()"
+                        <div *ngIf="tipo == 'pessoaJuridica'">
+                          <h2 class="text-justify">
+                            Sua empresa tem medidas de inclusão para:
+                          </h2>
+                          <div
+                            class="row d-flex flex-column justify-content-around ml-1"
+                          >
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="lgbtqia"
+                                    name="lgbtqia"
+                                    value="Sim"
+                                    (change)="selecionaGeneroLBTQIA($event)"
+                                  />
+                                  <label class="form-check-label" for="lgbtqia"
+                                    >Comunidade LGBQIA+</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="trans"
+                                    name="trans"
+                                    value="Sim"
+                                    (change)="selecionaGeneroTrans($event)"
+                                  />
+                                  <label class="form-check-label" for="trans"
+                                    >Comunidade Trans</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="mulheres"
+                                    name="mulheres"
+                                    value="Sim"
+                                    (change)="selecionaGeneroMulher($event)"
+                                  />
+                                  <label class="form-check-label" for="mulheres"
+                                    >Mulheres</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="pcdv"
+                                    name="pcdv"
+                                    value="Sim"
+                                    (change)="selecionaPCDVisual($event)"
+                                  />
+                                  <label class="form-check-label" for="pcdv"
+                                    >PCD Visual</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="pcda"
+                                    name="pcda"
+                                    value="Sim"
+                                    (change)="selecionaPCDAuditiva($event)"
+                                  />
+                                  <label class="form-check-label" for="pcda"
+                                    >PCD Auditiva</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="pcdf"
+                                    name="pcdf"
+                                    value="Sim"
+                                    (change)="selecionaPCDFisica($event)"
+                                  />
+                                  <label class="form-check-label" for="pcdf"
+                                    >PCD física</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="pcdi"
+                                    name="pcdi"
+                                    value="Sim"
+                                    (change)="selecionaPCDIntelectual($event)"
+                                  />
+                                  <label class="form-check-label" for="pcdi"
+                                    >PCD intelectual</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="pcdm"
+                                    name="pcdm"
+                                    value="Sim"
+                                    (change)="selecionaPCDMultiplas($event)"
+                                  />
+                                  <label class="form-check-label" for="pcdm"
+                                    >PCD múltiplas</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="comunNegros"
+                                    name="comunNegros"
+                                    value="Sim"
+                                    (change)="selecionaComunidadeNegra($event)"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="comunNegros"
+                                    >Comunidade Negra</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
+                                <div class="m-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="comunIndigenas"
+                                    name="comunIndigenas"
+                                    value="Sim"
+                                    (change)="
+                                      selecionaComunidadeIndigena($event)
+                                    "
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="comunIndigenas"
+                                    >Comunidade Indígena</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <div>
+                        <div
+                          *ngIf="step == 1"
+                          class="d-flex justify-content-center"
                         >
-                          Atualizar Perfil
-                        </button>
+                          <button
+                            (click)="selecionaButton1()"
+                            class="btn btn-sm mr-1 button-option-1"
+                          ></button>
+                          <button
+                            (click)="selecionaButton2()"
+                            class="btn btn-sm ml-1 button-option-2"
+                          ></button>
+                        </div>
+                        <div
+                          *ngIf="step == 2"
+                          class="d-flex justify-content-center"
+                        >
+                          <button
+                            (click)="selecionaButton1()"
+                            class="btn btn-sm mr-1 button-option-2"
+                          ></button>
+                          <button
+                            (click)="selecionaButton2()"
+                            class="btn btn-sm ml-1 button-option-1"
+                          ></button>
+                        </div>
+                        <div
+                          *ngIf="step == 2"
+                          class="d-flex justify-content-center d-grid gap-2 mx-auto mt-4"
+                        >
+                          <button
+                            class="btn btn-lg"
+                            type="button"
+                            (click)="atualizar()"
+                          >
+                            Atualizar Perfil
+                          </button>
+                        </div>
                       </div>
                     </form>
                   </div>

@@ -34,6 +34,8 @@ export class UsuarioEditComponent implements OnInit {
   comunidadeNegra: string
   comunidadeIndigena: string
 
+  step: any = 1
+
   constructor(private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
@@ -44,6 +46,14 @@ export class UsuarioEditComponent implements OnInit {
     this.authService.refreshToken()
     this.idUsuario = this.route.snapshot.params['idUsuario']
     this.findByIdUser(this.idUsuario)
+  }
+
+  selecionaButton1() {
+    this.step = 1
+  }
+
+  selecionaButton2() {
+    this.step = 2
   }
 
   findByIdUser(id: number){

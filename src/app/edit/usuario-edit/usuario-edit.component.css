@@ -54,13 +54,17 @@ button:hover {
   color: #be4137;
 }
 
+.button-option-1 {
+  background-color: #be4137 !important;
+}
+
+.button-option-2 {
+  background-color: #e8dcda !important;
+}
+
 .card-style {
   border-radius: 30px;
   background-color: #fffaf8;
   border: none;
   box-shadow: 0.5px 1px 2px 2px #be4137;
-}
-
-input:checked {
-  background-color: #be4137 !important;
 }
