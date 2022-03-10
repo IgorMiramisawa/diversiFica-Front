@@ -1,0 +1,20 @@
+<div class="container ">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12">
+      <h1 class="text-center font-color m-5 ">Deseja apagar está vaga ?</h1>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-12" >
+      <h2  class="text-center">{{vaga.nomeVaga}}  </h2>
+    </div>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-md-12 d-flex justify-content-center  ">
+      <button class="btn nova-cor borda mt-0 mr-2" routerLink="/vagas-pj" > Não</button>
+      <button class="btn nova-cor borda " (click)="apagar()">Sim</button>
+    </div>
+  </div>
+</div>
+

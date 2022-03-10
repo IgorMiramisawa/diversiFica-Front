@@ -7,21 +7,21 @@
   <div class="row">
     <div class="mt-4 col-md-12 text-center">
       <img
-        src="{{foto}}"
+        src="{{ foto }}"
         alt="imagem do usuário"
         width="150px"
         height="150px"
         class="img-fluid rounded-circle borda-perfil"
       />
-      <p class="font-weight-bold">{{nome}}</p>
+      <p class="font-weight-bold">{{ nome }}</p>
 
       <!-- Icones de inclusão -->
-      
       <div class="d-flex justify-content-center mb-2">
         <img
+          *ngIf="pcdFisica === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas com deficiência Fisica."
+          title="Pessoa com deficiência Fisica."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/fisico.svg"
           alt=""
@@ -29,28 +29,77 @@
         />
 
         <img
+          *ngIf="pcdFisica === 'Não'"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas com deficiência Auditiva."
+          title="Pessoa sem deficiência Fisica."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/fisico.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdVisual === 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa com deficiência Auditiva."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/auditivo.svg"
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="pcdVisual === 'Não'"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas Indígenas."
+          title="Pessoa sem deficiência Auditiva."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/auditivo.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="indigena === 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa Indígena."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/cocar.svg"
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="indigena !== 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas com deficiência intelectual."
+          title="Pessoa não Indígena."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/cocar.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdintelectual === 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa com deficiência intelectual."
           class="mt-0 mr-2"
+          src="../../assets/imgs/ico/intelectual.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdintelectual !== 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa sem deficiência intelectual."
+          class="mt-0 mr-2 opacity"
           src="../../assets/imgs/ico/intelectual.svg"
           alt=""
           width="25px"
@@ -58,41 +107,106 @@
       </div>
       <div>
         <img
+          *ngIf="negro === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas Negras."
+          title="Pessoa Negra."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/negro.svg"
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="negro !== 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas com deficiência Visual."
+          title="Pessoa não Negra."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/negro.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdVisual === 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa com deficiência Visual."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/visual.svg"
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="pcdVisual !== 'Sim'"
+          class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas LGBTQIA+."
+          title="Pessoa sem deficiência Visual."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/visual.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="generoLgbtqia === 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa LGBTQIA+."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/lgbqia.svg"
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="generoLgbtqia !== 'Sim'"
+          class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
-          title="Empresa se adequa a pessoas Trans."
+          title="Pessoa não LGBTQIA+."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/lgbqia.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="generoTrans === 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa Trans."
           class="mt-0 mr-2"
           src="../../assets/imgs/ico/trans.svg"
           alt=""
           width="25px"
         />
+
+        <img
+          *ngIf="generoTrans !== 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Pessoa não Trans."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/trans.svg"
+          alt=""
+          width="25px"
+        />
+        <div class="mt-5">
+          <button
+            class="btn btn-outline-success nova-cor rounded-pill mt-3"
+            [routerLink]="['/usuario-edit', idUsuario]"
+          >
+            Atualizar Perfil
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -103,7 +217,7 @@
       <div class="col-md-10">
         <div class="card borda-div p-0">
           <p class="font-weight-bold textos p-2 pl-4">
-            {{nome}}, 31 anos, desenvolvedor.
+            {{ nome }}, 31 anos, desenvolvedor.
           </p>
           <p class="pl-4">Desenvolvedor FullStack</p>
         </div>
@@ -113,7 +227,9 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-10">
-            <h5 class="card-title">Experiências Profissionais (Em construção)</h5>
+            <h5 class="card-title">
+              Experiências Profissionais (Em construção)
+            </h5>
           </div>
           <div class="col-md-2 d-flex justify-content-end">
             <i
@@ -184,13 +300,13 @@
   <div class="row justify-content-center">
     <div class="mt-4 col-md-12 text-center">
       <img
-        src="{{foto}}"
+        src="{{ foto }}"
         alt="imagem do usuário"
         width="150px"
         height="150px"
         class="img-fluid rounded-circle borda-perfil"
       />
-      <p class="font-weight-bold mt-3">{{nome}}</p>
+      <p class="font-weight-bold mt-3">{{ nome }}</p>
 
       <!-- Rank de estrela -->
       <div>
@@ -201,14 +317,15 @@
           width="100px"
         />
         <!-- <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
-<div class="card">
-    <pre class="card-block card-header" style="margin:15px 0;">Rate: <b>{{rate}}</b> </pre>
-</div> -->
+        <div class="card">
+        <pre class="card-block card-header" style="margin:15px 0;">Rate: <b>{{rate}}</b> </pre>
+        </div> -->
       </div>
 
       <!-- Icones de inclusão -->
       <div class="d-flex justify-content-center mb-2">
         <img
+          *ngIf="pcdFisica === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas com deficiência Fisica."
@@ -219,6 +336,18 @@
         />
 
         <img
+          *ngIf="pcdFisica === 'Não'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas com deficiência Fisica."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/fisico.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdVisual === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas com deficiência Auditiva."
@@ -227,7 +356,20 @@
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="pcdVisual === 'Não'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas com deficiência Auditiva."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/auditivo.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="indigena === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas Indígenas."
@@ -236,7 +378,20 @@
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="indigena !== 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas Indígenas."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/cocar.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdintelectual === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas com deficiência intelectual."
@@ -245,9 +400,21 @@
           alt=""
           width="25px"
         />
+
+        <img
+          *ngIf="pcdintelectual !== 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas com deficiência intelectual."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/intelectual.svg"
+          alt=""
+          width="25px"
+        />
       </div>
       <div>
         <img
+          *ngIf="negro === 'Sim'"
           data-toggle="tooltip"
           data-placement="top"
           title="Empresa se adequa a pessoas Negras."
@@ -256,7 +423,20 @@
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="negro !== 'Sim'"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas Negras."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/negro.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="pcdVisual === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -266,7 +446,21 @@
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="pcdVisual !== 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas com deficiência Visual."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/visual.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="generoLgbtqia === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -276,7 +470,21 @@
           alt=""
           width="25px"
         />
+
         <img
+          *ngIf="generoLgbtqia !== 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas LGBTQIA+."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/lgbqia.svg"
+          alt=""
+          width="25px"
+        />
+
+        <img
+          *ngIf="generoTrans === 'Sim'"
           class="mt-0 mr-2"
           data-toggle="tooltip"
           data-placement="top"
@@ -286,12 +494,31 @@
           alt=""
           width="25px"
         />
-        <div>
+
+        <img
+          *ngIf="generoTrans !== 'Sim'"
+          class="mt-0 mr-2"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Empresa não se adequa a pessoas Trans."
+          class="mt-0 mr-2 opacity"
+          src="../../assets/imgs/ico/trans.svg"
+          alt=""
+          width="25px"
+        />
+
+        <div class="mt-5">
           <button
-            class="btn rounded-pill mt-5 borda-entrar text-white font-weight-bold"
+            class="btn rounded-pill mt-3 borda-entrar text-white font-weight-bold"
             type="button"
           >
             <span class="texto-entrar m-4">AVALIAR</span>
+          </button>
+          <button
+            class="btn btn-outline-success nova-cor rounded-pill mt-3"
+            [routerLink]="['/usuario-edit', idUsuario]"
+          >
+            Atualizar Perfil
           </button>
         </div>
       </div>
@@ -303,7 +530,7 @@
       <div class="col-md-10">
         <div class="card borda-div p-0">
           <p class="font-weight-bold textos p-2 pl-4">
-            {{nome}}, Prestadora de serviços de tecnologia.
+            {{ nome }}, Prestadora de serviços de tecnologia.
           </p>
           <p class="pl-4">Localizado na região leste de São Paulo</p>
         </div>
@@ -330,15 +557,22 @@
         </div>
         <div class="row">
           <div class="col-md-12 mt-3">
-            <p class="card-text">Vamos muito além do ERP com um portfólio completo de sistemas e plataformas para gestão de empresas de 8 segmentos de mercado, serviços financeiros e soluções de business performance.
-              Nos últimos cinco anos, investimos R$ 2 bilhões em pesquisa e desenvolvimento para atender as exigências dos nossos mais de 40 mil clientes entre micro, pequenas, médias e grandes – de norte a sul do Brasil.</p>
+            <p class="card-text">
+              Vamos muito além do ERP com um portfólio completo de sistemas e
+              plataformas para gestão de empresas de 8 segmentos de mercado,
+              serviços financeiros e soluções de business performance. Nos
+              últimos cinco anos, investimos R$ 2 bilhões em pesquisa e
+              desenvolvimento para atender as exigências dos nossos mais de 40
+              mil clientes entre micro, pequenas, médias e grandes – de norte a
+              sul do Brasil.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Precisamos decidir -->
-    
+
     <!-- <div class="collapse" id="collapseExample">
       <div class="card card-body borda-div mt-3 col-md-10 text-muted">
         <div class="row">
@@ -375,7 +609,9 @@
     <div class="row mt-4">
       <div class="col-md-10">
         <div class="card borda-div p-0">
-          <p class="font-weight-bold textos pl-4 mb-2 mt-3 text-muted">(EM CONSTRUÇÃO) Vagas Abertas</p>
+          <p class="font-weight-bold textos pl-4 mb-2 mt-3 text-muted">
+            (EM CONSTRUÇÃO) Vagas Abertas
+          </p>
           <div class="d-flex flex-column ponteiro">
             <a class="textos-vagas pl-4">Desenvolvedor Java</a>
             <a class="textos-vagas pl-4">Desenvolvedor Angular</a>

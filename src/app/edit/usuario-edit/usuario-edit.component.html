@@ -9,7 +9,7 @@
                 <div class="col-md-10">
                   <div class="card-body">
                     <div class="text-center">
-                      <h1 class="my-3">Cadastrar</h1>
+                      <h1 class="my-3">Atualizar Cadastro</h1>
                       <br />
                     </div>
 
@@ -174,7 +174,9 @@
                         </select>
                       </div>
                       <div class="form-group" *ngIf="tipo == 'pessoaFisica'">
-                        <h2 class="text-justify">Possui algum tipo de deficiência?:</h2>
+                        <h2 class="text-justify">
+                          Possui algum tipo de deficiência?:
+                        </h2>
                         <div class="col-md-12">
                           <div class="form-group">
                             <div class="m-2">
@@ -469,9 +471,9 @@
                         <button
                           class="btn btn-lg"
                           type="button"
-                          (click)="cadastrar()"
+                          (click)="atualizar()"
                         >
-                          Cadastrar
+                          Atualizar Perfil
                         </button>
                       </div>
                     </form>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
+import { VagasPjService } from '../service/vagas-pj.service';
 
 @Component({
   selector: 'app-usuarios-pf',
@@ -33,19 +34,18 @@ export class UsuariosPfComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private alertas: AlertasService
-
+    private alertas: AlertasService,
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
-    // if (environment.token == '') {
-    //   this.alertas.showAlertInfo(
-    //     'Sua seção expirou para sua segurança! Faça o login novamente!'
-    //   );
-    //   this.router.navigate(['/entrar']);
-    // }
+    if (environment.token == '') {
+      this.alertas.showAlertInfo(
+        'Sua seção expirou para sua segurança! Faça o login novamente!'
+      );
+      this.router.navigate(['/entrar']);
+    }
 
     this.authService.refreshToken()
   }

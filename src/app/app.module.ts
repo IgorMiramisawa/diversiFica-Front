@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ɵInternalFormsSharedModule } from '@angular/forms'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
@@ -21,6 +21,10 @@ import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { ProjetoComponent } from './projeto/projeto.component';
+import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component';
+import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -38,15 +42,20 @@ import { ProjetoComponent } from './projeto/projeto.component';
     VagasPfComponent,
     VagasPjComponent,
     UsuariosPfComponent,
-    ProjetoComponent
+    ProjetoComponent,
+    VagaDeleteComponent,
+    VagaEditComponent,
+    NotFoundComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule,
+    ɵInternalFormsSharedModule,
+    AppRoutingModule
   ],
   providers: [{
     provide: LocationStrategy,

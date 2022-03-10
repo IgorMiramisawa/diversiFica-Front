@@ -1,24 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
-import { Usuario } from '../model/Usuario';
-import { Vaga } from '../model/Vaga';
-import { AlertasService } from '../service/alertas.service';
-import { AuthService } from '../service/auth.service';
-import { VagasPjService } from '../service/vagas-pj.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { Vaga } from 'src/app/model/Vaga';
+import { AlertasService } from 'src/app/service/alertas.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { VagasPjService } from 'src/app/service/vagas-pj.service';
 
 @Component({
-  selector: 'app-vagas-pj',
-  templateUrl: './vagas-pj.component.html',
-  styleUrls: ['./vagas-pj.component.css']
+  selector: 'app-vaga-edit',
+  templateUrl: './vaga-edit.component.html',
+  styleUrls: ['./vaga-edit.component.css']
 })
-export class VagasPjComponent implements OnInit {
-  vaga: Vaga = new Vaga()
-  listaVagas: Vaga[]
+export class VagaEditComponent implements OnInit {
 
-  usuario: Usuario = new Usuario()
-  id = environment.idUsuario
+  vaga: Vaga = new Vaga()
 
   lgbia: string
   trans: string
@@ -33,27 +27,18 @@ export class VagasPjComponent implements OnInit {
   experiencia: string
   etnia: string
 
+  idVaga: number
 
-
-
-  constructor(
-    private router: Router,
+  constructor(private router: Router,
     private auth: AuthService,
     private vagaspj: VagasPjService,
-    public alertas: AlertasService
-  ) {
-  }
+    private route: ActivatedRoute,
+    public alertas: AlertasService,) { }
 
-  ngOnInit() {
-
-    window.scroll(0, 0)
+  ngOnInit(){
     this.auth.refreshToken()
-    this.findByIdUsuario()
-
-    if (environment.token == '') {
-      /*alert('Sua seção expirou, faça o login novament.')*/
-      this.router.navigate(['/entrar'])
-    }
+    this.idVaga = this.route.snapshot.params['id']
+    this.findByIdVaga(this.idVaga)
   }
 
   selecionaGeneroLgbia(event: any) {
@@ -104,13 +89,12 @@ export class VagasPjComponent implements OnInit {
     this.experiencia = event.target.value
   }
 
-  findByIdUsuario() {
-    this.auth.findByIdUsuario(this.id).subscribe((resp: Usuario) => {
-      this.usuario = resp
+  findByIdVaga(id: number) {
+    this.vagaspj.getByIdVagas(this.idVaga).subscribe((resp: Vaga) => {
+      this.vaga = resp
     })
   }
-  cadastrar() {
-
+  atualizar() {
     this.vaga.etnia = this.etnia
     this.vaga.lgbia = this.lgbia
     this.vaga.trans = this.trans
@@ -123,19 +107,11 @@ export class VagasPjComponent implements OnInit {
     this.vaga.dental = this.dental
     this.vaga.experiencia = this.experiencia
     this.vaga.remoto = this.remoto
-    this.usuario.idUsuario = environment.idUsuario
-    this.vaga.usuario = this.usuario
 
-    this.vagaspj.postVagas(this.vaga).subscribe((resp: Vaga) => {
+    this.vagaspj.putVagas(this.vaga).subscribe((resp: Vaga) => {
       this.vaga = resp
-
-
-      this.alertas.showAlertSuccess('Vaga Cadastrada com sucesso!')
-      console.log(this.vaga.idVaga)
-      this.findByIdUsuario()
-      this.vaga = new Vaga()
+      this.alertas.showAlertSuccess('Vaga Atualizada com sucesso!')
+      this.router.navigate(['/vagas-pj'])
     })
   }
-
-
 }
