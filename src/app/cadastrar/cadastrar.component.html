@@ -287,10 +287,10 @@
                             Sua empresa tem medidas de inclusão para:
                           </h2>
                           <div
-                            class="row d-flex flex-column justify-content-around"
+                            class="row d-flex flex-column justify-content-around ml-1"
                           >
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -306,8 +306,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -323,8 +323,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -340,8 +340,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -357,8 +357,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -374,8 +374,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -391,8 +391,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -408,8 +408,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -425,8 +425,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -444,8 +444,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
+                            <div class="col-md-12 m-0">
+                              <div class="form-group m-0">
                                 <div class="m-2">
                                   <input
                                     class="form-check-input"
@@ -468,9 +468,13 @@
                       </section>
 
                       <div>
-                        <div class="d-flex justify-content-center">
-                          <button [ngStyle]="{'backgroundColor1': backgroundColor1}" (click)="selecionaButton1()" id="button-option-1" class="btn btn-sm mr-1"></button>
-                          <button [ngStyle]="{'backgroundColor2': backgroundColor2}" (click)="selecionaButton2()" id="button-option-2" class="btn btn-sm ml-1"></button>
+                        <div *ngIf="step == 1" class="d-flex justify-content-center">
+                          <button (click)="selecionaButton1()" class="btn btn-sm mr-1 button-option-1"></button>
+                          <button (click)="selecionaButton2()" class="btn btn-sm ml-1 button-option-2"></button>
+                        </div>
+                        <div *ngIf="step == 2" class="d-flex justify-content-center">
+                          <button (click)="selecionaButton1()" class="btn btn-sm mr-1 button-option-2"></button>
+                          <button (click)="selecionaButton2()" class="btn btn-sm ml-1 button-option-1"></button>
                         </div>
                         <div *ngIf="step == 2"
                           class="d-flex justify-content-center d-grid gap-2 mx-auto mt-4"
