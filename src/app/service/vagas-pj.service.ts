@@ -34,18 +34,14 @@ export class VagasPjService {
   // Postar Vagas
   postVagas(vagas: Vaga): Observable<Vaga> {
     return this.http.post<Vaga>(
-      'https://diversificageneration.herokuapp.com/vagas/save',
-      vagas,
-      this.token
+      'https://diversificageneration.herokuapp.com/vagas/save',vagas,this.token
     );
   }
 
   // Atualizar Vagas
   putVagas(vagas: Vaga): Observable<Vaga> {
     return this.http.put<Vaga>(
-      'https://diversificageneration.herokuapp.com/vagas/update',
-      vagas,
-      this.token
+      'https://diversificageneration.herokuapp.com/vagas/update',vagas,this.token
     );
   }
 

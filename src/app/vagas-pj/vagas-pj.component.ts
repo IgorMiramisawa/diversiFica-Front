@@ -22,7 +22,6 @@ export class VagasPjComponent implements OnInit {
 
   lgbia: string
   trans: string
-
   pcdVisual: string
   pcdAuditiva: string
   pcdFisica: string
@@ -34,17 +33,14 @@ export class VagasPjComponent implements OnInit {
   experiencia: string
   etnia: string
 
-  nome: string
+
 
 
   constructor(
-
     private router: Router,
     private auth: AuthService,
     private vagaspj: VagasPjService,
-    public alertas: AlertasService,
-
-
+    public alertas: AlertasService
   ) {
   }
 
@@ -114,6 +110,7 @@ export class VagasPjComponent implements OnInit {
     })
   }
   cadastrar() {
+
     this.vaga.etnia = this.etnia
     this.vaga.lgbia = this.lgbia
     this.vaga.trans = this.trans
@@ -131,13 +128,14 @@ export class VagasPjComponent implements OnInit {
 
     this.vagaspj.postVagas(this.vaga).subscribe((resp: Vaga) => {
       this.vaga = resp
+
+
       this.alertas.showAlertSuccess('Vaga cadastrada')
+      console.log(this.vaga.idVaga)
       this.findByIdUsuario()
       this.vaga = new Vaga()
     })
   }
 
-  confirmar() {
-    this.vaga.nomeVaga = this.nome
-  }
+
 }
