@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Vaga } from '../model/Vaga';
 import { AuthService } from '../service/auth.service';
 import { VagasPjService } from '../service/vagas-pj.service';
