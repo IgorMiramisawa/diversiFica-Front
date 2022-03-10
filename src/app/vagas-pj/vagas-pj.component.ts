@@ -34,7 +34,7 @@ export class VagasPjComponent implements OnInit {
   etnia: string
 
 
-
+  step: any = 1
 
   constructor(
     private router: Router,
@@ -54,6 +54,18 @@ export class VagasPjComponent implements OnInit {
       /*alert('Sua seção expirou, faça o login novament.')*/
       this.router.navigate(['/entrar'])
     }
+  }
+
+  selecionaButton1() {
+    this.step = 1
+  }
+
+  selecionaButton2() {
+    this.step = 2
+  }
+
+  selecionaButton3() {
+    this.step = 3
   }
 
   selecionaGeneroLgbia(event: any) {
@@ -128,11 +140,9 @@ export class VagasPjComponent implements OnInit {
 
     this.vagaspj.postVagas(this.vaga).subscribe((resp: Vaga) => {
       this.vaga = resp
-
-
       this.alertas.showAlertSuccess('Vaga Cadastrada com sucesso!')
-      console.log(this.vaga.idVaga)
       this.findByIdUsuario()
+      this.selecionaButton1()
       this.vaga = new Vaga()
     })
   }
