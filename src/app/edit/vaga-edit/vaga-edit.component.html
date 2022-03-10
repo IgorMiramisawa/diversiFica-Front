@@ -50,9 +50,16 @@
                           <label for="salario">Salário da Vaga</label>
                           <input
                             [(ngModel)]="vaga.salario"
-                            type="number"
                             class="form-control"
                             id="salario"
+                            currencyMask
+                            [options]="{
+                              prefix: 'R$',
+                              thousands: '.',
+                              decimal: ',',
+                              align: 'left',
+                              allowNegative: false
+                            }"
                             placeholder="Digite o salario"
                           />
                         </div>
