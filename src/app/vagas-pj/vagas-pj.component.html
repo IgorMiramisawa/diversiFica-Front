@@ -25,7 +25,7 @@
                     <div class="col-md-6">
                       <h5 class="card-title">{{ usuario.nomeUsuario }}</h5>
                     </div>
-                    <div class="col-md-5 d-flex justify-content-between">
+                    <div class="col-md-5 d-flex justify-content-end">
                       <img
                         *ngIf="vaga.etnia === 'negro'"
                         class="mt-0 mr-3"
@@ -67,6 +67,68 @@
                         width="25px"
                       />
                       <img
+                        *ngIf="vaga.beneficios != ''"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="{{ vaga.beneficios }}"
+                        src="../../assets/imgs/ico/beneficios.svg"
+                        alt="{{ vaga.beneficios }}"
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.beneficios === ''"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não possui beneficios."
+                        src="../../assets/imgs/ico/beneficios.svg"
+                        alt="Empresa não possui beneficios."
+                        width="25px"
+                      />
+                      <ng-container >
+                      <img
+                        *ngIf="vaga.salario != 0"
+                        class="mt-0 mr-3"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="{{ vaga.salario }}"
+                        src="../../assets/imgs/ico/salario.svg"
+                        alt="{{ vaga.salario }}"
+                        width="25px"
+                      />
+                      <img
+                        *ngIf="vaga.salario === 0"
+                        class="mt-0 mr-3 opacity"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Empresa não possui Salario."
+                        src="../../assets/imgs/ico/salario.svg"
+                        alt="Empresa não possui Salario."
+                        width="25px"
+                      />
+                      </ng-container>
+                      <img
+                      *ngIf="vaga.descricao != ''"
+                      class="mt-0 mr-3"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="{{ vaga.descricao }}."
+                      src="../../assets/imgs/ico/descricao.svg"
+                      alt="{{ vaga.descricao }}"
+                      width="25px"
+                    />
+                    <img
+                      *ngIf="vaga.descricao === ''"
+                      class="mt-0 mr-3 opacity"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Empresa não possui Descrição."
+                      src="../../assets/imgs/ico/descricao.svg"
+                      alt="Empresa não possui Descrição."
+                      width="25px"
+                    />
+                      <img
                         *ngIf="vaga.trans === 'Sim'"
                         class="mt-0 mr-3"
                         data-toggle="tooltip"
@@ -91,9 +153,9 @@
                         class="mt-0 mr-3"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa não se adequa a pessoas LGBIA+."
+                        title="Empresa se adequa a pessoas LGBIA+."
                         src="../../assets/imgs/ico/lgbqia.svg"
-                        alt="Empresa não se adequa a pessoas LGBIA+."
+                        alt="Empresa se adequa a pessoas LGBIA+."
                         width="25px"
                       />
                       <img
