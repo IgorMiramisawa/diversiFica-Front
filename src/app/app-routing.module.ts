@@ -6,6 +6,7 @@ import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component'
 import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'vagas-pj', component: VagasPjComponent},
   {path: 'usuarios-pf', component:UsuariosPfComponent},
   {path: 'vaga-delete/:id', component:VagaDeleteComponent},
-  {path: 'vaga-edit/:id' , component:VagaEditComponent}
+  {path: 'vaga-edit/:id' , component:VagaEditComponent},
+  {path: '**' , component:NotFoundComponent}
 ]
 
 @NgModule({
