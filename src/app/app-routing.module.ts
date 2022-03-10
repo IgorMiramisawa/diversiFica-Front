@@ -9,6 +9,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { TermosComponent } from './termos/termos.component';
 import { UsuariosPfComponent } from './usuarios-pf/usuarios-pf.component';
 import { VagasPfComponent } from './vagas-pf/vagas-pf.component';
 import { VagasPjComponent } from './vagas-pj/vagas-pj.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'vaga-delete/:id', component:VagaDeleteComponent},
   {path: 'vaga-edit/:id' , component:VagaEditComponent},
   {path: 'usuario-edit/:idUsuario' , component:UsuarioEditComponent},
+  {path: 'termo' , component:TermosComponent},
   {path: '**' , component:NotFoundComponent}
 ]
 
