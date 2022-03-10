@@ -29,6 +29,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 
+
 registerLocaleData(localept, 'pt');
 @NgModule({
   declarations: [
