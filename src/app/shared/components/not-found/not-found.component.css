@@ -1,12 +1,17 @@
+.row{
+    background-image: url(../../../../assets/imgs/bgs/bgError.svg);
+    background-size: cover;
+    background-position: 100% 40%;
+    background-repeat: no-repeat;
+}
+
 .titulo{
     color: #BE4137;
     margin-top: 2rem;
-    margin-bottom: 1rem;
 }
 
 .subtitulo{
     color: #1C0200;
-    margin: 1rem;
 }
 
 .texto{
