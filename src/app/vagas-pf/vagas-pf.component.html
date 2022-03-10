@@ -19,162 +19,54 @@
                       </h5>
                     </div>
                     <div class="col-md-5 d-flex justify-content-end">
-                      <img
-                        *ngIf="vagas.etnia === 'negro'"
-                        class="mt-0 mr-3"
-                        data-toggle="tooltip"
-                        data-placement="top"
+                      <img *ngIf="vagas.etnia === 'negro'" class="mt-0 mr-3" data-toggle="tooltip" data-placement="top"
                         title="Empresa se adequa a pessoas Negras."
-                        class="mt-0 mr-2"
-                        src="../../assets/imgs/ico/negro.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.etnia !== 'negro'"
-                        class="mt-0 mr-3 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas Negras."
-                        src="../../assets/imgs/ico/negro.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.etnia === 'indigena'"
-                        class="mt-0 mr-3"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa se adequa a pessoas Indígenas."
-                        src="../../assets/imgs/ico/cocar.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.etnia !== 'indigena'"
-                        class="mt-0 mr-3 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas Indígenas."
-                        src="../../assets/imgs/ico/cocar.svg"
-                        alt=""
-                        width="25px"
-                      />
+                        src="../../assets/imgs/ico/negro.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.etnia !== 'negro'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas Negras."
+                        src="../../assets/imgs/ico/negro.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.etnia === 'indigena'" class="mt-0 mr-3" data-toggle="tooltip"
+                        data-placement="top" title="Empresa se adequa a pessoas Indígenas."
+                        src="../../assets/imgs/ico/cocar.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.etnia !== 'indigena'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas Indígenas."
+                        src="../../assets/imgs/ico/cocar.svg" alt="" width="25px" />
 
-                      <img
-                        *ngIf="vagas.trans === 'Sim'"
-                        class="mt-0 mr-4"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa se adequa a pessoas Trans."
-                        src="../../assets/imgs/ico/trans.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.trans === 'Não'"
-                        class="mt-0 mr-4 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas Trans."
-                        src="../../assets/imgs/ico/trans.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdVisual === 'Sim'"
-                        class="mt-0 mr-4"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência Visual."
-                        src="../../assets/imgs/ico/visual.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdVisual === 'Não'"
-                        class="mt-0 mr-4 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas com deficiência Visual."
-                        src="../../assets/imgs/ico/visual.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdAuditiva === 'Sim'"
-                        class="mt-0 mr-4"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência Auditiva."
-                        src="../../assets/imgs/ico/auditivo.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdAuditiva === 'Não'"
-                        class="mt-0 mr-4 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas com deficiência Auditiva."
-                        src="../../assets/imgs/ico/auditivo.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdIntelectual === 'Sim'"
-                        class="mt-0 mr-4"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência intelectual."
-                        src="../../assets/imgs/ico/intelectual.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdIntelectual === 'Não'"
-                        class="mt-0 mr-4 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas com deficiência intelectual."
-                        src="../../assets/imgs/ico/intelectual.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdFisica === 'Sim'"
-                        class="mt-0 mr-4"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa se adequa a pessoas com deficiência Fisica."
-                        src="../../assets/imgs/ico/fisico.svg"
-                        alt=""
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.pcdFisica === 'Não'"
-                        class="mt-0 mr-4 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não se adequa a pessoas com deficiência Fisica."
-                        src="../../assets/imgs/ico/fisico.svg"
-                        alt=""
-                        width="25px"
-                      />
+                      <img *ngIf="vagas.trans === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip" data-placement="top"
+                        title="Empresa se adequa a pessoas Trans." src="../../assets/imgs/ico/trans.svg" alt=""
+                        width="25px" />
+                      <img *ngIf="vagas.trans === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas Trans."
+                        src="../../assets/imgs/ico/trans.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdVisual === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip"
+                        data-placement="top" title="Empresa se adequa a pessoas com deficiência Visual."
+                        src="../../assets/imgs/ico/visual.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdVisual === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência Visual."
+                        src="../../assets/imgs/ico/visual.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdAuditiva === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip"
+                        data-placement="top" title="Empresa se adequa a pessoas com deficiência Auditiva."
+                        src="../../assets/imgs/ico/auditivo.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdAuditiva === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência Auditiva."
+                        src="../../assets/imgs/ico/auditivo.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdIntelectual === 'Sim'" class="mt-0 mr-3" data-toggle="tooltip"
+                        data-placement="top" title="Empresa se adequa a pessoas com deficiência intelectual."
+                        src="../../assets/imgs/ico/intelectual.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdIntelectual === 'Não'" class="mt-0 mr-3 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência intelectual."
+                        src="../../assets/imgs/ico/intelectual.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdFisica === 'Sim'" class="mt-0 mr-4" data-toggle="tooltip"
+                        data-placement="top" title="Empresa se adequa a pessoas com deficiência Fisica."
+                        src="../../assets/imgs/ico/fisico.svg" alt="" width="25px" />
+                      <img *ngIf="vagas.pcdFisica === 'Não'" class="mt-0 mr-4 opacity" data-toggle="tooltip"
+                        data-placement="top" title="Empresa não se adequa a pessoas com deficiência Fisica."
+                        src="../../assets/imgs/ico/fisico.svg" alt="" width="25px" />
                     </div>
-                    <div
-                      class="col-md-1 d-flex justify-content-end"
-                      *ngIf="auth.logado()"
-                    >
-                      <i
-                        class="fa fa-angle-down"
-                        aria-hidden="true"
-                        data-toggle="collapse"
-                        attr.href="#collapse-{{ vagas.idVaga }}"
-                        role="button"
-                        aria-expanded="false"
-                        attr.aria-controls="collapse-{{ vagas.idVaga }}"
-                      ></i>
+                    <div class="col-md-1 d-flex justify-content-end" *ngIf="auth.logado()">
+                      <i class="fa fa-angle-down" aria-hidden="true" data-toggle="collapse"
+                        attr.href="#collapse-{{ vagas.idVaga }}" role="button" aria-expanded="false"
+                        attr.aria-controls="collapse-{{ vagas.idVaga }}"></i>
                     </div>
                   </div>
                   <div class="row">
@@ -208,9 +100,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-2">
-                      <span class="text-center font-weight-bold"
-                        >Benefícios</span
-                      >
+                      <span class="text-center font-weight-bold">Benefícios</span>
                       <span class="text-center">
                         {{ vagas.beneficios }}
                       </span>
@@ -218,16 +108,11 @@
                   </div>
                   <div class="row mt-2">
                     <div class="col-md-12 mt-2">
-                      <a
-                        class="btn btn-outline-success nova-cor rounded-pill"
-                        href="mailto:{{
+                      <a class="btn btn-outline-success nova-cor rounded-pill" href="mailto:{{
                           vagas.usuario.email
                         }}?Subject=Cadastro%20para%Participar%Da%Vaga:%20{{
                           vagas.nomeVaga
-                        }}"
-                        target="_top"
-                        >Enviar Curriculum</a
-                      >
+                        }}" target="_top">Enviar Curriculum</a>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,11 @@
+.nova-cor {
+  color: #be4137 !important;
+  border-color: #be4137 !important;
+}
+.borda {
+  box-shadow: 0px 2px 1px #be4137;
+  border-radius: 20px;
+}
+.font-color {
+  color: #be4137;
+}
