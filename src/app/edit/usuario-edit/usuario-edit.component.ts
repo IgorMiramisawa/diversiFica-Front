@@ -181,6 +181,7 @@ export class UsuarioEditComponent implements OnInit {
       if(this.comunidadeIndigena == null){
         this.usuario.indigena = "Não"
       }
+      console.log(this.usuario)
       this.authService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(["/login"])

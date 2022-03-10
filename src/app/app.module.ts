@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ɵInternalFormsSharedModule } from '@angular/forms'
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrderModule } from 'ngx-order-pipe';
+import localept from '@angular/common/locales/pt';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +27,9 @@ import { VagaDeleteComponent } from './delete/vaga-delete/vaga-delete.component'
 import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
-
+registerLocaleData(localept, 'pt');
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     VagaDeleteComponent,
     VagaEditComponent,
     NotFoundComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,11 +58,13 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     ModalModule.forRoot(),
     OrderModule,
     ɵInternalFormsSharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CurrencyMaskModule
   ],
   providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
+    provide: LOCALE_ID,
+    useClass: HashLocationStrategy,
+    useValue: 'pt'
   }],
   bootstrap: [AppComponent]
 })
