@@ -28,6 +28,7 @@ import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { EsqueceuComponent } from './esqueceu/esqueceu.component';
 
 
 registerLocaleData(localept, 'pt');
@@ -51,6 +52,7 @@ registerLocaleData(localept, 'pt');
     VagaEditComponent,
     NotFoundComponent,
     UsuarioEditComponent,
+    EsqueceuComponent,
   ],
   imports: [
     BrowserModule,

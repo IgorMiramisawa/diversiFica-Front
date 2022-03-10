@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'vaga-delete/:id', component:VagaDeleteComponent},
   {path: 'vaga-edit/:id' , component:VagaEditComponent},
   {path: 'usuario-edit/:idUsuario' , component:UsuarioEditComponent},
-  {path: 'termo' , component:TermosComponent},
+  {path: 'termos' , component:TermosComponent},
   {path: 'projeto' , component:ProjetoComponent},
   {path: '**' , component:NotFoundComponent}
 ]
