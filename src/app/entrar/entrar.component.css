@@ -1,7 +1,10 @@
 .bg-digital{
-background: url(../../assets/imgs/ico/bgDigital.svg);
-background-repeat: no-repeat;
-background-size:contain;
+  background-image: url(../../assets/imgs/bgs/bgHome.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  background-position-y: center;
+  margin-bottom: 1rem;
 }
 
 .borda-div{
@@ -13,11 +16,11 @@ background-size:contain;
   border: 1px solid #be4137;
 }
 .borda-entrar{
-border-radius: 10%;
-border: 3px solid #be4137;
+  border-radius: 10%;
+  border: 3px solid #be4137;
 }
 .texto-entrar{
-color: #be4137;
+  color: #be4137;
 }
 .textos{
   font-size: 8pt;
