@@ -32,10 +32,6 @@ export class CadastrarComponent implements OnInit {
   comunidadeIndigena: string
 
   step: any = 1
-  backgroundColor1: any
-  backgroundColor2: any
-  button1: any = document.getElementById('button-option-1')
-  button2: any = document.getElementById('button-option-2')
 
   constructor(
     private authService: AuthService,
@@ -49,18 +45,10 @@ export class CadastrarComponent implements OnInit {
 
   selecionaButton1() {
     this.step = 1
-    this.backgroundColor1 = '#BE4137'
-    this.backgroundColor2 = '#E8DCDA'
-    this.button2 = this.backgroundColor2
-    this.button1 = this.backgroundColor1
   }
 
   selecionaButton2() {
     this.step = 2
-    this.backgroundColor2 = '#BE4137'
-    this.backgroundColor1 = '#E8DCDA'
-    this.button2 = this.backgroundColor1
-    this.button1 = this.backgroundColor2
   }
 
   selecionaTipo(event: any) {
