@@ -124,7 +124,7 @@ export class CadastrarComponent implements OnInit {
     this.usuario.negro = this.comunidadeNegra
     this.usuario.indigena = this.comunidadeIndigena
     if (this.usuario.senha != this.confirmSenha) {
-      this.alertas.showAlertWarning("Tipo de usuário precisa estar selecionado")
+      this.alertas.showAlertWarning("As senhas precisam estár iguais!")
     } else {
       if(this.generoLgbtqia == null){
         this.usuario.generoLgbtqia = "Não"

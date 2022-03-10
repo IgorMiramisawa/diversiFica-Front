@@ -130,7 +130,7 @@ export class VagasPjComponent implements OnInit {
       this.vaga = resp
 
 
-      this.alertas.showAlertSuccess('Vaga cadastrada')
+      this.alertas.showAlertSuccess('Vaga Cadastrada com sucesso!')
       console.log(this.vaga.idVaga)
       this.findByIdUsuario()
       this.vaga = new Vaga()
