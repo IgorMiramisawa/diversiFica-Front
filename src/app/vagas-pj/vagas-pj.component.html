@@ -273,7 +273,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <span class="font-weight-bold">Salário:</span>
-                      <span> {{ vaga.salario }}</span>
+                      <span> {{ vaga.salario | currency: "BRL" }}</span>
                     </div>
                     <div class="col-md-12 mt-2">
                       <span class="font-weight-bold">Cargo:</span>
@@ -387,9 +387,16 @@
             <label for="salario">Salário da Vaga</label>
             <input
               [(ngModel)]="vaga.salario"
-              type="number"
               class="form-control"
               id="salario"
+              currencyMask
+              [options]="{
+                prefix: 'R$',
+                thousands: '.',
+                decimal: ',',
+                align: 'left',
+                allowNegative: false
+              }"
               placeholder="Digite o salario"
             />
           </div>
