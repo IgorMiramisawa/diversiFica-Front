@@ -15,208 +15,273 @@
                   <div class="row"></div>
                   <div class="row d-flex justify-content-center">
                     <div class="col-md-8">
-                      <div class="form-group">
-                        <label for="nomeVaga">Nome da Vaga</label>
-                        <input
-                          [(ngModel)]="vaga.nomeVaga"
-                          type="text"
+                      <section *ngIf="step == 1">
+                        <div class="form-group">
+                          <label for="nomeVaga">Nome da Vaga</label>
+                          <input
+                            [(ngModel)]="vaga.nomeVaga"
+                            type="text"
+                            class="form-control"
+                            id="nomeVaga"
+                            placeholder="Digite o nome da vaga"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="descricaoVaga">Descrição da Vaga</label>
+                          <input
+                            [(ngModel)]="vaga.descricao"
+                            type="text"
+                            class="form-control"
+                            id="descricaoVaga"
+                            placeholder="Digite a descrição da vaga"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="cargoVaga">Cargo da Vaga</label>
+                          <input
+                            [(ngModel)]="vaga.cargo"
+                            type="text"
+                            class="form-control"
+                            id="cargoVaga"
+                            placeholder="Digite o cargo"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="salario">Salário da Vaga</label>
+                          <input
+                            [(ngModel)]="vaga.salario"
+                            type="number"
+                            class="form-control"
+                            id="salario"
+                            placeholder="Digite o salario"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="beneficiosVaga">Benefícios da Vaga</label>
+                          <input
+                            [(ngModel)]="vaga.beneficios"
+                            type="text"
+                            class="form-control"
+                            id="beneficiosVaga"
+                            placeholder="Digite os benefícios"
+                          />
+                        </div>
+                      </section>
+                      <section *ngIf="step == 2">
+                        <label for="convenio">Oferece convênio?</label>
+                        <select
+                          (change)="selecionaConvenio($event)"
                           class="form-control"
-                          id="nomeVaga"
-                          placeholder="Digite o nome da vaga"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="descricaoVaga">Descrição da Vaga</label>
-                        <input
-                          [(ngModel)]="vaga.descricao"
-                          type="text"
-                          class="form-control"
-                          id="descricaoVaga"
-                          placeholder="Digite a descrição da vaga"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="cargoVaga">Cargo da Vaga</label>
-                        <input
-                          [(ngModel)]="vaga.cargo"
-                          type="text"
-                          class="form-control"
-                          id="cargoVaga"
-                          placeholder="Digite o cargo"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="salario">Salário da Vaga</label>
-                        <input
-                          [(ngModel)]="vaga.salario"
-                          type="number"
-                          class="form-control"
-                          id="salario"
-                          placeholder="Digite o salario"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="beneficiosVaga">Benefícios da Vaga</label>
-                        <input
-                          [(ngModel)]="vaga.beneficios"
-                          type="text"
-                          class="form-control"
-                          id="beneficiosVaga"
-                          placeholder="Digite os benefícios"
-                        />
-                      </div>
-                      <label for="convenio">Possui convênio</label>
-                      <select
-                        (change)="selecionaConvenio($event)"
-                        class="form-control"
-                        name="convenio"
-                        id="convenio"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="dental">Possui dental</label>
-                      <select
-                        (change)="selecionaDental($event)"
-                        class="form-control"
-                        name="dental"
-                        id="dental"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="remoto">Possui remoto</label>
-                      <select
-                        (change)="selecionaRemoto($event)"
-                        class="form-control"
-                        name="remoto"
-                        id="remoto"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="intelectual"
-                        >Possui deficiência intelectual</label
-                      >
-                      <select
-                        (change)="selecionaPCDIntelectual($event)"
-                        class="form-control"
-                        name="intelectual"
-                        id="intelectual"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="fisica">Possui deficiência física</label>
-                      <select
-                        (change)="selecionaPCDFisica($event)"
-                        class="form-control"
-                        name="fisica"
-                        id="fisica"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="visual">Possui deficiência visual</label>
-                      <select
-                        (change)="selecionaPCDVisual($event)"
-                        class="form-control"
-                        name="visual"
-                        id="visual"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="auditiva">Possui deficiência Auditiva</label>
-                      <select
-                        (change)="selecionaPCDAuditiva($event)"
-                        class="form-control"
-                        name="auditiva"
-                        id="auditiva"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="multiplas"
-                        >Possui deficiência multíplas</label
-                      >
-                      <select
-                        (change)="selecionaPCDMultiplas($event)"
-                        class="form-control"
-                        name="multiplas"
-                        id="multiplas"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="lgbia">LGBIA</label>
-                      <select
-                        (change)="selecionaGeneroLgbia($event)"
-                        class="form-control"
-                        name="lgbia"
-                        id="lgbia"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="trans">TRANS</label>
-                      <select
-                        (change)="selecionaGeneroTrans($event)"
-                        class="form-control"
-                        name="trans"
-                        id="trans"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="experiencia">Necessário experiência</label>
-                      <select
-                        (change)="selecionaExperiencia($event)"
-                        class="form-control"
-                        name="experiencia"
-                        id="experiencia"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="Sim">Sim</option>
-                        <option value="Não">Não</option>
-                      </select>
-                      <label for="etnia">Etnia</label>
-                      <select
-                        (change)="selecionaEtnia($event)"
-                        class="form-control"
-                        name="etnia"
-                        id="etnia"
-                      >
-                        <option>Selecione a opção</option>
-                        <option value="negro">Negro</option>
-                        <option value="indigena">Indígena</option>
-                        <option value="outro">Outro</option>
-                      </select>
-                      <div class="mt-4 d-flex justify-content-center">
-                        <button
-                          type="button"
-                          class="btn nova-cor rounded-pill mr-3"
-                          routerLink="/vagas-pj"
+                          name="convenio"
+                          id="convenio"
                         >
-                          Voltar
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-outline-success nova-cor rounded-pill"
-                          (click)="atualizar()"
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="dental">Oferece Plano dental?</label>
+                        <select
+                          (change)="selecionaDental($event)"
+                          class="form-control"
+                          name="dental"
+                          id="dental"
                         >
-                          Atualizar
-                        </button>
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="remoto">Trabalho Remoto?</label>
+                        <select
+                          (change)="selecionaRemoto($event)"
+                          class="form-control"
+                          name="remoto"
+                          id="remoto"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                      </section>
+                      <section *ngIf="step == 3">
+                        <label for="intelectual"
+                          >Possui deficiência intelectual</label
+                        >
+                        <select
+                          (change)="selecionaPCDIntelectual($event)"
+                          class="form-control"
+                          name="intelectual"
+                          id="intelectual"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="fisica">Possui deficiência física</label>
+                        <select
+                          (change)="selecionaPCDFisica($event)"
+                          class="form-control"
+                          name="fisica"
+                          id="fisica"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="visual">Possui deficiência visual</label>
+                        <select
+                          (change)="selecionaPCDVisual($event)"
+                          class="form-control"
+                          name="visual"
+                          id="visual"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="auditiva"
+                          >Possui deficiência Auditiva</label
+                        >
+                        <select
+                          (change)="selecionaPCDAuditiva($event)"
+                          class="form-control"
+                          name="auditiva"
+                          id="auditiva"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="multiplas"
+                          >Possui deficiência multíplas</label
+                        >
+                        <select
+                          (change)="selecionaPCDMultiplas($event)"
+                          class="form-control"
+                          name="multiplas"
+                          id="multiplas"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="lgbia">LGBIA</label>
+                        <select
+                          (change)="selecionaGeneroLgbia($event)"
+                          class="form-control"
+                          name="lgbia"
+                          id="lgbia"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="trans">TRANS</label>
+                        <select
+                          (change)="selecionaGeneroTrans($event)"
+                          class="form-control"
+                          name="trans"
+                          id="trans"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="experiencia">Necessário experiência</label>
+                        <select
+                          (change)="selecionaExperiencia($event)"
+                          class="form-control"
+                          name="experiencia"
+                          id="experiencia"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="Sim">Sim</option>
+                          <option value="Não">Não</option>
+                        </select>
+                        <label for="etnia">Etnia</label>
+                        <select
+                          (change)="selecionaEtnia($event)"
+                          class="form-control"
+                          name="etnia"
+                          id="etnia"
+                        >
+                          <option>Selecione a opção</option>
+                          <option value="negro">Negro</option>
+                          <option value="indigena">Indígena</option>
+                          <option value="outro">Outro</option>
+                        </select>
+                        <div
+                          *ngIf="step == 3"
+                          class="d-flex justify-content-center d-grid gap-2 mt-4"
+                        >
+                          <button
+                            type="button"
+                            class="btn nova-cor rounded-pill mr-3"
+                            routerLink="/vagas-pj"
+                          >
+                            Voltar
+                          </button>
+                          <button
+                            *ngIf="step == 3"
+                            class="btn nova-cor rounded-pill"
+                            type="button"
+                            (click)="atualizar()"
+                          >
+                            Atualizar Vaga
+                          </button>
+                        </div>
+                      </section>
+                      <div class="d-flex justify-content-center">
+                        <div
+                          *ngIf="step == 1"
+                          class="d-flex justify-content-center mt-3"
+                        >
+                          <button
+                            (click)="selecionaButton1()"
+                            class="btn buttonVagas btn-sm mr-1 button-option-1"
+                          ></button>
+                          <button
+                            (click)="selecionaButton2()"
+                            class="btn buttonVagas btn-sm ml-1 button-option-2"
+                          ></button>
+                          <button
+                            (click)="selecionaButton3()"
+                            class="btn buttonVagas btn-sm ml-1 button-option-2"
+                          ></button>
+                        </div>
+                        <div
+                          *ngIf="step == 2"
+                          class="d-flex justify-content-center mt-3"
+                        >
+                          <button
+                            (click)="selecionaButton1()"
+                            class="btn buttonVagas btn-sm mr-1 button-option-2"
+                          ></button>
+                          <button
+                            (click)="selecionaButton2()"
+                            class="btn buttonVagas btn-sm ml-1 button-option-1"
+                          ></button>
+                          <button
+                            (click)="selecionaButton3()"
+                            class="btn buttonVagas btn-sm ml-1 button-option-2"
+                          ></button>
+                        </div>
+                        <div
+                          *ngIf="step == 3"
+                          class="d-flex justify-content-center mt-3"
+                        >
+                          <button
+                            (click)="selecionaButton1()"
+                            class="btn buttonVagas btn-sm mr-1 button-option-2"
+                          ></button>
+                          <button
+                            (click)="selecionaButton2()"
+                            class="btn buttonVagas btn-sm ml-1 button-option-2"
+                          ></button>
+                          <button
+                            (click)="selecionaButton3()"
+                            class="btn buttonVagas btn-sm ml-1 button-option-1"
+                          ></button>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -42,6 +42,12 @@ export class UsuarioEditComponent implements OnInit {
     private alerts: AlertasService) { }
 
   ngOnInit(){
+    if (environment.token == '') {
+      this.alerts.showAlertInfo(
+        'Sua seção expirou para sua segurança! Faça o login novamente!'
+      );
+      this.router.navigate(['/entrar']);
+    }
     window.scroll(0,0)
     this.authService.refreshToken()
     this.idUsuario = this.route.snapshot.params['idUsuario']
