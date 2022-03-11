@@ -23,9 +23,16 @@
       <li class="nav-item active mr-4">
         <a class="nav-link font-color" routerLink="/inicio">HOME</a>
       </li>
-      <li class="nav-item mr-4 ml-4">
-        <a class="nav-link font-color" routerLink="/sobre">SOBRE</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SOBRE</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown">
+          <a class="dropdown-item" routerLink="/projeto">PROJETO</a>
+          <a class="dropdown-item" routerLink="/sobre">EQUIPE</a>
+          <a class="dropdown-item" routerLink="/contato">CONTATO</a>
+        </div>
       </li>
+
       <li class="nav-item mr-4 ml-4" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/vagas-pf">VAGAS</a>
       </li>

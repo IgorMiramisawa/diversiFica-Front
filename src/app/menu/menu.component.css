@@ -22,3 +22,29 @@
 .sair-config {
   cursor: pointer;
 }
+
+.dropdown-item{
+  color:#be4137;
+}
+
+.dropdown-item:hover{
+  color:#601009
+}
+
+.nav-link{
+  color:#be4137;
+}
+
+.nav-link:hover{
+  color:#601009;
+}
+
+.dropdown-menu{
+    background-color: #fffaf8;
+    min-width: 160px;
+    box-shadow: 0px 8px 8px 0px #6010094f;
+}
+
+.dropdown-menu a:hover{
+  background-color: #FFF3F1;
+}

@@ -17,6 +17,7 @@ export class UsuariosPfComponent implements OnInit {
   usuario: Usuario = new Usuario()
 
   idUsuario = environment.idUsuario
+  token = environment.token
   nome = environment.nomeUsuario
   foto = environment.foto
   tipo = environment.tipo

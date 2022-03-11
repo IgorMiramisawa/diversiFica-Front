@@ -71,9 +71,9 @@
                         class="mt-0 mr-3"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="{{ vaga.beneficios }}"
+                        title="Beneficios: {{ vaga.beneficios }}"
                         src="../../assets/imgs/ico/beneficios.svg"
-                        alt="{{ vaga.beneficios }}"
+                        alt="Beneficios: {{ vaga.beneficios }}"
                         width="25px"
                       />
                       <img
@@ -86,48 +86,48 @@
                         alt="Empresa não possui beneficios"
                         width="25px"
                       />
-                      <ng-container >
+                      <ng-container>
+                        <img
+                          *ngIf="vaga.salario != 0"
+                          class="mt-0 mr-3"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Salário: {{ vaga.salario | currency: 'BRL' }}"
+                          src="../../assets/imgs/ico/salario.svg"
+                          alt="Salário: {{ vaga.salario | currency: 'BRL' }}"
+                          width="25px"
+                        />
+                        <img
+                          *ngIf="vaga.salario === 0"
+                          class="mt-0 mr-3 opacity"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Empresa não possui salário"
+                          src="../../assets/imgs/ico/salario.svg"
+                          alt="Empresa não possui salário"
+                          width="25px"
+                        />
+                      </ng-container>
                       <img
-                        *ngIf="vaga.salario != 0"
+                        *ngIf="vaga.descricao != ''"
                         class="mt-0 mr-3"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="{{ vaga.salario }}"
-                        src="../../assets/imgs/ico/salario.svg"
-                        alt="{{ vaga.salario }}"
+                        title="Descrição: {{ vaga.descricao }}"
+                        src="../../assets/imgs/ico/descricao.svg"
+                        alt="Descrição: {{ vaga.descricao }}"
                         width="25px"
                       />
                       <img
-                        *ngIf="vaga.salario === 0"
+                        *ngIf="vaga.descricao === ''"
                         class="mt-0 mr-3 opacity"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Empresa não possui salário"
-                        src="../../assets/imgs/ico/salario.svg"
-                        alt="Empresa não possui salário"
+                        title="Empresa não possui descrição"
+                        src="../../assets/imgs/ico/descricao.svg"
+                        alt="Empresa não possui descrição"
                         width="25px"
                       />
-                      </ng-container>
-                      <img
-                      *ngIf="vaga.descricao != ''"
-                      class="mt-0 mr-3"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="{{ vaga.descricao }}."
-                      src="../../assets/imgs/ico/descricao.svg"
-                      alt="{{ vaga.descricao }}"
-                      width="25px"
-                    />
-                    <img
-                      *ngIf="vaga.descricao === ''"
-                      class="mt-0 mr-3 opacity"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Empresa não possui descrição"
-                      src="../../assets/imgs/ico/descricao.svg"
-                      alt="Empresa não possui descrição"
-                      width="25px"
-                    />
                       <img
                         *ngIf="vaga.trans === 'Sim'"
                         class="mt-0 mr-3"
@@ -304,13 +304,14 @@
                     <div class="col-md-12 mt-2 d-flex justify-content-end">
                       <button
                         class="btn nova-cor borda mr-3"
-
+                        [routerLink]="['/vaga-edit', vaga.idVaga]"
                       >
                         Atualizar
                       </button>
                       <button
                         class="btn nova-cor borda"
-                        >
+                        [routerLink]="['/vaga-delete', vaga.idVaga]"
+                      >
                         Apagar
                       </button>
                     </div>
@@ -457,7 +458,9 @@
           </select>
         </section>
         <section *ngIf="step == 3">
-          <label for="intelectual">Essa vaga também é para pessoas com deficiência intelectual?</label>
+          <label for="intelectual"
+            >Essa vaga também é para pessoas com deficiência intelectual?</label
+          >
           <select
             (change)="selecionaPCDIntelectual($event)"
             class="form-control"
@@ -468,7 +471,9 @@
             <option value="Sim">Sim</option>
             <option value="Não">Não</option>
           </select>
-          <label for="fisica">Essa vaga também é para pessoas com deficiência física?</label>
+          <label for="fisica"
+            >Essa vaga também é para pessoas com deficiência física?</label
+          >
           <select
             (change)="selecionaPCDFisica($event)"
             class="form-control"
@@ -479,7 +484,9 @@
             <option value="Sim">Sim</option>
             <option value="Não">Não</option>
           </select>
-          <label for="visual">Essa vaga também é para pessoas com deficiência visual?</label>
+          <label for="visual"
+            >Essa vaga também é para pessoas com deficiência visual?</label
+          >
           <select
             (change)="selecionaPCDVisual($event)"
             class="form-control"
@@ -490,7 +497,9 @@
             <option value="Sim">Sim</option>
             <option value="Não">Não</option>
           </select>
-          <label for="auditiva">Essa vaga também é para pessoas com deficiência auditiva?</label>
+          <label for="auditiva"
+            >Essa vaga também é para pessoas com deficiência auditiva?</label
+          >
           <select
             (change)="selecionaPCDAuditiva($event)"
             class="form-control"
@@ -501,7 +510,9 @@
             <option value="Sim">Sim</option>
             <option value="Não">Não</option>
           </select>
-          <label for="multiplas">Essa vaga também é para pessoas com deficiências multíplas?</label>
+          <label for="multiplas"
+            >Essa vaga também é para pessoas com deficiências multíplas?</label
+          >
           <select
             (change)="selecionaPCDMultiplas($event)"
             class="form-control"
