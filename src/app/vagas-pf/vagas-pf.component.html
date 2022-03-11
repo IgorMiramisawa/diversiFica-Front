@@ -39,35 +39,36 @@
                         alt="Empresa não se adequa a pessoas negras"
                         width="25px"
                       />
-                      <img
-                        *ngIf="vagas.beneficios != ''"
-                        class="mt-0 mr-3"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="{{ vagas.beneficios }}"
-                        src="../../assets/imgs/ico/beneficios.svg"
-                        alt="{{ vagas.beneficios }}"
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.beneficios === ''"
-                        class="mt-0 mr-3 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não possui beneficios."
-                        src="../../assets/imgs/ico/beneficios.svg"
-                        alt="Empresa não possui beneficios"
-                        width="25px"
-                      />
+
                       <ng-container *ngIf="auth.logado()">
+                        <img
+                          *ngIf="vagas.beneficios != ''"
+                          class="mt-0 mr-3"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Beneficios: {{ vagas.beneficios }}"
+                          src="../../assets/imgs/ico/beneficios.svg"
+                          alt="Beneficios: {{ vagas.beneficios }}"
+                          width="25px"
+                        />
+                        <img
+                          *ngIf="vagas.beneficios === ''"
+                          class="mt-0 mr-3 opacity"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Empresa não possui beneficios."
+                          src="../../assets/imgs/ico/beneficios.svg"
+                          alt="Empresa não possui beneficios"
+                          width="25px"
+                        />
                         <img
                           *ngIf="vagas.salario != 0"
                           class="mt-0 mr-3"
                           data-toggle="tooltip"
                           data-placement="top"
-                          title="{{ vagas.salario }}"
+                          title="Salário: {{ vagas.salario | currency: 'BRL' }}"
                           src="../../assets/imgs/ico/salario.svg"
-                          alt="{{ vagas.salario }}"
+                          alt="Salário: {{ vagas.salario | currency: 'BRL' }}"
                           width="25px"
                         />
                         <img
@@ -80,28 +81,28 @@
                           alt="Empresa não possui salário"
                           width="25px"
                         />
+                        <img
+                          *ngIf="vagas.descricao != ''"
+                          class="mt-0 mr-3"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Descrição: {{ vagas.descricao }}"
+                          src="../../assets/imgs/ico/descricao.svg"
+                          alt="Descrição: {{ vagas.descricao }}"
+                          width="25px"
+                        />
+                        <img
+                          *ngIf="vagas.descricao === ''"
+                          class="mt-0 mr-3 opacity"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Empresa não possui descrição"
+                          src="../../assets/imgs/ico/descricao.svg"
+                          alt="Empresa não possui descrição"
+                          width="25px"
+                        />
                       </ng-container>
 
-                      <img
-                        *ngIf="vagas.descricao != ''"
-                        class="mt-0 mr-3"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="{{ vagas.descricao }}."
-                        src="../../assets/imgs/ico/descricao.svg"
-                        alt="{{ vagas.descricao }}"
-                        width="25px"
-                      />
-                      <img
-                        *ngIf="vagas.descricao === ''"
-                        class="mt-0 mr-3 opacity"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Empresa não possui descrição"
-                        src="../../assets/imgs/ico/descricao.svg"
-                        alt="Empresa não possui descrição"
-                        width="25px"
-                      />
                       <img
                         *ngIf="vagas.etnia === 'indigena'"
                         class="mt-0 mr-3"
