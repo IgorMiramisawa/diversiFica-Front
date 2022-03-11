@@ -12,12 +12,11 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./usuarios-pf.component.css'],
 })
 export class UsuariosPfComponent implements OnInit {
-  
+
   vaga: Vaga = new Vaga()
   usuario: Usuario = new Usuario()
 
   idUsuario = environment.idUsuario
-  token = environment.token
   nome = environment.nomeUsuario
   foto = environment.foto
   tipo = environment.tipo
@@ -40,11 +39,12 @@ export class UsuariosPfComponent implements OnInit {
     public authService: AuthService,
     private router: Router,
     private alertas: AlertasService
-    
+
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
+    this.authService.refreshToken()
     this.findByIdUsuario();
 
     if (environment.token == '') {
@@ -53,8 +53,6 @@ export class UsuariosPfComponent implements OnInit {
       );
       this.router.navigate(['/entrar']);
     }
-
-    this.authService.refreshToken()
   }
 
   findByIdUsuario() {
