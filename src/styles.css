@@ -2,3 +2,5 @@
 .ponteiro{
   cursor: pointer;
 }
+
+@import "~bootstrap/dist/css/bootstrap.css";

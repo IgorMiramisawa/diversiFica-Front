@@ -7,6 +7,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { VagaEditComponent } from './edit/vaga-edit/vaga-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ProjetoComponent } from './projeto/projeto.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { TermosComponent } from './termos/termos.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'vaga-delete/:id', component:VagaDeleteComponent},
   {path: 'vaga-edit/:id' , component:VagaEditComponent},
   {path: 'usuario-edit/:idUsuario' , component:UsuarioEditComponent},
-  {path: 'termo' , component:TermosComponent},
+  {path: 'termos' , component:TermosComponent},
+  {path: 'projeto' , component:ProjetoComponent},
   {path: '**' , component:NotFoundComponent}
 ]
 
