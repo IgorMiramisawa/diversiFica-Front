@@ -1,6 +1,35 @@
-.projeto{
-    font-weight: 600;
+.row{
+    background-image: url(../../assets/imgs/bgs/bgProjeto.svg);
+    background-size: cover;
+    background-position: 100% 20%;
+    background-repeat: no-repeat;
+}
+
+.titulo{
+    text-align: center;
     color: #BE4137;
-    margin-top: 3rem;
-    margin-bottom: 0%;
+    margin-top: 2rem;
+}
+
+.subtitulo{
+    color: #BE4137;
+}
+
+.texto{
+    color: #1C0200;
+    margin-top: 0.8rem;
+}
+
+.link{
+    color: #BE4137;
+    margin-bottom: 3rem;
+}
+
+.imagem{
+    max-width: 50vw;
+    max-height: 50vw;
+    margin-top: 1rem;
+    margin-bottom: 1.4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }

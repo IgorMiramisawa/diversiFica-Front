@@ -2,8 +2,8 @@
   <a class="navbar-brand" routerLink="/inicio"
     ><img
       src="../../assets/imgs/menu/diversifica.svg"
-      alt="DiversiFica Logo"
-      width="360"
+      alt="diversiFica Logo"
+      width="300"
   /></a>
   <button
     class="navbar-toggler"
@@ -20,16 +20,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"></ul>
     <ul class="navbar-nav nav-positioning">
-      <li class="nav-item active mr-5">
+      <li class="nav-item active mr-4">
         <a class="nav-link font-color" routerLink="/inicio">HOME</a>
       </li>
-      <li class="nav-item mr-5 ml-5">
+      <li class="nav-item mr-4 ml-4">
         <a class="nav-link font-color" routerLink="/sobre">SOBRE</a>
       </li>
-      <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
+      <li class="nav-item mr-4 ml-4" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/vagas-pf">VAGAS</a>
       </li>
-      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+      <li class="nav-item mr-4 ml-4" *ngIf="auth.logado()">
         <a
           class="nav-link font-color"
           routerLink="/vagas-pf"
@@ -40,16 +40,16 @@
           class="nav-link font-color"
           routerLink="/vagas-pj"
           *ngIf="!auth.pessoaFisica()"
-          >Minhas VAGAS</a
+          >MINHAS VAGAS</a
         >
       </li>
-      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+      <li class="nav-item mr-4 ml-4" *ngIf="auth.logado()">
         <a class="nav-link font-color" routerLink="/usuarios-pf">PERFIL</a>
       </li>
-      <li class="nav-item mr-5 ml-5" *ngIf="auth.logado()">
+      <li class="nav-item mr-4 ml-4" *ngIf="auth.logado()">
         <a class="nav-link font-color sair-config" (click)="sair()">SAIR</a>
       </li>
-      <li class="nav-item mr-5 ml-5" *ngIf="!auth.logado()">
+      <li class="nav-item mr-4 ml-4" *ngIf="!auth.logado()">
         <a class="nav-link font-color" routerLink="/entrar">ENTRAR</a>
       </li>
       <li class="nav-item" *ngIf="!auth.logado()">
@@ -58,7 +58,7 @@
           routerLink="/cadastrar"
           *ngIf="!auth.logado()"
         >
-          Cadastrar
+          CADASTRAR
         </button>
       </li>
     </ul>

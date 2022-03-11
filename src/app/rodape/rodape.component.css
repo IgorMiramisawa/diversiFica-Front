@@ -27,12 +27,17 @@ ul.social-network li
   padding: 5px;
 }
 .fa-behance:hover {
-
+  color: #601009;
   transform: translateY(-9px);
   transition: 0.5s ease-in-out;
 }
 
 .fa-linkedin:hover {
+  color: #601009;
   transform: translateY(-9px);
   transition: 0.5s ease-in-out;
+}
+
+.link:hover{
+  color: #601009;
 }
