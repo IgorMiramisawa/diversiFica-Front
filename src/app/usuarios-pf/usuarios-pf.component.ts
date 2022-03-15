@@ -12,12 +12,11 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./usuarios-pf.component.css'],
 })
 export class UsuariosPfComponent implements OnInit {
-  
+  token = environment.token
   vaga: Vaga = new Vaga()
   usuario: Usuario = new Usuario()
 
   idUsuario = environment.idUsuario
-  token = environment.token
   nome = environment.nomeUsuario
   foto = environment.foto
   tipo = environment.tipo
